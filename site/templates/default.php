@@ -18,8 +18,31 @@
 		<link href="assets/foundation.css" rel="stylesheet">
 	</head>
 	<body>
-		<header></header>
+		<header>
+			<!-- Welle -->
+			<picture aria-hidden="true">
+				<!-- browsers will use the first source that is "true" -->
+				<source media="(min-width: 1729px)" srcset="/assets/images/welle-2560@2x.jpg" />
+				<source media="(min-width: 1281px)" srcset="/assets/images/welle-1728@2x.jpg" />
+				<source media="(min-width: 1025px)" srcset="/assets/images/welle-1280@2x.jpg" />
+				<source media="(min-width: 415px)"  srcset="/assets/images/welle-1024@2x.jpg" />
+				<source media="(max-width: 414px)"  srcset="/assets/images/welle-414@2x.jpg" />
+				
+				<!-- fallback if no condition is met — IE will always use this -->
+				<img src="/assets/images/welle-1280@2x.jpg" alt="" aria-hidden="true" />
+			</picture>
+			<div class="contain">
+				<!-- Logo --><img />
+				<nav>
+					<ol>
+						Nav
+					</ol>
+				</nav>
+			</div>
+		</header>
 		<main><?= $page->inhalt()->toBlocks() ?></main>
-		<footer></footer>
+		<footer>
+			Footer
+		</footer>
 	</body>
 </html>
