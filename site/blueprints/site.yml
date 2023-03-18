@@ -12,10 +12,35 @@ columns:
         fields:
           description:
             label: "Beschreibung für Suchmaschinen"
+            help: "Google zeigt bis zu 160 Zeichen in den Suchergebnissen an"
             type: textarea
             size: small
             required: true
             spellcheck: true
             buttons: false
-            help: "Google zeigt bis zu 160 Zeichen in den Suchergebnissen an"
             counter: true
+          info:
+            type: info
+            label: Open Graph Info
+            theme: info
+            text: |
+              Hallo Babs!
+
+              OpenGraph ist ein Standard für elegantere Vorschauen von Links. Open Graph Bilder werden von Diensten wie iMessage, Facebook, etc. angezeigt. Sie sind das Vorschaubild, das erscheint, wenn dort ein Link geteilt wird. Ich habe in diese Webseite Open Graph Unterstützung eingebaut.
+
+              Open Graph Bilder dürfen jedes Seitenverhältnis nutzen, am besten sind jedoch quadratische Grafiken. Die Dateigröße darf nicht mehr als 1MB sein und nicht kleiner als 120x120 PX. Am besten 1024x1024 PX oder größer.
+
+              Bilder sollten keine zusätzlichen Informationen beinhalten, sie dienen ausschließlich der Illustration und werden von Screen-Readern nicht beschrieben.
+
+              Liebe Grüße,
+              Wenzel
+          ogImage:
+            label: "Standard Open Graph Bild"
+            help: Dieses Bild wird für alle Seiten genutzt, die kein eigenes OG-Bild festlegen.
+            type: files
+            max: 1
+            layout: cards
+            image:
+              cover: true
+              ratio: 1/1
+
