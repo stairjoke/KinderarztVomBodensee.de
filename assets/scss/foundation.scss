@@ -1,0 +1,14 @@
+// Foundational styles - Der Kinderarzt vom Bodensee
+//
+// Mobile design in Figma is 320w
+// Desktop design in Figma is 1280w
+//
+// 1 REM: Body font size is default, assumed 16px, body text in Figma is 16px.
+//
+// Convert all units to REM using 1 REM = 16 PX
+
+@use 'globals';
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
