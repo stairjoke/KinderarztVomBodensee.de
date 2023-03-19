@@ -1,1 +1,40 @@
 // Global SCSS variables - Der Kinderarzt vom Bodensee
+
+:root {
+  --color-CI: #084CB5;
+  --color-accent-1: #FFE588;
+  --color-accent-2: #FFAC46;
+  --color-page: #FFFBF0;
+
+  --color-secondary-elements-and-links: #4F4F4F;
+  --color-text: #212121;
+  --color-text-inverted: #FFFFFF;
+  --color-accent-2-text: #E57A00;
+
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-overlay-alt: rgba(0, 0, 0, 0.8);
+}
+
+@mixin glass() {
+  background-color: var(--color-overlay-alt);
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    background-color: var(--color-overlay);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+}
+
+@mixin shadow-L() {
+  --shadow-color: var(--color-accent-1);
+  box-shadow: 1rem 1rem 0 0 var(--shadow-color);
+}
+
+@mixin shadow() {
+  --shadow-color: var(--color-accent-1);
+  box-shadow: .5rem .5rem 0 0 var(--shadow-color);
+}
+
+@mixin shadow-alt() {
+  @include shadow();
+  --shadow-color: var(--color-CI);
+}
