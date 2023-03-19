@@ -38,3 +38,7 @@
   @include shadow();
   --shadow-color: var(--color-CI);
 }
+
+$break-point-desktop-max: 1280px;
+$break-point-desktop: 1024px;
+$break-point-tablet: 744px;
