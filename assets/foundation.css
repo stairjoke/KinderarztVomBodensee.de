@@ -1,5 +1,26 @@
+:root {
+  --color-CI: #084CB5;
+  --color-accent-1: #FFE588;
+  --color-accent-2: #FFAC46;
+  --color-page: #FFFBF0;
+  --color-secondary-elements-and-links: #4F4F4F;
+  --color-text: #212121;
+  --color-text-inverted: #FFFFFF;
+  --color-accent-2-text: #E57A00;
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-overlay-alt: rgba(0, 0, 0, 0.8);
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--color-page);
+}
+
+.welle img {
+  width: 100%;
+  height: auto;
 }
 
 /*# sourceMappingURL=foundation.css.map */
