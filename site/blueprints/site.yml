@@ -4,11 +4,11 @@ columns:
   - width: 1/2
     sections:
       welcome:
-        label: Hallo Babs!
+        label: Hallo Babs und Christof!
         type: info
         theme: info
         text: |
-          Du findest durch das Panel verteilt diese Hilfstexte. Ich habe sie überall dort geschrieben, wo ich glaube, dass ein paar Infos hilfreich sein könnten. Die Texte sind manchmal farbig hinterlegt, so wie diese, und manchmal sind sie in grau unterhalb von Elementen.
+          Ihr findet über das Kirby-Panel verteilt diese Hilfstexte. Ich habe sie überall dort geschrieben, wo ich glaube, dass ein paar Infos hilfreich sein könnten. Die Texte sind manchmal farbig hinterlegt, so wie dieser, und manchmal sind sie in grau unterhalb von Elementen.
 
           Hilfe? (link: tel:00491748940954 text: Hier klicken um mich anzurufen!)
 
