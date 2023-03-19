@@ -8,7 +8,9 @@ columns:
         type: info
         theme: info
         text: |
-          Du findest durch das Panel verteilt diese Hilfstexte. Ich habe sie überall dort geschrieben, wo ich glaube, dass ein paar Infos hilfreich sein könnten.
+          Du findest durch das Panel verteilt diese Hilfstexte. Ich habe sie überall dort geschrieben, wo ich glaube, dass ein paar Infos hilfreich sein könnten. Die Texte sind manchmal farbig hinterlegt, so wie diese, und manchmal sind sie in grau unterhalb von Elementen.
+
+          Hilfe? (link: tel:00491748940954 text: Hier klicken um mich anzurufen!)
 
           Liebe Grüße,
           Wenzel
@@ -39,7 +41,8 @@ columns:
 
               Die Reihenfolge der Grafiken bestimmt welche für Desktop und welche für Mobil genutzt wird. Du kannst die Reihenfolge ändern, indem du die Dateien via Drag & Drop sortierst. Du kannst so viele Grafiken hochladen wie du möchtest, es werden die ersten zwei genutzt und alle Weiteren ignoriert.
           navImage:
-            label: Header Bild
+            label: Header Bild (Logo/Slogan)
+            help: Das erste Bild wird für Desktop-Layouts genutzt, das zweite für Tablet- und Smartphone-Layouts. Alle weiteren werden ignoriert.
             type: files
             layout: cards
           infoOGImage:
@@ -54,7 +57,8 @@ columns:
               Bilder sollten keine zusätzlichen Informationen beinhalten, sie dienen ausschließlich der Illustration und werden von Screen-Readern nicht beschrieben.
           ogImage:
             label: "Standard Open Graph Bild"
-            help: Dieses Bild wird für alle Seiten genutzt, die kein eigenes OG-Bild festlegen.
+            help: |
+              Dieses Bild wird als „Open Graph”-Bild für alle Seiten genutzt, die kein eigenes Bild festlegen. (link: https://ogp.me text: Mehr Informationen zu Open Graph. target: _blank)
             type: files
             max: 1
             layout: cards
