@@ -9,7 +9,7 @@
 		<meta name="description" content="<?= ($page->description()->exists()) ? $page->description() : $site->description() ?>">
 		<meta property="og:title" content="<?= $page->title() ?>">
 		<meta property="og:site_name" content="<?= $site->title() ?>">
-		<meta property="og:image" content="<?= ($page->ogImage()->exists()) ? $page->ogImage()->files()->first()->toFile()->url() : $site->ogImage()->files()->first()->toFile()->url() ?>">
+		<meta property="og:image" content="<?= ($page->ogImage()->exists()) ? $page->ogImage()->toFiles()->first()->url() : $site->ogImage()->toFiles()->first()->url() ?>">
 		<meta property="og:url" content="<?= $page->url() ?>">
 		<meta property="og:locale" content="de_DE">
 		
