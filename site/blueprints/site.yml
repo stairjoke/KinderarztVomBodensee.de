@@ -1,11 +1,20 @@
 title: Site
 
 columns:
-  - width: 2/3
+  - width: 1/2
     sections:
+      welcome:
+        label: Hallo Babs!
+        type: info
+        theme: info
+        text: |
+          Du findest durch das Panel verteilt diese Hilfstexte. Ich habe sie überall dort geschrieben, wo ich glaube, dass ein paar Infos hilfreich sein könnten.
+
+          Liebe Grüße,
+          Wenzel
       seiten:
         type: pages
-  - width: 1/3
+  - width: 1/2
     sections:
       informationen:
         type: fields
@@ -19,21 +28,30 @@ columns:
             spellcheck: true
             buttons: false
             counter: true
-          info:
+          infoNavImage:
+            type: info
+            label: Header Bild Info
+            theme: info
+            text: |
+              Im Header der Seite werden die Karrikatur und der Slogan angezeigt. Diese sind als eine gemeinsame Grafik hinterlegt, jedoch in zwei Varianten: Desktop und Mobil. Auf Tablets und Smartphones wird die mobile Version angezeigt, auf größeren Geräten die Desktop Version.
+
+              Die Desktop Version wird mit eine Höhe von 132px angezeigt, die Mobile mit 78px (Tablet) oder weniger (Smartphone).
+
+              Die Reihenfolge der Grafiken bestimmt welche für Desktop und welche für Mobil genutzt wird. Du kannst die Reihenfolge ändern, indem du die Dateien via Drag & Drop sortierst. Du kannst so viele Grafiken hochladen wie du möchtest, es werden die ersten zwei genutzt und alle Weiteren ignoriert.
+          navImage:
+            label: Header Bild
+            type: files
+            layout: cards
+          infoOGImage:
             type: info
             label: Open Graph Info
             theme: info
             text: |
-              Hallo Babs!
-
               OpenGraph ist ein Standard für elegantere Vorschauen von Links. Open Graph Bilder werden von Diensten wie iMessage, Facebook, etc. angezeigt. Sie sind das Vorschaubild, das erscheint, wenn dort ein Link geteilt wird. Ich habe in diese Webseite Open Graph Unterstützung eingebaut.
 
               Open Graph Bilder dürfen jedes Seitenverhältnis nutzen, am besten sind jedoch quadratische Grafiken. Die Dateigröße darf nicht mehr als 1MB sein und nicht kleiner als 120x120 PX. Am besten 1024x1024 PX oder größer.
 
               Bilder sollten keine zusätzlichen Informationen beinhalten, sie dienen ausschließlich der Illustration und werden von Screen-Readern nicht beschrieben.
-
-              Liebe Grüße,
-              Wenzel
           ogImage:
             label: "Standard Open Graph Bild"
             help: Dieses Bild wird für alle Seiten genutzt, die kein eigenes OG-Bild festlegen.
