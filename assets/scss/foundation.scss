@@ -14,6 +14,24 @@ body {
   margin: 0;
   padding: 0;
   background: var(--color-page);
+
+  --grid-margin: 1rem;
+  --grid-margin-adaptive: var(--grid-margin);
+  --grid-gap: 1rem;
+
+  @media (min-width: #{globals.$break-point-tablet}) {
+    --grid-margin: 1.5rem;
+    --grid-gap: 2rem;
+  }
+
+  @media (min-width: #{globals.$break-point-desktop}) {
+    --grid-margin: 3rem;
+    --grid-gap: 2rem;
+  }
+
+  @media (min-width: #{globals.$break-point-desktop-max}) {
+    --grid-margin-adaptive: auto;
+  }
 }
 
 .welle {
@@ -21,4 +39,10 @@ body {
     width: 100%;
     height: auto;
   }
+}
+
+.contain, main, footer {
+  margin-left: var(--grid-margin-adaptive);
+  margin-right: var(--grid-margin-adaptive);
+  max-width: calc(#{globals.$break-point-desktop-max} - (2 * var(--grid-margin)));
 }
