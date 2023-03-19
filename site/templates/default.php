@@ -20,7 +20,7 @@
 	<body>
 		<header>
 			<!-- Welle -->
-			<picture aria-hidden="true">
+			<picture aria-hidden="true" class=welle>
 				<!-- browsers will use the first source that is "true" -->
 				<source media="(min-width: 1729px)" srcset="/assets/images/welle-2560@2x.jpg" />
 				<source media="(min-width: 1281px)" srcset="/assets/images/welle-1728@2x.jpg" />
