@@ -17,8 +17,8 @@ body {
   padding: 0;
   background: var(--color-page);
   --grid-margin: 1rem;
-  --grid-margin-adaptive: var(--grid-margin);
   --grid-gap: 1rem;
+  --grid-margin-adaptive: var(--grid-margin);
 }
 @media (min-width: 744px) {
   body {

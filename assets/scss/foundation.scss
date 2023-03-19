@@ -16,8 +16,11 @@ body {
   background: var(--color-page);
 
   --grid-margin: 1rem;
-  --grid-margin-adaptive: var(--grid-margin);
   --grid-gap: 1rem;
+
+  //The grid-margin-adaptive property can change to be a non-numeric value,
+  // whereas the grid-margin is safe to use in calculations
+  --grid-margin-adaptive: var(--grid-margin);
 
   @media (min-width: #{globals.$break-point-tablet}) {
     --grid-margin: 1.5rem;
@@ -42,6 +45,10 @@ body {
 }
 
 .contain, main, footer {
+  // This class will limit the width of an element to be the maximum size and center
+  // it horizontally. Using custom properties, it maintains a margin left/right that
+  // is consistent with the rest of the page.
+
   margin-left: var(--grid-margin-adaptive);
   margin-right: var(--grid-margin-adaptive);
   max-width: calc(#{globals.$break-point-desktop-max} - (2 * var(--grid-margin)));
