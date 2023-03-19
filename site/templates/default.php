@@ -32,7 +32,13 @@
 				<img src="/assets/images/welle-1280@2x.jpg" alt="" aria-hidden="true" />
 			</picture>
 			<div class="contain">
-				<!-- Logo --><img />
+				<picture class="logo">
+					<source media="(max-width: 1023px)" srcset="<?= $site->navImage()->toFiles()->nth(1)->url() ?>" />
+					<source media="(min-width: 1024px)" srcset="<?= $site->navImage()->toFiles()->nth(0)->url() ?>" />
+					
+					<!-- fallback if no condition is met — IE will always use this -->
+					<img src="<?= $site->navImage()->toFiles()->nth(0)->url() ?>" alt="Der Kinderarzt vom Bodensee. Dr. med. Christof Metzler, Kinder- und Jugendarzt" />
+				</picture>
 				<nav>
 					<ol>
 						Nav
