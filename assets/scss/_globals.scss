@@ -1,5 +1,6 @@
 // Global SCSS variables - Der Kinderarzt vom Bodensee
 
+// Colors
 :root {
   --color-CI: #084CB5;
   --color-accent-1: #FFE588;
@@ -15,6 +16,7 @@
   --color-overlay-alt: rgba(0, 0, 0, 0.8);
 }
 
+// Styles
 @mixin glass() {
   background-color: var(--color-overlay-alt);
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -39,6 +41,7 @@
   --shadow-color: var(--color-CI);
 }
 
+// Break points — these may not be defined as CSS custom properties.
 $break-point-desktop-max: 1280px;
 $break-point-desktop: 1024px;
 $break-point-tablet: 744px;
