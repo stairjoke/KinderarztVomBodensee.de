@@ -8,6 +8,7 @@
 // Convert all units to REM using 1 REM = 16 PX
 
 @use 'globals';
+@use 'header';
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

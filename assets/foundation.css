@@ -11,6 +11,11 @@
   --color-overlay-alt: rgba(0, 0, 0, 0.8);
 }
 
+.welle img {
+  width: 100%;
+  height: auto;
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
