@@ -41,7 +41,22 @@
 				</picture>
 				<nav>
 					<ol>
-						Nav
+						<?php
+							// List all public pages that are immediate children of home in the navigation
+							foreach($site->children()->listed() as $navItem){
+								// Make $item string and start the LI-element for the nav item in it
+								$item = "<li><a href='{$navItem->url()}'";
+								// if the current page is the page linked to in this nav item
+								if($page->is($navItem)) {
+									// add CSS class "current"
+									$item .= " class='current'";
+								}
+								// close the LI-HTML item
+								$item .= ">{$navItem->title()}</a></li>";
+								// return HTML item to page
+								echo($item);
+							}
+						?>
 					</ol>
 				</nav>
 			</div>
