@@ -9,18 +9,70 @@
   }
 }
 
-.logo {
-	img {
-		outline: dashed 1px red;
-		margin-left: -14px; //Graphic contains a shadow
-		
-		width: auto;
-		height: auto;
-		max-height: 4.875rem;
-		
-		@media (min-width: #{globals.$break-point-desktop}) {
-			margin-left: -23px;
-			max-height: 8.25rem;
-		}
-	}
+header {
+  position: absolute;
+  inset: 0;
+
+  @media (min-width: #{globals.$break-point-desktop}) {
+    position: static;
+  }
+
+  .contain {
+    display: flex;
+
+    @media (min-width: #{globals.$break-point-desktop}) {
+      align-items: baseline;
+    }
+
+    .logo {
+      outline: dashed 1px red;
+      img {
+        margin-left: -5.7%; //relative to <picture> with, pulls image left to bring carricature in line with text
+        margin-bottom: -7.5%; // !! relative to WIDTH
+
+        width: auto;
+        height: auto;
+        max-height: 4.875rem;
+
+        @media (min-width: #{globals.$break-point-desktop}) {
+          margin-left: -8.5%;
+          margin-bottom: -5.3%;
+          max-height: 8.25rem;
+        }
+      }
+    }
+
+    nav {
+      ol, ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        li {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          display: block;
+
+          a {
+            @media (max-width: #{globals.$break-point-desktop-}) {
+              display: block;
+              line-height: 44px; //Not in REM, as this is the touch-area minimum
+              padding: 0 1rem;
+            }
+            @media (pointer: coarse), (pointer: none) {
+              line-height: 44px; //Not in REM, as this is the touch-area minimum
+              padding: 0 1rem;
+            }
+          }
+
+          @media (min-width: #{globals.$break-point-desktop}) {
+            margin-left: 1.5rem;
+            margin-block-start: 0;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
 }

@@ -16,17 +16,69 @@
   height: auto;
 }
 
-.logo img {
+header {
+  position: absolute;
+  inset: 0;
+}
+@media (min-width: 1024px) {
+  header {
+    position: static;
+  }
+}
+header .contain {
+  display: flex;
+}
+@media (min-width: 1024px) {
+  header .contain {
+    align-items: baseline;
+  }
+}
+header .contain .logo {
   outline: dashed 1px red;
-  margin-left: -14px;
+}
+header .contain .logo img {
+  margin-left: -5.7%;
+  margin-bottom: -7.5%;
   width: auto;
   height: auto;
   max-height: 4.875rem;
 }
 @media (min-width: 1024px) {
-  .logo img {
-    margin-left: -23px;
+  header .contain .logo img {
+    margin-left: -8.5%;
+    margin-bottom: -5.3%;
     max-height: 8.25rem;
+  }
+}
+header .contain nav ol, header .contain nav ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+header .contain nav ol li, header .contain nav ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+}
+@media (max-width: 1023px) {
+  header .contain nav ol li a, header .contain nav ul li a {
+    display: block;
+    line-height: 44px;
+    padding: 0 1rem;
+  }
+}
+@media (pointer: coarse), (pointer: none) {
+  header .contain nav ol li a, header .contain nav ul li a {
+    line-height: 44px;
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  header .contain nav ol li, header .contain nav ul li {
+    margin-left: 1.5rem;
+    margin-block-start: 0;
+    display: inline-block;
   }
 }
 
