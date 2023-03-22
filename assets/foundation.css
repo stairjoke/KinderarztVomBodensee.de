@@ -38,11 +38,6 @@ body {
   }
 }
 
-.welle img {
-  width: 100%;
-  height: auto;
-}
-
 .contain, main, footer {
   margin-left: var(--grid-margin-adaptive);
   margin-right: var(--grid-margin-adaptive);
