@@ -33,11 +33,11 @@
 			</picture>
 			<div class="contain">
 				<picture class="logo">
-					<source media="(max-width: 1023px)" srcset="<?= $site->navImage()->toFiles()->nth(1)->url() ?>" />
-					<source media="(min-width: 1024px)" srcset="<?= $site->navImage()->toFiles()->nth(0)->url() ?>" />
+					<source media="(max-width: 1023px)" srcset="/assets/images/logo-and-slogan-mobile@2x.jpg" />
+					<source media="(min-width: 1024px)" srcset="/assets/images/logo-and-slogan-desktop@2x.jpg" />
 					
 					<!-- fallback if no condition is met — IE will always use this -->
-					<img src="<?= $site->navImage()->toFiles()->nth(0)->url() ?>" alt="Der Kinderarzt vom Bodensee. Dr. med. Christof Metzler, Kinder- und Jugendarzt" />
+					<img src="/assets/images/logo-and-slogan-desktop@2x.jpg" alt="Der Kinderarzt vom Bodensee. Dr. med. Christof Metzler, Kinder- und Jugendarzt" />
 				</picture>
 				<nav>
 					<ol>

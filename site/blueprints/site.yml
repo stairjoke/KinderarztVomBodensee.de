@@ -30,21 +30,6 @@ columns:
             spellcheck: true
             buttons: false
             counter: true
-          infoNavImage:
-            type: info
-            label: Header Bild Info
-            theme: info
-            text: |
-              Im Header der Seite werden die Karrikatur und der Slogan angezeigt. Diese sind als eine gemeinsame Grafik hinterlegt, jedoch in zwei Varianten: Desktop und Mobil. Auf Tablets und Smartphones wird die mobile Version angezeigt, auf größeren Geräten die Desktop Version.
-
-              Die Desktop Version wird mit eine Höhe von 132px angezeigt, die Mobile mit 78px (Tablet) oder weniger (Smartphone). Damit die Grafik einen überlappenden Schatten darstellen kann, wird die mobile um 14px nach links verschoben relativ zur Textkante, die desktop Variante um 23px.
-
-              Die Reihenfolge der Grafiken bestimmt welche für Desktop und welche für Mobil genutzt wird. Du kannst die Reihenfolge ändern, indem du die Dateien via Drag & Drop sortierst. Du kannst so viele Grafiken hochladen wie du möchtest, es werden die ersten zwei genutzt und alle Weiteren ignoriert.
-          navImage:
-            label: Header Bild (Logo/Slogan)
-            help: Das erste Bild wird für Desktop-Layouts genutzt, das zweite für Tablet- und Smartphone-Layouts. Alle weiteren werden ignoriert.
-            type: files
-            layout: cards
           infoOGImage:
             type: info
             label: Open Graph Info
