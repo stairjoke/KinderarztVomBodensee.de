@@ -1,5 +1,7 @@
 // Page Header — Der Kinderarzt vom Bodensee
 
+@use 'globals';
+
 .welle {
   img {
 	width: 100%;
@@ -7,3 +9,18 @@
   }
 }
 
+.logo {
+	img {
+		outline: dashed 1px red;
+		margin-left: -14px; //Graphic contains a shadow
+		
+		width: auto;
+		height: auto;
+		max-height: 4.875rem;
+		
+		@media (min-width: #{globals.$break-point-desktop}) {
+			margin-left: -23px;
+			max-height: 8.25rem;
+		}
+	}
+}

@@ -16,6 +16,20 @@
   height: auto;
 }
 
+.logo img {
+  outline: dashed 1px red;
+  margin-left: -14px;
+  width: auto;
+  height: auto;
+  max-height: 4.875rem;
+}
+@media (min-width: 1024px) {
+  .logo img {
+    margin-left: -23px;
+    max-height: 8.25rem;
+  }
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
