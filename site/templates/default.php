@@ -18,6 +18,7 @@
 		<link href="assets/foundation.css" rel="stylesheet">
 	</head>
 	<body>
+		
 		<header>
 			<!-- Welle -->
 			<picture aria-hidden="true" class=welle>
@@ -61,9 +62,12 @@
 				</nav>
 			</div>
 		</header>
+		
 		<main><?= $page->inhalt()->toBlocks() ?></main>
+		
 		<footer>
 			Footer
 		</footer>
+		
 	</body>
 </html>
