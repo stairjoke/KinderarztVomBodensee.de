@@ -47,3 +47,7 @@ body {
   margin-right: var(--grid-margin-adaptive);
   max-width: calc(#{globals.$break-point-desktop-max} - (2 * var(--grid-margin)));
 }
+
+img {
+  display: block;
+}
