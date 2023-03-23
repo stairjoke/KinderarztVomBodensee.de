@@ -45,10 +45,10 @@
 				<nav>
 					<input type="checkbox" value="false" id="nav-toggle">
 					<label for="nav-toggle" class="triggered-by-nav-toggle">
-						<svg class="icon" id="menu">
+						<svg class="icon" id="menu" aria-label="Open menu">
 							<use href="/assets/images/iconSprite.svg#menu"></use>
 						</svg>
-						<svg class="icon" id="close">
+						<svg class="icon" id="close" aria-label="Close menu">
 							<use href="/assets/images/iconSprite.svg#cross"></use>
 						</svg>
 					</label>
