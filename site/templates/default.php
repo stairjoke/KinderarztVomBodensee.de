@@ -32,16 +32,28 @@
 				<!-- fallback if no condition is met — IE will always use this -->
 				<img src="/assets/images/welle-1280@2x.jpg" alt="" aria-hidden="true" />
 			</picture>
-			<div class="contain">
-				<picture class="logo">
-					<source media="(max-width: 1023px)" srcset="/assets/images/logo-and-slogan-mobile@2x.jpg" />
-					<source media="(min-width: 1024px)" srcset="/assets/images/logo-and-slogan-desktop@2x.jpg" />
-					
-					<!-- fallback if no condition is met — IE will always use this -->
-					<img src="/assets/images/logo-and-slogan-desktop@2x.jpg" alt="Der Kinderarzt vom Bodensee. Dr. med. Christof Metzler, Kinder- und Jugendarzt" />
-				</picture>
+			<div class="contain header-layout">
+				<div class="logo-container">
+					<picture>
+						<source media="(max-width: 1023px)" srcset="/assets/images/logo-and-slogan-mobile@2x.jpg" />
+						<source media="(min-width: 1024px)" srcset="/assets/images/logo-and-slogan-desktop@2x.jpg" />
+						
+						<!-- fallback if no condition is met — IE will always use this -->
+						<img src="/assets/images/logo-and-slogan-desktop@2x.jpg" alt="Der Kinderarzt vom Bodensee. Dr. med. Christof Metzler, Kinder- und Jugendarzt" class="logo" />
+					</picture>
+				</div>
 				<nav>
-					<ol>
+					<input type="checkbox" value="false" id="nav-toggle">
+					<label for="nav-toggle" class="triggered-by-nav-toggle">
+						<svg class="icon" id="menu">
+							<use href="/assets/images/iconSprite.svg#menu"></use>
+						</svg>
+						<svg class="icon" id="close">
+							<use href="/assets/images/iconSprite.svg#cross"></use>
+						</svg>
+					</label>
+					
+					<ol class="triggered-by-nav-toggle">
 						<?php
 							// List all public pages that are immediate children of home in the navigation
 							foreach($site->children()->listed() as $navItem){
