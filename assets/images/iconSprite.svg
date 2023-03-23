@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<!--
+	This is an invisible SVG Sprite. use the icons contained in it by adding an HTML node like this:
+	<svg class="icon">
+		<use href="#icon"></use>
+	</svg>
+	
+	Info, good, but outdated: https://css-tricks.com/svg-use-with-external-reference-take-2/
+-->
+
+<symbol viewBox="0 0 16 16" id="cross">
+	<title>Close or Error</title>
+	<g style="fill: currentColor">
+		<rect x="3.05029" y="1.63599" width="16" height="2" rx="1" transform="rotate(45 3.05029 1.63599)" />
+		<rect x="1.63599" y="12.9497" width="16" height="2" rx="1" transform="rotate(-45 1.63599 12.9497)" />
+	</g>
+</symbol>
+
+<symbol viewBox="0 0 16 16" id="ext">
+	<title>External Link</title>
+	<g style="fill: currentColor">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M5 1H6V2.61538H5.11538C3.73467 2.61538 2.61538 3.73467 2.61538 5.11539V10.8846C2.61538 12.2653 3.73467 13.3846 5.11539 13.3846H10.8846C12.2653 13.3846 13.3846 12.2653 13.3846 10.8846V10H15V11C15 13.2091 13.2091 15 11 15H5C2.79086 15 1 13.2091 1 11V5C1 2.79086 2.79086 1 5 1ZM9 1V2.61538H12.3846L8.5 6.5L9.5 7.5L13.3846 3.61539V7H15V2C15 1.44772 14.5523 1 14 1H9Z" />
+	</g>
+</symbol>
+
+<symbol viewBox="0 0 16 16" id="menu">
+	<title>Menu</title>
+	<g style="fill: currentColor">
+		<rect width="16" height="2" rx="1" />
+		<rect y="7" width="16" height="2" rx="1" />
+		<rect y="14" width="16" height="2" rx="1" />
+	</g>
+</symbol>
+
+<symbol viewBox="0 0 16 16" id="menu">
+	<title>Menu</title>
+	<g style="fill: currentColor">
+		<rect width="16" height="2" rx="1" />
+		<rect y="7" width="16" height="2" rx="1" />
+		<rect y="14" width="16" height="2" rx="1" />
+	</g>
+</symbol>
+
+</svg>
