@@ -16,9 +16,20 @@
 		<meta name="roboty" content="inxed, follow">
 		
 		<link href="assets/foundation.css" rel="stylesheet">
+		<script>
+			window.onload = (event) => {
+				document.body.classList.remove('no-js');
+				document.body.classList.add('loaded');
+			}
+			window.onpageshow = (event) => {
+				if(document.getElementById('nav-toggle').checked) {
+					document.getElementById('nav-toggle').click();
+				}
+			}
+		</script>
 	</head>
-	<body>
-		
+	<body class="no-js">
+		<div aria-hidden="true" class="body-dim"></div>
 		<header>
 			<!-- Welle -->
 			<picture aria-hidden="true" class=welle>
@@ -42,18 +53,19 @@
 						<img src="/assets/images/logo-and-slogan-desktop@2x.jpg" alt="Der Kinderarzt vom Bodensee. Dr. med. Christof Metzler, Kinder- und Jugendarzt" class="logo" />
 					</picture>
 				</div>
-				<nav>
-					<input type="checkbox" value="false" id="nav-toggle">
-					<label for="nav-toggle" class="triggered-by-nav-toggle">
-						<svg class="icon" id="menu" aria-label="Open menu">
-							<use href="/assets/images/iconSprite.svg#menu"></use>
-						</svg>
-						<svg class="icon" id="close" aria-label="Close menu">
-							<use href="/assets/images/iconSprite.svg#cross"></use>
-						</svg>
-					</label>
-					
-					<ol class="triggered-by-nav-toggle">
+				
+				<input type="checkbox" id="nav-toggle">
+				<label for="nav-toggle" class="triggered-by-nav-toggle">
+					<svg class="icon" id="menu" aria-label="Open menu">
+						<use href="/assets/images/iconSprite.svg#menu"></use>
+					</svg>
+					<svg class="icon" id="close" aria-label="Close menu">
+						<use href="/assets/images/iconSprite.svg#cross"></use>
+					</svg>
+				</label>
+				
+				<nav class="triggered-by-nav-toggle">
+					<ol>
 						<?php
 							// List all public pages that are immediate children of home in the navigation
 							foreach($site->children()->listed() as $navItem){
