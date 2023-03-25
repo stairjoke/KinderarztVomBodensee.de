@@ -8,14 +8,13 @@
 // Convert all units to REM using 1 REM = 16 PX
 
 @use 'globals';
+@use 'typography';
 @use 'header';
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: var(--color-page, #f0f);
-  color: var(--color-text, #f0f);
 
   --grid-margin: 1rem;
   --grid-gap: 1rem;

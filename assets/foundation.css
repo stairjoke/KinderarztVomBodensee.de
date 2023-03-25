@@ -12,6 +12,69 @@
   --color-overlay-alt: rgba(0, 0, 0, 0.8);
 }
 
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #f0f);
+}
+
+strong, em {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #f0f);
+  font-weight: 700;
+}
+
+.fett {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: underline;
+  --link-hover: var(--color-CI);
+}
+a:hover, a:focus {
+  color: var(--link-hover);
+}
+
+h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #f0f);
+  font-weight: 700;
+  font-weight: 700;
+  --link-hover: var(--color-accent-2);
+}
+h2 a:link, h2 a:active, h2 a:visited {
+  color: var(--color-accent-2-text);
+}
+
+h1 {
+  font-family: "Univers-Black";
+  font-weight: 750;
+  font-size: 3.5rem;
+  line-height: 1.09;
+  color: var(--color-accent-2-text);
+}
+.card h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #f0f);
+  font-weight: 700;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.5em;
+  color: var(--color-accent-2-text);
+}
+
 .welle img {
   width: 100%;
   height: auto;
@@ -173,11 +236,9 @@ header .header-layout nav.triggered-by-nav-toggle ol li, header .header-layout n
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: var(--color-page, #f0f);
-  color: var(--color-text, #f0f);
   --grid-margin: 1rem;
   --grid-gap: 1rem;
   --spacer-abschnitt: 3rem;
