@@ -20,6 +20,17 @@ body {
   --grid-margin: 1rem;
   --grid-gap: 1rem;
 
+  --spacer-abschnitt: 3rem;
+  --spacer-element: 1.5rem;
+  --spacer-elemente-absatz: 0.75rem;
+  --spacer-viertel: 0.75rem;
+  --spacer-absatz: 0.5rem;
+
+  --transition-duration-XL: 450ms;
+  --transition-duration-L: 250ms;
+  --transition-duration-M: 120ms;
+  --transition-timing-function: ease-in;
+
   //The grid-margin-adaptive property can change to be a non-numeric value,
   // whereas the grid-margin is safe to use in calculations
   --grid-margin-adaptive: var(--grid-margin);
@@ -32,6 +43,12 @@ body {
   @media (min-width: #{globals.$break-point-desktop}) {
     --grid-margin: 3rem;
     --grid-gap: 2rem;
+
+    --spacer-abschnitt: 6rem;
+    --spacer-element: 3rem;
+    --spacer-elemente-absatz: 1.5rem;
+    --spacer-viertel: 0.75rem;
+    --spacer-absatz: 0.5rem;
   }
 
   @media (min-width: #{globals.$break-point-desktop-max}) {
@@ -58,4 +75,24 @@ svg.icon {
   height: 1rem;
   color: currentcolor;
   display: block;
+}
+
+.body-dim {
+  body.loaded & {
+    display: block;
+    transition-delay: var(--transition-duration-L);
+  }
+
+  opacity: 0;
+  display: none;
+
+  transition: opacity;
+  transition-timing-function: ease-out;
+  transition-duration: var(--transition-duration-XL);
+
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  @include globals.glass;
 }
