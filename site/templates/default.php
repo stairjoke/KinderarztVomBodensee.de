@@ -43,7 +43,7 @@
 				<!-- fallback if no condition is met — IE will always use this -->
 				<img src="/assets/images/welle-1280@2x.jpg" alt="" aria-hidden="true" />
 			</picture>
-			<div class="contain header-layout">
+			<div class="header-layout">
 				<div class="logo-container">
 					<picture>
 						<source media="(max-width: 1023px)" srcset="/assets/images/logo-and-slogan-mobile@2x.jpg" />
