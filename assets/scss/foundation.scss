@@ -76,14 +76,16 @@ svg.icon {
   display: block;
 }
 
-.body-dim {
+#overlay-dimmer {
+  @include globals.glass;
+
+  display: none;
   body.loaded & {
     display: block;
     transition-delay: var(--transition-duration-L);
   }
 
   opacity: 0;
-  display: none;
 
   transition: opacity;
   transition-timing-function: ease-out;
@@ -92,6 +94,4 @@ svg.icon {
   position: absolute;
   inset: 0;
   z-index: 0;
-
-  @include globals.glass;
 }
