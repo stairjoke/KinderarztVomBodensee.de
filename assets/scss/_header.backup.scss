@@ -1,0 +1,168 @@
+// Page Header — Der Kinderarzt vom Bodensee
+
+@use 'globals';
+
+.welle {
+  img {
+	width: 100%;
+	height: auto;
+  }
+}
+
+body:has(#nav-toggle:checked) {
+  .body-dim {
+    opacity: 1;
+    display: block;
+    transition-delay: 0ms;
+  }
+}
+
+header {
+  position: relative;
+  z-index: 1;
+  background: var(--color-page);
+  padding-bottom: var(--spacer-element);
+  margin-bottom: var(--spacer-abschnitt);
+
+  overflow: visible;
+
+  .header-layout {
+    display: grid;
+    grid-template-columns: auto 44px;
+    grid-template-areas:
+      "logo toggle"
+      "nav nav";
+
+    .logo-container {
+      grid-area: logo;
+
+      .logo { // img
+        width: 100%;
+        max-width: 22.06rem;
+        height: auto;
+        max-height: 4.875rem;
+        transform: translateX(-5.7%);
+      }
+    }
+
+    #nav-toggle { // Checkbox
+      position: absolute;
+      visibility: hidden;
+      grid-area: toggle;
+
+      & + label.triggered-by-nav-toggle {
+        #close {
+          display: none;
+        }
+      }
+      &:checked + label.triggered-by-nav-toggle {
+        #menu {
+          display: none;
+        }
+        #close {
+          display: block;
+        }
+      }
+
+      & ~ nav.triggered-by-nav-toggle {
+        display: block;
+
+        ol, ul {
+          max-height: 0;
+
+          li {
+            opacity: 0;
+            transform: translateX(-.5rem);
+            transition-delay: 1s;
+          }
+        }
+      }
+      &:checked ~ nav.triggered-by-nav-toggle {
+        display: block;
+
+        ol, ul {
+          max-height: 50vh;
+          padding-bottom: var(--spacer-element);
+          box-shadow: 0 1rem 1rem 0 var(--color-shadow);
+
+          li {
+            opacity: 1;
+            transform: translateX(0);
+            @for $nth from 1 through 10 {
+              &:nth-child(#{$nth}) {
+                transition-delay: calc(var(--transition-duration-XL) * #{$nth} / 7) !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    label[for="nav-toggle"] {
+      grid-area: toggle;
+      width: 1rem;
+      padding: calc(22px - .5rem);
+      margin-right: calc(-22px + .5rem);
+
+      .icon {
+        position: relative;
+        top: calc(50% - .75rem - 11px); //50% minus half the padding
+      }
+    }
+
+    nav.triggered-by-nav-toggle {
+      grid-area: nav;
+      position: relative;
+
+      ol, ul {
+        position: absolute;
+        right: calc(var(--grid-margin) * -1);
+        left: calc(var(--grid-margin) * -1);
+        padding: 0 var(--grid-margin);
+
+        overflow: hidden;
+
+        transition-property: max-height box-shadow;
+        transition-duration: var(--transition-duration-XL);
+        transition-timing-function: ease-in-out;
+        background: var(--color-page);
+
+        box-shadow: 0 0 0 0 transparent;
+
+        display: flex;
+
+        flex-direction: column;
+        align-items: flex-end;
+
+        li {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          display: block;
+
+          transition-property: opacity transform;
+          transition-duration: var(--transition-duration-L);
+          transition-timing-function: ease-in;
+
+          a {
+            @media (max-width: #{globals.$break-point-desktop-}) {
+              display: block;
+              line-height: 44px; //Not in REM, as this is the touch-area minimum
+              padding: 0 1rem;
+            }
+            @media (pointer: coarse), (pointer: none) {
+              line-height: 44px; //Not in REM, as this is the touch-area minimum
+              padding: 0 1rem;
+            }
+          }
+
+          @media (min-width: #{globals.$break-point-desktop}) {
+            margin-left: 1.5rem;
+            margin-block-start: 0;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
