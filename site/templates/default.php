@@ -29,7 +29,7 @@
 		</script>
 	</head>
 	<body class="no-js">
-		<div aria-hidden="true" class="body-dim"></div>
+		<div aria-hidden="true" id="overlay-dimmer"></div>
 		<header>
 			<!-- Welle -->
 			<picture aria-hidden="true" class=welle>
