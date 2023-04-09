@@ -75,6 +75,11 @@ h1 {
   color: var(--color-accent-2-text);
 }
 
+header {
+  position: relative;
+  z-index: 1;
+}
+
 .welle img {
   width: 100%;
   height: auto;
@@ -91,12 +96,16 @@ div.header-layout {
   max-width: calc(1280px - (2 * var(--grid-margin)));
   margin-bottom: var(--spacer-abschnitt);
 }
+
 div.logo-container {
-  flex-basis: calc(100% - var(--grid-gap) - 44px);
+  flex-basis: calc(100% - var(--grid-gap) - 44px + 1rem - var(--grid-margin));
 }
 div.logo-container img {
   width: 100%;
   height: auto;
+  max-height: 4.875rem;
+  object-fit: contain;
+  object-position: left;
 }
 
 input#nav-toggle {
@@ -136,8 +145,6 @@ nav.triggered-by-nav-toggle {
   position: relative;
 }
 nav.triggered-by-nav-toggle ul, nav.triggered-by-nav-toggle ol {
-  position: relative;
-  z-index: 100;
   background: var(--color-page);
   margin: 0;
   list-style: none;
@@ -156,7 +163,6 @@ nav.triggered-by-nav-toggle ul li, nav.triggered-by-nav-toggle ol li {
 }
 nav.triggered-by-nav-toggle ul li a, nav.triggered-by-nav-toggle ol li a {
   display: block;
-  box-sizing: border-box;
   padding: calc(22px - 0.5em);
 }
 nav.triggered-by-nav-toggle ul li a, nav.triggered-by-nav-toggle ul li a:link, nav.triggered-by-nav-toggle ul li a:active, nav.triggered-by-nav-toggle ul li a:visited, nav.triggered-by-nav-toggle ol li a, nav.triggered-by-nav-toggle ol li a:link, nav.triggered-by-nav-toggle ol li a:active, nav.triggered-by-nav-toggle ol li a:visited {
@@ -251,7 +257,7 @@ svg.icon {
   transition-duration: var(--transition-duration-XL);
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
 }
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   #overlay-dimmer {

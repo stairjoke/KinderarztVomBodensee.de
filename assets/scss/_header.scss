@@ -4,10 +4,13 @@
 @use 'typography';
 
 header {
-
+  // Lift the header element above the body-dim element
+  position: relative;
+  z-index: 1;
 }
 
 .welle {
+  // Picture element showing the wave/curve at the top
   img {
 	width: 100%;
 	height: auto;
@@ -15,6 +18,13 @@ header {
 }
 
 div.header-layout {
+  // The horizontal layout of
+  // [Logo] [Navigation]
+
+  // On mobile and tablet the layout breaks into two "lines"
+  // [Logo] [Nav toggle]
+  // [ ------ Nav -----]
+
   display: flex;
   column-gap: var(--grid-gap);
   flex-wrap: wrap;
@@ -29,36 +39,47 @@ div.header-layout {
   // Center on large displays
   max-width: calc(#{globals.$break-point-desktop-max} - (2 * var(--grid-margin)));
 
+  // The push the [navigation] or the content down - depending on layout
   margin-bottom: var(--spacer-abschnitt);
-
-  @media (min-width: #{globals.$break-point-desktop-max}) {
-    //--grid-margin-adaptive: auto;
-  }
 }
 
 div.logo-container {
-  flex-basis: calc(100% - var(--grid-gap) - 44px);
+  // Contains the picture element of the logo. The design uses different logos for mobile+tablet vs. desktop
+
+  // The logo-container should grow to fill the space, but keep enough room for the nav toggle
+  //  logo takes up 100% of the width minus the gap, minus the toggle size but the toggle padding is 1rem and the toggle is pushed to the edge, and minus the grid-margin
+  flex-basis: calc(100% - var(--grid-gap) - 44px + 1rem - var(--grid-margin));
+
   img {
     width: 100%;
     height: auto;
+    max-height: 4.875rem;
+
+    // The image will position itself as if it was a background image st to cover, no-repeat, left
+    object-fit: contain;
+    object-position: left;
   }
 }
 
 input#nav-toggle { //Checkbox
+  // Hidden checkbox to toggle the menu
   position: absolute;
   left: -5000px;
 }
 #nav-toggle ~ label[for="nav-toggle"].triggered-by-nav-toggle {
+  // The nav-toggle has a min-size of the min touch area
   min-width: 44px;
   min-height: 44px;
 
   svg.icon {
+    // Positioning itself in the center center position
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
+  // By default the close icon is hidden and the menu icon is visible
   #menu {
     display: block;
   }
@@ -68,6 +89,7 @@ input#nav-toggle { //Checkbox
 }
 
 #nav-toggle:checked ~ label[for="nav-toggle"].triggered-by-nav-toggle {
+  // When the checkbox is checked by clicking the label, the close icon becomes visible, the menu icon is hidden
   #menu {
     display: none;
   }
@@ -77,25 +99,30 @@ input#nav-toggle { //Checkbox
 }
 
 nav.triggered-by-nav-toggle {
+  // This is the actual navigation. It is hidden by default
   display: none;
+
+  // The navigation does not take up any vertical space. This means it can be shows and hidden without a reflow of the page.
   height: 0;
   overflow: visible;
 
+  // It is a wide as possible
   flex-basis: 100%;
+
+  // Set a new stacking context for z-index
   position: relative;
 
   ul, ol {
 
     &::after {
+      // Usually the body:has() will show the overlay-dimmer element, but Firefox doesn’t support :has() yet.
+      // This adds a line at the bottom edge of the navigation
       display: block;
       content: "";
       height: 1px;
       background: var(--color-shadow);
       margin-top: var(--spacer-abschnitt);
     }
-
-    position: relative;
-    z-index: 100;
 
     background: var(--color-page);
     margin: 0;
@@ -108,7 +135,8 @@ nav.triggered-by-nav-toggle {
 
       a {
         display: block;
-        box-sizing: border-box;
+
+        // Set minimum size of link to touch minimum touch area
         padding: calc(22px - 0.5em);
       }
 
@@ -127,10 +155,12 @@ nav.triggered-by-nav-toggle {
   }
 }
 
+// Show the navigation while the nav-toggle checkbox is checked
 #nav-toggle:checked ~ nav.triggered-by-nav-toggle {
   display: block;
 }
 
+// Dim the body while the nav-toggle checkbox is checked
 body:has(#nav-toggle:checked) #overlay-dimmer {
   opacity: 1;
 }
