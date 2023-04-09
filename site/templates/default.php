@@ -87,7 +87,7 @@
 			</div>
 		</header>
 		
-		<main><?= $page->inhalt()->toBlocks() ?></main>
+		<main><?= $page->blocks()->toBlocks() ?></main>
 		
 		<footer>
 			Footer
