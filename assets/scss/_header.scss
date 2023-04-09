@@ -1,6 +1,11 @@
 // Page Header — Der Kinderarzt vom Bodensee
 
 @use 'globals';
+@use 'typography';
+
+header {
+
+}
 
 .welle {
   img {
@@ -10,37 +15,122 @@
 }
 
 div.header-layout {
-  div.logo-container {
-    picture {
-      img {
+  display: flex;
+  column-gap: var(--grid-gap);
+  flex-wrap: wrap;
+  align-items: stretch;
 
-      }
-    }
+  background: var(--color-page);
+
+  // Pull towards the edges to match the grid, but not beyond the edges
+  margin-left: max(calc(var(--grid-margin) - 5.7%), 0);
+  margin-right: max(calc(var(--grid-margin) - (22px - .5rem)), 0);
+
+  // Center on large displays
+  max-width: calc(#{globals.$break-point-desktop-max} - (2 * var(--grid-margin)));
+
+  margin-bottom: var(--spacer-abschnitt);
+
+  @media (min-width: #{globals.$break-point-desktop-max}) {
+    //--grid-margin-adaptive: auto;
+  }
+}
+
+div.logo-container {
+  flex-basis: calc(100% - var(--grid-gap) - 44px);
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+input#nav-toggle { //Checkbox
+  position: absolute;
+  left: -5000px;
+}
+#nav-toggle ~ label[for="nav-toggle"].triggered-by-nav-toggle {
+  min-width: 44px;
+  min-height: 44px;
+
+  svg.icon {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  input#nav-toggle { //Checkbox
-
-    & ~ label[for="nav-toggle"].triggered-by-nav-toggle {
-      svg.icon {
-        &#menu {
-
-        }
-        &#close {
-
-        }
-      }
-    }
+  #menu {
+    display: block;
   }
+  #close {
+    display: none;
+  }
+}
 
-  nav.triggered-by-nav-toggle {
-    ul, ol {
-      li {
+#nav-toggle:checked ~ label[for="nav-toggle"].triggered-by-nav-toggle {
+  #menu {
+    display: none;
+  }
+  #close {
+    display: block;
+  }
+}
+
+nav.triggered-by-nav-toggle {
+  display: none;
+  height: 0;
+  overflow: visible;
+
+  flex-basis: 100%;
+  position: relative;
+
+  ul, ol {
+
+    &::after {
+      display: block;
+      content: "";
+      height: 1px;
+      background: var(--color-shadow);
+      margin-top: var(--spacer-abschnitt);
+    }
+
+    position: relative;
+    z-index: 100;
+
+    background: var(--color-page);
+    margin: 0;
+    list-style: none;
+    padding: var(--spacer-abschnitt) 0 0 0;
+
+    li {
+      display: block;
+      text-align: center;
+
+      a {
+        display: block;
+        box-sizing: border-box;
+        padding: calc(22px - 0.5em);
+      }
+
+      a, a:link, a:active, a:visited {
+        @include typography.navigation();
 
         &.current {
-
+          color: var(--color-secondary-elements-and-links);
         }
+      }
+
+      a:hover, a:focus {
+        text-decoration: underline;
       }
     }
   }
+}
 
+#nav-toggle:checked ~ nav.triggered-by-nav-toggle {
+  display: block;
+}
+
+body:has(#nav-toggle:checked) #overlay-dimmer {
+  opacity: 1;
 }

@@ -80,6 +80,110 @@ h1 {
   height: auto;
 }
 
+div.header-layout {
+  display: flex;
+  column-gap: var(--grid-gap);
+  flex-wrap: wrap;
+  align-items: stretch;
+  background: var(--color-page);
+  margin-left: max(var(--grid-margin) - 5.7%, 0);
+  margin-right: max(var(--grid-margin) - (22px - 0.5rem), 0);
+  max-width: calc(1280px - (2 * var(--grid-margin)));
+  margin-bottom: var(--spacer-abschnitt);
+}
+div.logo-container {
+  flex-basis: calc(100% - var(--grid-gap) - 44px);
+}
+div.logo-container img {
+  width: 100%;
+  height: auto;
+}
+
+input#nav-toggle {
+  position: absolute;
+  left: -5000px;
+}
+
+#nav-toggle ~ label[for=nav-toggle].triggered-by-nav-toggle {
+  min-width: 44px;
+  min-height: 44px;
+}
+#nav-toggle ~ label[for=nav-toggle].triggered-by-nav-toggle svg.icon {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#nav-toggle ~ label[for=nav-toggle].triggered-by-nav-toggle #menu {
+  display: block;
+}
+#nav-toggle ~ label[for=nav-toggle].triggered-by-nav-toggle #close {
+  display: none;
+}
+
+#nav-toggle:checked ~ label[for=nav-toggle].triggered-by-nav-toggle #menu {
+  display: none;
+}
+#nav-toggle:checked ~ label[for=nav-toggle].triggered-by-nav-toggle #close {
+  display: block;
+}
+
+nav.triggered-by-nav-toggle {
+  display: none;
+  height: 0;
+  overflow: visible;
+  flex-basis: 100%;
+  position: relative;
+}
+nav.triggered-by-nav-toggle ul, nav.triggered-by-nav-toggle ol {
+  position: relative;
+  z-index: 100;
+  background: var(--color-page);
+  margin: 0;
+  list-style: none;
+  padding: var(--spacer-abschnitt) 0 0 0;
+}
+nav.triggered-by-nav-toggle ul::after, nav.triggered-by-nav-toggle ol::after {
+  display: block;
+  content: "";
+  height: 1px;
+  background: var(--color-shadow);
+  margin-top: var(--spacer-abschnitt);
+}
+nav.triggered-by-nav-toggle ul li, nav.triggered-by-nav-toggle ol li {
+  display: block;
+  text-align: center;
+}
+nav.triggered-by-nav-toggle ul li a, nav.triggered-by-nav-toggle ol li a {
+  display: block;
+  box-sizing: border-box;
+  padding: calc(22px - 0.5em);
+}
+nav.triggered-by-nav-toggle ul li a, nav.triggered-by-nav-toggle ul li a:link, nav.triggered-by-nav-toggle ul li a:active, nav.triggered-by-nav-toggle ul li a:visited, nav.triggered-by-nav-toggle ol li a, nav.triggered-by-nav-toggle ol li a:link, nav.triggered-by-nav-toggle ol li a:active, nav.triggered-by-nav-toggle ol li a:visited {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #f0f);
+  text-decoration: none;
+  line-height: 1rem;
+  color: var(--color-CI);
+}
+nav.triggered-by-nav-toggle ul li a.current, nav.triggered-by-nav-toggle ul li a:link.current, nav.triggered-by-nav-toggle ul li a:active.current, nav.triggered-by-nav-toggle ul li a:visited.current, nav.triggered-by-nav-toggle ol li a.current, nav.triggered-by-nav-toggle ol li a:link.current, nav.triggered-by-nav-toggle ol li a:active.current, nav.triggered-by-nav-toggle ol li a:visited.current {
+  color: var(--color-secondary-elements-and-links);
+}
+nav.triggered-by-nav-toggle ul li a:hover, nav.triggered-by-nav-toggle ul li a:focus, nav.triggered-by-nav-toggle ol li a:hover, nav.triggered-by-nav-toggle ol li a:focus {
+  text-decoration: underline;
+}
+
+#nav-toggle:checked ~ nav.triggered-by-nav-toggle {
+  display: block;
+}
+
+body:has(#nav-toggle:checked) #overlay-dimmer {
+  opacity: 1;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -141,12 +245,13 @@ svg.icon {
   background-color: var(--color-overlay-alt);
   display: none;
   opacity: 0;
+  pointer-events: none;
   transition: opacity;
   transition-timing-function: ease-out;
   transition-duration: var(--transition-duration-XL);
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
 }
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   #overlay-dimmer {
@@ -157,7 +262,6 @@ svg.icon {
 }
 body.loaded #overlay-dimmer {
   display: block;
-  transition-delay: var(--transition-duration-L);
 }
 
 /*# sourceMappingURL=foundation.css.map */
