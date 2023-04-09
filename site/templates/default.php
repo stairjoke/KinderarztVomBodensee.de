@@ -72,7 +72,7 @@
 								// Make $item string and start the LI-element for the nav item in it
 								$item = "<li><a href='{$navItem->url()}'";
 								// if the current page is the page linked to in this nav item
-								if($page->is($navItem)) {
+								if($navItem->isActive()) {
 									// add CSS class "current"
 									$item .= " class='current'";
 								}
