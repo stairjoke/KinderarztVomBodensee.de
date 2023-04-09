@@ -1,4 +1,4 @@
-title: Default Page
+title: Standard Seite
 
 columns:
   main:
@@ -7,15 +7,17 @@ columns:
       fields:
         type: fields
         fields:
-          text:
-            type: textarea
-            size: huge
+          blocks:
+            label: Inhalt
+            type: blocks
   sidebar:
     width: 1/3
     sections:
       pages:
+        label: Untergeordnete Seiten
         type: pages
         template: default
       files:
+        label: Dateien
         type: files
 
