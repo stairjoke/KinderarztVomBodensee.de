@@ -1,0 +1,10 @@
+title: Videos Seite
+
+
+sections:
+  pages:
+    label: Videos
+    layout: cards
+    type: pages
+    sortBy: title asc
+    template: video

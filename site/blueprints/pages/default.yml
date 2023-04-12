@@ -20,4 +20,3 @@ columns:
       files:
         label: Dateien
         type: files
-

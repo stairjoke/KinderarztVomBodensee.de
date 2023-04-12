@@ -1,0 +1,42 @@
+title: Video Eintrag
+
+columns:
+  main:
+    width: 2/3
+    sections:
+      fields:
+        type: fields
+        fields:
+          beschreibung:
+            type: textarea
+            size: small
+            help: Beschreibungstext des Videos, gleich wie auf YouTube. Wird in Suchergebnissen auf dieser Webseite, Google, Bing, etc. angezeigt.
+          url:
+            type: text
+            help: URL des Videos auf YouTube (Kurz- oder Langform).
+          worte:
+            label: Suchstichworte
+            type: tags
+            width: 1/2
+            help: Die "Suchstichworte"-tags werden genutzt um die Suche zu optimieren. Sie werden nirgends angezeigt.
+            options:
+              type: query
+              query: page.siblings.pluck("worte", ",", true)
+          buchstaben:
+            label: Glossar-Orte
+            type: tags
+            width: 1/2
+            help: Die "Glossar-Orte"-Tags sind *ganze Worte* und werden genutzt um das Video an mehr als einer Stelle in der alphabetischen Liste anzuzeigen.
+            options:
+              type: query
+              query: page.siblings.pluck("buchstaben", ",", true)
+  sidebar:
+    width: 1/3
+    sections:
+      files:
+        label: Thumbnail
+        type: files
+        max: 1
+        layout: cards
+        accept: image/*
+        help: Thumbnail Bilder sollten 746 x 426 PX oder größer sein. Um die Dateigröße gering zu halten sollten sie als JPG vorliegen, aber bitte in 100% Qualität, „runter”-rechnen geht immer, nur verlorene Pixel zurückholen nicht.
