@@ -37,6 +37,10 @@ div.header-layout {
   margin-right: max(calc(var(--grid-margin) - (22px - .5rem)), 0);
 
   // Center on large displays
+  @media (min-width: #{globals.$break-point-desktop}) {
+    margin-left: var(--grid-margin-adaptive);
+    margin-right: var(--grid-margin-adaptive);
+  }
   max-width: calc(#{globals.$break-point-desktop-max} - (2 * var(--grid-margin)));
 
   // The push the [navigation] or the content down - depending on layout
@@ -49,11 +53,21 @@ div.logo-container {
   // The logo-container should grow to fill the space, but keep enough room for the nav toggle
   //  logo takes up 100% of the width minus the gap, minus the toggle size but the toggle padding is 1rem and the toggle is pushed to the edge, and minus the grid-margin
   flex-basis: calc(100% - var(--grid-gap) - 44px + 1rem - var(--grid-margin));
+  @media (min-width: #{globals.$break-point-desktop}) {
+    flex-basis: 399px;
+  }
 
   img {
+    display: block;
     width: 100%;
     height: auto;
     max-height: 4.875rem;
+    @media (min-width: #{globals.$break-point-desktop}) {
+      // On desktop the logo is defined by width alone.
+      // It is pulled left to align the image’s contents with the grid
+      max-height: unset;
+      transform: translateX(-7.77%);
+    }
 
     // The image will position itself as if it was a background image st to cover, no-repeat, left
     object-fit: contain;
@@ -98,6 +112,13 @@ input#nav-toggle { //Checkbox
   }
 }
 
+// desktop navigation is always visible, hide the toggle
+@media (min-width: #{globals.$break-point-desktop}) {
+  #nav-toggle, label[for="nav-toggle"] {
+    display: none;
+  }
+}
+
 nav.triggered-by-nav-toggle {
   // This is the actual navigation. It is hidden by default
   display: none;
@@ -112,8 +133,18 @@ nav.triggered-by-nav-toggle {
   // Set a new stacking context for z-index
   position: relative;
 
-  ul, ol {
+  // No fancy dropdown on desktop
+  @media (min-width: #{globals.$break-point-desktop}) {
+    // desktop navigation is always visible
+    display: block;
+    flex-grow: 1;
+    height: unset;
+    flex-basis: auto;
+    text-align: right;
+  }
 
+  ul, ol {
+  @media (max-width: #{globals.$break-point-desktop-}) {
     &::after {
       // Usually the body:has() will show the overlay-dimmer element, but Firefox doesn’t support :has() yet.
       // This adds a line at the bottom edge of the navigation
@@ -123,21 +154,47 @@ nav.triggered-by-nav-toggle {
       background: var(--color-shadow);
       margin-top: var(--spacer-abschnitt);
     }
+  }
 
     background: var(--color-page);
     margin: 0;
     list-style: none;
     padding: var(--spacer-abschnitt) 0 0 0;
 
+    @media (min-width: #{globals.$break-point-desktop}) {
+      padding: 0;
+      position: absolute;
+      right: -.75rem;
+      bottom: 18px;
+      display: inline-block;
+    }
+
     li {
       display: block;
       text-align: center;
+
+      @media (min-width: #{globals.$break-point-tablet}) {
+        text-align: right;
+      }
+
+      @media (min-width: #{globals.$break-point-desktop}) {
+        display: inline-block;
+        text-align: right;
+      }
 
       a {
         display: block;
 
         // Set minimum size of link to touch minimum touch area
         padding: calc(22px - 0.5em);
+        @media (min-width: #{globals.$break-point-tablet}) {
+          padding-right: max(calc(22px - 0.5em), var(--grid-margin));
+        }
+
+        @media (min-width: #{globals.$break-point-desktop}) {
+          padding-right: unset;
+          padding: 0 .75rem;
+        }
       }
 
       a, a:link, a:active, a:visited {
@@ -160,7 +217,9 @@ nav.triggered-by-nav-toggle {
   display: block;
 }
 
-// Dim the body while the nav-toggle checkbox is checked
-body:has(#nav-toggle:checked) #overlay-dimmer {
-  opacity: 1;
+@media (max-width: #{globals.$break-point-desktop-}) {
+  // Dim the body while the nav-toggle checkbox is checked
+  body:has(#nav-toggle:checked) #overlay-dimmer {
+    opacity: 1;
+  }
 }
