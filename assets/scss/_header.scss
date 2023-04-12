@@ -30,6 +30,7 @@ div.header-layout {
   flex-wrap: wrap;
   align-items: stretch;
 
+  // Needs background color because #overlay-dimmer will otherwise determine the background of the nav
   background: var(--color-page);
 
   // Pull towards the edges to match the grid, but not beyond the edges
@@ -53,25 +54,29 @@ div.logo-container {
   // The logo-container should grow to fill the space, but keep enough room for the nav toggle
   //  logo takes up 100% of the width minus the gap, minus the toggle size but the toggle padding is 1rem and the toggle is pushed to the edge, and minus the grid-margin
   flex-basis: calc(100% - var(--grid-gap) - 44px + 1rem - var(--grid-margin));
+
+  // Desktop Logo has a static size on all desktop displays
   @media (min-width: #{globals.$break-point-desktop}) {
     flex-basis: 399px;
   }
 
   img {
-    display: block;
+    display: block; //avoid line-height
     width: 100%;
     height: auto;
     max-height: 4.875rem;
-    @media (min-width: #{globals.$break-point-desktop}) {
-      // On desktop the logo is defined by width alone.
-      // It is pulled left to align the image’s contents with the grid
-      max-height: unset;
-      transform: translateX(-7.77%);
-    }
 
     // The image will position itself as if it was a background image st to cover, no-repeat, left
     object-fit: contain;
     object-position: left;
+
+    @media (min-width: #{globals.$break-point-desktop}) {
+      // On desktop the logo is defined by width alone.
+      max-height: unset;
+
+      // It is pulled left to align the image’s contents with the grid
+      transform: translateX(-7.77%);
+    }
   }
 }
 
@@ -112,7 +117,7 @@ input#nav-toggle { //Checkbox
   }
 }
 
-// desktop navigation is always visible, hide the toggle
+// The desktop navigation is always visible, hide the toggle
 @media (min-width: #{globals.$break-point-desktop}) {
   #nav-toggle, label[for="nav-toggle"] {
     display: none;
@@ -137,10 +142,11 @@ nav.triggered-by-nav-toggle {
   @media (min-width: #{globals.$break-point-desktop}) {
     // desktop navigation is always visible
     display: block;
+
+    // nav element should grow to occupy available space
     flex-grow: 1;
     height: unset;
     flex-basis: auto;
-    text-align: right;
   }
 
   ul, ol {
@@ -156,42 +162,51 @@ nav.triggered-by-nav-toggle {
     }
   }
 
+    // Needs background color because otherwise #overlay-dimmer will determine the background color
     background: var(--color-page);
+
+    // Resets
     margin: 0;
     list-style: none;
+
     padding: var(--spacer-abschnitt) 0 0 0;
 
+    // Position the List Block at the bottom right of the container
     @media (min-width: #{globals.$break-point-desktop}) {
       padding: 0;
       position: absolute;
-      right: -.75rem;
+
+      right: -.75rem; // Negative the amount of padding in the list elements to keep the clickable area consistent the padding of the last element is the same as all the others
       bottom: 18px;
-      display: inline-block;
     }
 
     li {
+      // By default list items positin themselves stacked with centered text
       display: block;
       text-align: center;
 
       @media (min-width: #{globals.$break-point-tablet}) {
+        // On tablet the text is right aligned
         text-align: right;
       }
 
       @media (min-width: #{globals.$break-point-desktop}) {
+        // On desktop the list items behave like normal text/inline elements
         display: inline-block;
-        text-align: right;
+        text-align: left;
       }
 
       a {
-        display: block;
-
         // Set minimum size of link to touch minimum touch area
+        display: block;
         padding: calc(22px - 0.5em);
         @media (min-width: #{globals.$break-point-tablet}) {
+          // On tablet the items are right-aligned to the edge of the viewport and need to maintain the grid-margin
           padding-right: max(calc(22px - 0.5em), var(--grid-margin));
         }
 
         @media (min-width: #{globals.$break-point-desktop}) {
+          // On desktop the items are inline-block and need to space themselves evenly
           padding-right: unset;
           padding: 0 .75rem;
         }
@@ -218,7 +233,7 @@ nav.triggered-by-nav-toggle {
 }
 
 @media (max-width: #{globals.$break-point-desktop-}) {
-  // Dim the body while the nav-toggle checkbox is checked
+  // Dim the body while the nav-toggle checkbox is checked, if the checkbox is actually being used
   body:has(#nav-toggle:checked) #overlay-dimmer {
     opacity: 1;
   }

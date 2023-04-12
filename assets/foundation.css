@@ -173,7 +173,6 @@ nav.triggered-by-nav-toggle {
     flex-grow: 1;
     height: unset;
     flex-basis: auto;
-    text-align: right;
   }
 }
 nav.triggered-by-nav-toggle ul, nav.triggered-by-nav-toggle ol {
@@ -197,7 +196,6 @@ nav.triggered-by-nav-toggle ul, nav.triggered-by-nav-toggle ol {
     position: absolute;
     right: -0.75rem;
     bottom: 18px;
-    display: inline-block;
   }
 }
 nav.triggered-by-nav-toggle ul li, nav.triggered-by-nav-toggle ol li {
@@ -212,7 +210,7 @@ nav.triggered-by-nav-toggle ul li, nav.triggered-by-nav-toggle ol li {
 @media (min-width: 1024px) {
   nav.triggered-by-nav-toggle ul li, nav.triggered-by-nav-toggle ol li {
     display: inline-block;
-    text-align: right;
+    text-align: left;
   }
 }
 nav.triggered-by-nav-toggle ul li a, nav.triggered-by-nav-toggle ol li a {
