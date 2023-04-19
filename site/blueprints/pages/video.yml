@@ -26,7 +26,9 @@ columns:
             label: Glossar-Orte
             type: tags
             width: 1/2
-            help: Die "Glossar-Orte"-Tags sind *ganze Worte* und werden genutzt um das Video an mehr als einer Stelle in der alphabetischen Liste anzuzeigen.
+            help: |
+              **Ist ein Wort eingetragen wird der Titel des Videos ignoriert!** Ansonsten wird der Videotitel genutzt um das Video im Glossar einzuordnen. Die "Glossar-Orte"-Tags sind **ganze Worte** und können dazu genutzt werden das Video an mehr als einer Stelle in der alphabetischen Glossar-Liste anzuzeigen.
+              Bei Videotiteln die mit "der", "die" oder "das" beginnen wird automatisch das zweite Wort genutzt.
             options:
               type: query
               query: page.siblings.pluck("buchstaben", ",", true)
