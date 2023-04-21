@@ -1,0 +1,26 @@
+name: Video
+icon: video
+tabs:
+  content:
+    fields:
+      files:
+        label: Thumbnail
+        type: files
+        max: 1
+        layout: cards
+        accept: image/*
+      mp4:
+        label: URL der Videodatei in MP4
+        type: text
+        width: 1/2
+        help: Der Text kann eine relative oder abolute Adresse sein. Also */downloads/video.mp4* oder *https://externer-hoster.xyz/video.mp4*.
+      webm:
+        label: URL der Videodatei in WebM
+        type: text
+        width: 1/2
+        help: Der Text kann eine relative oder abolute Adresse sein. Also */downloads/video.mp4* oder *https://externer-hoster.xyz/video.mp4*.
+      subtitles:
+        label: Untertitel
+        help: Untertitel müssen im WebVTT Format als vtt Datei hochgeladen werden. Der Dateiname muss die Sprache indizieren, beispielsweise "de.vtt" oder "en.vtt".
+        type: files
+        template: subtitle-file

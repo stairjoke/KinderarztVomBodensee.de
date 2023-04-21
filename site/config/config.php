@@ -14,7 +14,7 @@ return [
 				'label' => 'Medien',
 				'type' => 'group',
 				'fieldsets' => [
-					'image', 'self-hosted-video'
+					'image', 'self-hosted-video-block'
 				]
 			],
 			'code' => [
