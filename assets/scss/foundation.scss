@@ -58,9 +58,10 @@ body {
   }
 }
 
-main {
-  // The main element takes up the middle 8 of 12 columns by default. Only when it is
-  // .wide, it will be as wide as the header and footer sections
+body > main {
+  // The main <MAIN> element, the one immediately inside the BODY, takes up the middle
+  // 8 of 12 columns by default. Only when it is .wide, it will be as wide as the header
+  // and footer sections
 
   // The margin left and right is always the larger value. Either --grid-margin, or
   // half the viewport width minus 4 columns.

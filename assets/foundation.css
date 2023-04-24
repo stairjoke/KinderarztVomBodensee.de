@@ -307,7 +307,7 @@ body {
   }
 }
 
-main {
+body > main {
   margin-left: max(var(--grid-margin), 50vw - (1280px - (2 * var(--grid-margin))) / 3);
   margin-right: max(var(--grid-margin), 50vw - (1280px - (2 * var(--grid-margin))) / 3);
 }
