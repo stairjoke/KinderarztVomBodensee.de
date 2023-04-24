@@ -7,13 +7,12 @@
 		],
 		'blueprints' => [
 			'blocks/self-hosted-video-block' => __DIR__ . '/blueprints/blocks/self-hosted-video-block.yml',
-			'files/subtitle-file' => __DIR__ . '/files/subtitle-file.yml',
+			'files/subtitle-file' => __DIR__ . '/blueprints/files/subtitle-file.yml',
 		],
 		'fileTypes' => [
 			'vtt' => [
-				'mime' => 'text/plain',
-				'type' => 'subtitle',
-			],
+				'type' => 'document'
+			]
 		]
 	]);
 ?>

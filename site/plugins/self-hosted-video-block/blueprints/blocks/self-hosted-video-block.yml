@@ -23,4 +23,4 @@ tabs:
         label: Untertitel
         help: Untertitel müssen im WebVTT Format als vtt Datei hochgeladen werden. Der Dateiname muss die Sprache indizieren, beispielsweise "de.vtt" oder "en.vtt".
         type: files
-        template: subtitle-file
+        uploads: subtitle-file
