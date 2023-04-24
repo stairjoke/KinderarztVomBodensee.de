@@ -13,9 +13,12 @@
 		<meta property="og:url" content="<?= $page->url() ?>">
 		<meta property="og:locale" content="de_DE">
 		
-		<meta name="roboty" content="inxed, follow">
+		<meta name="robots" content="inxed, follow">
 		
 		<link href="assets/foundation.css" rel="stylesheet">
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffe587" />
+		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#084CB5" />
+		
 		<script>
 			window.onload = (event) => {
 				document.body.classList.remove('no-js');
