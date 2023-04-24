@@ -19,8 +19,8 @@
 	
 	<!-- Subtitles-->
 	<?php if($block->subtitles()->isNotEmpty()) :
-		foreach($block->subtitles() as $track) : ?>
-			<track src="<?= $track()->url() ?>" kind="subtitles" srclang="<?= $track()->name() ?>" />
+		foreach($block->subtitles()->toFiles() as $track) : ?>
+			<track src="<?= $track->url() ?>" kind="subtitles" srclang="<?= $track->name() ?>" />
 		<?php
 		endforeach;
 	endif; ?>
