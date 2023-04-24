@@ -10,6 +10,7 @@
 @use 'globals';
 @use 'typography';
 @use 'header';
+@use 'video';
 
 body {
   margin: 0;
@@ -18,6 +19,8 @@ body {
 
   --grid-margin: 1rem;
   --grid-gap: 1rem;
+  --border-radius-M: 1rem;
+  --border-radius-L: 2rem;
 
   --spacer-abschnitt: 3rem;
   --spacer-element: 1.5rem;
@@ -55,7 +58,15 @@ body {
   }
 }
 
-.contain, main, footer {
+main {
+  // The main element takes up the middle 8 of 12 columns by default. Only when it is
+  // .wide, it will be as wide as the header and footer sections
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(((#{globals.$break-point-desktop-max} - (2 * var(--grid-margin))) - (var(--grid-margin)*2)) / 1.5); // 12/8 = 1.5
+}
+.contain, footer, main.wide {
   // This class will limit the width of an element to be the maximum size and center
   // it horizontally. Using custom properties, it maintains a margin left/right that
   // is consistent with the rest of the page.
@@ -65,8 +76,10 @@ body {
   max-width: calc(#{globals.$break-point-desktop-max} - (2 * var(--grid-margin)));
 }
 
-img {
+img, video {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 svg.icon {

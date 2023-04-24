@@ -8,6 +8,7 @@ tabs:
         type: files
         max: 1
         layout: cards
+        size: huge
         accept: image/*
       mp4:
         label: URL der Videodatei in MP4
@@ -19,6 +20,14 @@ tabs:
         type: text
         width: 1/2
         help: Der Text kann eine relative oder abolute Adresse sein. Also */downloads/video.mp4* oder *https://externer-hoster.xyz/video.mp4*.
+      size:
+        type: radio
+        label: Stil
+        help: Wähle zwischen kleinem Schatten und eng anbgerundeten Ecken oder großem Schatten und einem größeren Radius für die Ecken.
+        default: large
+        options:
+          small: Klein
+          large: Groß
       subtitles:
         label: Untertitel
         help: Untertitel müssen im WebVTT Format als vtt Datei hochgeladen werden. Der Dateiname muss die Sprache indizieren, beispielsweise "de.vtt" oder "en.vtt".

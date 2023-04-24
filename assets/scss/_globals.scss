@@ -47,3 +47,21 @@ $break-point-desktop-max: 1280px;
 $break-point-desktop: 1024px;
 $break-point-desktop-: 1023px;
 $break-point-tablet: 744px;
+
+@mixin media-L() {
+  @include shadow-L();
+  border-radius: var(--border-radius-L);
+}
+
+@mixin media() {
+  @include shadow();
+  border-radius: var(--border-radius-M);
+}
+
+main img, main video, .media {
+  @include media();
+
+  &.large {
+    @include media-L();
+  }
+}

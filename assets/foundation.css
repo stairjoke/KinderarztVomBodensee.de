@@ -12,6 +12,17 @@
   --color-overlay-alt: rgba(0, 0, 0, 0.8);
 }
 
+main img, main video, .media {
+  --shadow-color: var(--color-accent-1);
+  box-shadow: 0.5rem 0.5rem 0 0 var(--shadow-color);
+  border-radius: var(--border-radius-M);
+}
+main img.large, main video.large, .media.large {
+  --shadow-color: var(--color-accent-1);
+  box-shadow: 1rem 1rem 0 0 var(--shadow-color);
+  border-radius: var(--border-radius-L);
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -260,6 +271,8 @@ body {
   background: var(--color-page, #f0f);
   --grid-margin: 1rem;
   --grid-gap: 1rem;
+  --border-radius-M: 1rem;
+  --border-radius-L: 2rem;
   --spacer-abschnitt: 3rem;
   --spacer-element: 1.5rem;
   --spacer-elemente-absatz: 0.75rem;
@@ -294,14 +307,22 @@ body {
   }
 }
 
-.contain, main, footer {
+main {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(((1280px - (2 * var(--grid-margin))) - var(--grid-margin) * 2) / 1.5);
+}
+
+.contain, footer, main.wide {
   margin-left: var(--grid-margin-adaptive);
   margin-right: var(--grid-margin-adaptive);
   max-width: calc(1280px - (2 * var(--grid-margin)));
 }
 
-img {
+img, video {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 svg.icon {
