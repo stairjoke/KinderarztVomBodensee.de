@@ -19,8 +19,8 @@ body {
 
   --grid-margin: 1rem;
   --grid-gap: 1rem;
-  --border-radius-M: 1rem;
-  --border-radius-L: 2rem;
+  --border-radius-M: .5rem;
+  --border-radius-L: .5rem;
 
   --spacer-abschnitt: 3rem;
   --spacer-element: 1.5rem;
@@ -36,6 +36,11 @@ body {
   //The grid-margin-adaptive property can change to be a non-numeric value,
   // whereas the grid-margin is safe to use in calculations
   --grid-margin-adaptive: var(--grid-margin);
+
+  @media (min-width: #{globals.$break-point-phablet}) {
+    --border-radius-M: 1rem;
+    --border-radius-L: 2rem;
+  }
 
   @media (min-width: #{globals.$break-point-tablet}) {
     --grid-margin: 1.5rem;
