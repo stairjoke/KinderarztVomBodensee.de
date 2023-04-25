@@ -47,6 +47,7 @@ $break-point-desktop-max: 1280px;
 $break-point-desktop: 1024px;
 $break-point-desktop-: 1023px;
 $break-point-tablet: 744px;
+$break-point-phablet: 431px; // Wider than the largest iPhone is tall
 
 @mixin media-L() {
   @include shadow-L();
@@ -61,7 +62,9 @@ $break-point-tablet: 744px;
 main img, main video, .media {
   @include media();
 
-  &.large {
-    @include media-L();
+  @media (min-width: #{$break-point-phablet}) {
+    &.large {
+      @include media-L();
+    }
   }
 }
