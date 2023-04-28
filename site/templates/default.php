@@ -94,8 +94,13 @@
 		<main><?= $page->blocks()->toBlocks() ?></main>
 		
 		<footer>
-			<?= $site->socials()->toBlocks() ?>
-			<?= $site->navigation()->toBlocks() ?>
+			<main>
+				<?= $site->photo()->toFile() ?>
+				<?= $site->vita()->toBlocks() ?>
+			</main>
+			<aside>
+				<?= $site->links()->toBlocks() ?>
+			</aside>
 		</footer>
 		
 	</body>

@@ -1,11 +1,3 @@
-<!--
-// Picture list element
-
-	- itemImage
-	- text
-
--->
-
 <?php
 	$emoji = null;
 	$alt = null;

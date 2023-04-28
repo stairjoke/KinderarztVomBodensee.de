@@ -89,20 +89,16 @@ tabs:
                 type: files
               vita:
                 label: Vita Text
-                type: textarea
-                size: medium
+                type: blocks
       - width: 1/2
         sections:
           links:
             type: fields
             fields:
-              socials:
-                label: Social Media Links
+              links:
+                label: Link-Listen
                 type: blocks
                 fieldsets:
+                  - heading
                   - picture-list-block
-              navigation:
-                label: Fuß-Navigation
-                type: blocks
-                fieldsets:
-                  - picture-list-block
+                  - list
