@@ -28,18 +28,28 @@ main img, main video, .media {
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  line-height: 1.5em;
+  line-height: 1.375em;
   letter-spacing: 0.02em;
   color: var(--color-text, #f0f);
+}
+@media (min-width: 744px) {
+  body {
+    line-height: 1.5em;
+  }
 }
 
 strong, em {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  line-height: 1.5em;
+  line-height: 1.375em;
   letter-spacing: 0.02em;
   color: var(--color-text, #f0f);
   font-weight: 700;
+}
+@media (min-width: 744px) {
+  strong, em {
+    line-height: 1.5em;
+  }
 }
 
 .fett {
@@ -48,21 +58,49 @@ strong, em {
 
 a {
   text-decoration: underline;
-  --link-hover: var(--color-CI);
+  --link-hover: var(--color-accent-2-text);
+}
+a:link, a:active, a:visited {
+  color: var(--color-CI);
+}
+a[href*=amazon]:link, a[href*=amazon]:active, a[href*=amazon]:visited {
+  color: var(--color-secondary-elements-and-links);
 }
 a:hover, a:focus {
   color: var(--link-hover);
+}
+a[target=_blank]::after {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  margin-left: 2px;
+  margin-right: 4px;
+  transform: translateY(0.2rem);
+  content: " (externer Link)";
+  color: transparent;
+  overflow: hidden;
+  background-image: url("images/external-link.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+a[target=_blank]::after svg {
+  --icon-color: var(--color-secondary-elements-and-links);
 }
 
 h2 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  line-height: 1.5em;
+  line-height: 1.375em;
   letter-spacing: 0.02em;
   color: var(--color-text, #f0f);
   font-weight: 700;
   font-weight: 700;
   --link-hover: var(--color-accent-2);
+}
+@media (min-width: 744px) {
+  h2 {
+    line-height: 1.5em;
+  }
 }
 h2 a:link, h2 a:active, h2 a:visited {
   color: var(--color-accent-2-text);
@@ -78,14 +116,25 @@ h1 {
 .card h1 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  line-height: 1.5em;
+  line-height: 1.375em;
   letter-spacing: 0.02em;
   color: var(--color-text, #f0f);
   font-weight: 700;
   font-weight: 700;
-  font-size: 2rem;
-  line-height: 1.5em;
+  font-size: 1.5rem;
+  line-height: 2rem;
   color: var(--color-accent-2-text);
+}
+@media (min-width: 744px) {
+  .card h1 {
+    line-height: 1.5em;
+  }
+}
+@media (min-width: 744px) {
+  .card h1 {
+    font-size: 2rem;
+    line-height: 1.5em;
+  }
 }
 
 header {
@@ -245,12 +294,17 @@ nav.triggered-by-nav-toggle ul li a, nav.triggered-by-nav-toggle ol li a {
 nav.triggered-by-nav-toggle ul li a, nav.triggered-by-nav-toggle ul li a:link, nav.triggered-by-nav-toggle ul li a:active, nav.triggered-by-nav-toggle ul li a:visited, nav.triggered-by-nav-toggle ol li a, nav.triggered-by-nav-toggle ol li a:link, nav.triggered-by-nav-toggle ol li a:active, nav.triggered-by-nav-toggle ol li a:visited {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  line-height: 1.5em;
+  line-height: 1.375em;
   letter-spacing: 0.02em;
   color: var(--color-text, #f0f);
   text-decoration: none;
   line-height: 1rem;
   color: var(--color-CI);
+}
+@media (min-width: 744px) {
+  nav.triggered-by-nav-toggle ul li a, nav.triggered-by-nav-toggle ul li a:link, nav.triggered-by-nav-toggle ul li a:active, nav.triggered-by-nav-toggle ul li a:visited, nav.triggered-by-nav-toggle ol li a, nav.triggered-by-nav-toggle ol li a:link, nav.triggered-by-nav-toggle ol li a:active, nav.triggered-by-nav-toggle ol li a:visited {
+    line-height: 1.5em;
+  }
 }
 nav.triggered-by-nav-toggle ul li a.current, nav.triggered-by-nav-toggle ul li a:link.current, nav.triggered-by-nav-toggle ul li a:active.current, nav.triggered-by-nav-toggle ul li a:visited.current, nav.triggered-by-nav-toggle ol li a.current, nav.triggered-by-nav-toggle ol li a:link.current, nav.triggered-by-nav-toggle ol li a:active.current, nav.triggered-by-nav-toggle ol li a:visited.current {
   color: var(--color-secondary-elements-and-links);
