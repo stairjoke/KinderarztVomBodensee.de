@@ -1,0 +1,27 @@
+name: Listenelement
+icon: file-image
+tabs:
+  content:
+    fields:
+      itemImage:
+        label: Bild (optional)
+        width: 1/2
+        type: files
+        max: 1
+        layout: cards
+        size: small
+        accept: image/*
+        image:
+          cover: false
+          ratio: 1/1
+        help: |
+          Das Bild sollte entlang der langen Kante 48px groß sein. Vektorgrafiken wie SVG-Dateien dürfen auch 16px sein.
+        uploads: image
+      emoji:
+        label: Emoji (überschreibt Bild)
+        width: 1/2
+        type: text
+      text:
+        label: Text
+        width: 1
+        type: text

@@ -1,0 +1,12 @@
+title: Bild / Grafik
+
+accept: image/*
+fields:
+  alt:
+    label: Alternativtext
+    type: text
+  caption:
+    label: Bildbeschreibung
+    type: textarea
+    buttons: false
+    size: small

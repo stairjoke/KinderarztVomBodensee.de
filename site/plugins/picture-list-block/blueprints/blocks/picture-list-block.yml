@@ -1,0 +1,9 @@
+name: Liste mit Ikonen als Bullets
+icon: list-bullet
+tabs:
+  content:
+    fields:
+      items:
+        type: blocks
+        fieldsets:
+          - picture-list-element

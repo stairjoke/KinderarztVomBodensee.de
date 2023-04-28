@@ -7,7 +7,7 @@ return [
 				'label' => 'Text',
 				'type' => 'group',
 				'fieldsets' => [
-					'text', 'heading', 'list'
+					'text', 'heading', 'list', 'picture-list-block'
 				]
 			],
 			'media' => [

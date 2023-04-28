@@ -93,7 +93,8 @@
 		<main><?= $page->blocks()->toBlocks() ?></main>
 		
 		<footer>
-			Footer
+			<?= $site->socials()->toBlocks() ?>
+			<?= $site->navigation()->toBlocks() ?>
 		</footer>
 		
 	</body>

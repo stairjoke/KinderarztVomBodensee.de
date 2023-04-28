@@ -10,7 +10,7 @@
 @use 'globals';
 @use 'typography';
 @use 'header';
-@use 'video';
+@use 'media';
 
 body {
   margin: 0;
@@ -78,6 +78,9 @@ body > main {
     var(--grid-margin),
     calc(50vw - ((#{globals.$break-point-desktop-max} - (2 * var(--grid-margin))) / 3))
   );
+
+  margin-top: var(--spacer-abschnitt);
+  margin-bottom: var(--spacer-abschnitt);
 }
 .contain, footer, main.wide {
   // This class will limit the width of an element to be the maximum size and center
@@ -87,19 +90,6 @@ body > main {
   margin-left: var(--grid-margin-adaptive);
   margin-right: var(--grid-margin-adaptive);
   max-width: calc(#{globals.$break-point-desktop-max} - (2 * var(--grid-margin)));
-}
-
-img, video {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-svg.icon {
-  width: 1rem;
-  height: 1rem;
-  color: currentcolor;
-  display: block;
 }
 
 #overlay-dimmer {
