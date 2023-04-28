@@ -16,7 +16,7 @@ tabs:
           ratio: 1/1
         help: |
           Das Bild sollte entlang der langen Kante 48px groß sein. Vektorgrafiken wie SVG-Dateien dürfen auch 16px sein.
-        uploads: image
+        uploads: picture-list-block-image
       emoji:
         label: Emoji (überschreibt Bild)
         width: 1/2

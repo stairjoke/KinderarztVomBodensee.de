@@ -24,7 +24,7 @@ tabs:
   meta:
     label: Metadaten
     columns:
-      - width: 1/3
+      - width: 2/3
         sections:
           informationen:
             type: fields
@@ -42,6 +42,7 @@ tabs:
                 type: info
                 label: Open Graph Info
                 theme: info
+                width: 1/2
                 text: |
                   OpenGraph ist ein Standard für elegantere Vorschauen von Links. Open Graph Bilder werden von Diensten wie iMessage, Facebook, etc. angezeigt. Sie sind das Vorschaubild, das erscheint, wenn dort ein Link geteilt wird. Ich habe in diese Webseite Open Graph Unterstützung eingebaut.
 
@@ -50,6 +51,7 @@ tabs:
                   Bilder sollten keine zusätzlichen Informationen beinhalten, sie dienen ausschließlich der Illustration und werden von Screen-Readern nicht beschrieben.
               ogImage:
                 label: "Standard Open Graph Bild"
+                width: 1/2
                 help: |
                   Dieses Bild wird als „Open Graph”-Bild für alle Seiten genutzt, die kein eigenes Bild festlegen. (link: https://ogp.me text: Mehr Informationen zu Open Graph. target: _blank)
                 type: files
@@ -58,6 +60,15 @@ tabs:
                 image:
                   cover: true
                   ratio: 1/1
+                uploads: image
+      - width: 1/3
+        sections:
+          files:
+            type: files
+            label: Alle Dateien dieser Seite
+            help: |
+              Kirby speichert Dateien jeweils in der Seite ab, für die sie hochgeladen wurden. Diese Dateien sind für alle Seiten hochgeladen und werden für den Seitenfuß, Suchmaschinen und OpenGraph genutzt.
+
   footer:
     label: Seitenfuß
     columns:
@@ -95,8 +106,3 @@ tabs:
                 type: blocks
                 fieldsets:
                   - picture-list-block
-          files:
-            type: files
-            label: Alle Dateien
-            help: |
-              Kirby speichert Dateien jeweils in der Seite ab, für die sie hochgeladen wurden. Diese Dateien sind für alle Seiten hochgeladen und werden für den Seitenfuß, Suchmaschinen und OpenGraph genutzt.

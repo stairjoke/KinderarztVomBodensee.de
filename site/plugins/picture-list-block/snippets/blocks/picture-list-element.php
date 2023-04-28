@@ -22,7 +22,7 @@
 	<?php if(isset($image)) : ?>
 		<inline-icon style="background-image: url(<?= $image->url() ?>)" alt="<?= $image->alt() ?>"></inline-icon>
 	<?php elseif(isset($emoji)) : ?>
-		<inline-icon><?= $emoji ?></inline-icon>
+		<emoji-icon><?= $emoji ?></emoji-icon>
 	<?php endif; ?>
-	<?= $block->text()->kirbytext() ?>
+	<?= $block->text()->kirbytextinline() ?>
 </li>

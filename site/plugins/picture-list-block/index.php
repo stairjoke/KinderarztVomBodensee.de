@@ -8,7 +8,8 @@
 		],
 		'blueprints' => [
 			'blocks/picture-list-block' => __DIR__ . '/blueprints/blocks/picture-list-block.yml',
-			'blocks/picture-list-element' => __DIR__ . '/blueprints/blocks/picture-list-element.yml'
+			'blocks/picture-list-element' => __DIR__ . '/blueprints/blocks/picture-list-element.yml',
+			'files/picture-list-block-image' => __DIR__ . '/blueprints/files/picture-list-block-image.yml'
 		]
 	]);
 ?>

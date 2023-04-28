@@ -15,6 +15,7 @@
 		
 		<meta name="robots" content="inxed, follow">
 		
+		<link href="site/plugins/picture-list-block/assets/picture-list-plugin.css" rel="stylesheet" />
 		<link href="assets/foundation.css" rel="stylesheet">
 		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffe587" />
 		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#084CB5" />
