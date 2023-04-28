@@ -63,7 +63,7 @@ a {
 a:link, a:active, a:visited {
   color: var(--color-CI);
 }
-a[href*=amazon]:link, a[href*=amazon]:active, a[href*=amazon]:visited {
+a[href*=amazon]:link, a[href*=amazon]:active, a[href*=amazon]:visited, a[href*="//amzn."]:link, a[href*="//amzn."]:active, a[href*="//amzn."]:visited {
   color: var(--color-secondary-elements-and-links);
 }
 a:hover, a:focus {
@@ -82,9 +82,6 @@ a[target=_blank]::after {
   background-image: url("images/external-link.svg");
   background-size: contain;
   background-repeat: no-repeat;
-}
-a[target=_blank]::after svg {
-  --icon-color: var(--color-secondary-elements-and-links);
 }
 
 h2 {
@@ -322,6 +319,12 @@ nav.triggered-by-nav-toggle ul li a:hover, nav.triggered-by-nav-toggle ul li a:f
     opacity: 1;
   }
 }
+@media (max-width: 743px) {
+  footer {
+    background-color: var(--color-accent-1);
+  }
+}
+
 img, video {
   display: block;
   max-width: 100%;
@@ -396,7 +399,7 @@ body > main {
   margin-bottom: var(--spacer-abschnitt);
 }
 
-.contain, footer, main.wide {
+.contain, main.wide {
   margin-left: var(--grid-margin-adaptive);
   margin-right: var(--grid-margin-adaptive);
   max-width: calc(1280px - (2 * var(--grid-margin)));

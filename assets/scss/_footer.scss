@@ -1,0 +1,9 @@
+// Page Footer — Der Kinderarzt vom Bodensee
+
+@use 'globals';
+
+footer {
+  @media (max-width: #{globals.$break-point-tablet-}) {
+    background-color: var(--color-accent-1);
+  }
+}
