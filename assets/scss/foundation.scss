@@ -10,6 +10,7 @@
 @use 'globals';
 @use 'typography';
 @use 'header';
+@use 'footer';
 @use 'media';
 
 body {
@@ -82,7 +83,7 @@ body > main {
   margin-top: var(--spacer-abschnitt);
   margin-bottom: var(--spacer-abschnitt);
 }
-.contain, footer, main.wide {
+.contain, main.wide {
   // This class will limit the width of an element to be the maximum size and center
   // it horizontally. Using custom properties, it maintains a margin left/right that
   // is consistent with the rest of the page.
