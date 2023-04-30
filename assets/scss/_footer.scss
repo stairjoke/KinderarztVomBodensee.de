@@ -6,24 +6,31 @@ footer {
   padding-bottom: var(--spacer-element);
 
   @media (max-width: #{globals.$break-point-tablet-}) {
-    padding-top: var(--spacer-element);
     background-color: var(--color-accent-1);
+    padding-top: var(--spacer-element);
+  }
+
+  @media (min-width: #{globals.$break-point-tablet}) {
+    .containWide {
+      border-top: solid 2px var(--color-accent-2);
+      height: var(--spacer-element);
+    }
   }
 
   .contain {
+    margin-top: 0;
+    margin-bottom: 0;
 
     @media (min-width: #{globals.$break-point-tablet}) {
-      padding-top: var(--spacer-element);
-      border-top: solid 2px var(--color-accent-2);
-
       display: flex;
+      gap: var(--grid-gap);
+      align-items: stretch;
     }
-
-    gap: var(--grid-gap);
 
     main {
       order: 1;
       flex-grow: 1;
+      max-width: 36rem;
 
       @media (max-width: #{globals.$break-point-tablet-}) {
         img.portraitphoto {
@@ -51,6 +58,11 @@ footer {
       order: 2;
       flex-basis: 33.3333%;
       flex-shrink: 0;
+      margin-left: auto;
+
+      @media (min-width: #{globals.$break-point-desktop}) {
+        flex-basis: 25%;
+      }
     }
   }
 
