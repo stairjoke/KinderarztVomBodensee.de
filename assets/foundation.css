@@ -333,23 +333,31 @@ footer {
 }
 @media (max-width: 693px) {
   footer {
-    padding-top: var(--spacer-element);
     background-color: var(--color-accent-1);
+    padding-top: var(--spacer-element);
+  }
+}
+@media (min-width: 694px) {
+  footer .containWide {
+    border-top: solid 2px var(--color-accent-2);
+    height: var(--spacer-element);
   }
 }
 footer .contain {
-  gap: var(--grid-gap);
+  margin-top: 0;
+  margin-bottom: 0;
 }
 @media (min-width: 694px) {
   footer .contain {
-    padding-top: var(--spacer-element);
-    border-top: solid 2px var(--color-accent-2);
     display: flex;
+    gap: var(--grid-gap);
+    align-items: stretch;
   }
 }
 footer .contain main {
   order: 1;
   flex-grow: 1;
+  max-width: 36rem;
 }
 @media (max-width: 693px) {
   footer .contain main img.portraitphoto {
@@ -375,6 +383,12 @@ footer .contain aside {
   order: 2;
   flex-basis: 33.3333%;
   flex-shrink: 0;
+  margin-left: auto;
+}
+@media (min-width: 1024px) {
+  footer .contain aside {
+    flex-basis: 25%;
+  }
 }
 
 img, video {
@@ -404,7 +418,7 @@ main figure {
 .hasSidecar {
   gap: var(--grid-gap);
 }
-@media (min-width: 694px) {
+@media (min-width: 431px) {
   .hasSidecar {
     display: flex;
   }
@@ -417,6 +431,11 @@ main figure {
   order: 1;
   flex-basis: 33.3333%;
   flex-shrink: 0;
+}
+@media (min-width: 1024px) {
+  .hasSidecar aside {
+    flex-basis: 25%;
+  }
 }
 
 body {
@@ -467,14 +486,14 @@ body {
   }
 }
 
-body > main {
+body > main, .contain {
   margin-left: max(var(--grid-margin), 50vw - (1280px - (2 * var(--grid-margin))) / 3);
   margin-right: max(var(--grid-margin), 50vw - (1280px - (2 * var(--grid-margin))) / 3);
   margin-top: var(--spacer-abschnitt);
   margin-bottom: var(--spacer-abschnitt);
 }
 
-.contain, main.wide {
+.containWide, main.wide {
   margin-left: var(--grid-margin-adaptive);
   margin-right: var(--grid-margin-adaptive);
   max-width: calc(1280px - (2 * var(--grid-margin)));
