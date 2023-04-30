@@ -65,7 +65,7 @@ body {
   }
 }
 
-body > main {
+body > main, .contain {
   // The main <MAIN> element, the one immediately inside the BODY, takes up the middle
   // 8 of 12 columns by default. Only when it is .wide, it will be as wide as the header
   // and footer sections
@@ -84,7 +84,7 @@ body > main {
   margin-top: var(--spacer-abschnitt);
   margin-bottom: var(--spacer-abschnitt);
 }
-.contain, main.wide {
+.containWide, main.wide {
   // This class will limit the width of an element to be the maximum size and center
   // it horizontally. Using custom properties, it maintains a margin left/right that
   // is consistent with the rest of the page.
