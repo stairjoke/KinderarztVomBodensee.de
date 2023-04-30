@@ -1,8 +1,14 @@
 		<footer>
 			<div class="contain">
 				<main>
-					<img src="<?= $site->photo()->toFile()->url() ?>" alt="<?= $site->photo()->toFile()->alt() ?>" class="portraitphoto" />
-					<?= $site->vita()->toBlocks() ?>
+					<?php
+						if($image = $site->photo()->toFile()):
+					?>
+						<img src="<?= $image->url() ?>" alt="<?= $image->alt() ?>" width="<?= $image->width() ?>" height="<?= $image->height() ?>" class="portraitphoto" />
+					<?php
+						endif;
+					?>
+					<div><?= $site->vita()->toBlocks() ?></div>
 				</main>
 				<aside>
 					<?= $site->links()->toBlocks() ?>
