@@ -1,7 +1,7 @@
 		<footer>
 			<div class="contain">
 				<main>
-					<?= $site->photo()->toFile() ?>
+					<img src="<?= $site->photo()->toFile()->url() ?>" alt="<?= $site->photo()->toFile()->alt() ?>" class="portraitphoto" />
 					<?= $site->vita()->toBlocks() ?>
 				</main>
 				<aside>
