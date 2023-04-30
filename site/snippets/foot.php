@@ -1,4 +1,5 @@
 		<footer>
+			<div class="containWide"><!-- border above footer --></div>
 			<div class="contain">
 				<main>
 					<?php
