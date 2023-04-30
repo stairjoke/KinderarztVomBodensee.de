@@ -3,6 +3,9 @@
 @use 'globals';
 
 footer {
+  padding-top: var(--spacer-element);
+  padding-bottom: var(--spacer-element);
+
   @media (max-width: #{globals.$break-point-tablet-}) {
     background-color: var(--color-accent-1);
   }

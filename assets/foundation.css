@@ -319,6 +319,10 @@ nav.triggered-by-nav-toggle ul li a:hover, nav.triggered-by-nav-toggle ul li a:f
     opacity: 1;
   }
 }
+footer {
+  padding-top: var(--spacer-element);
+  padding-bottom: var(--spacer-element);
+}
 @media (max-width: 743px) {
   footer {
     background-color: var(--color-accent-1);
