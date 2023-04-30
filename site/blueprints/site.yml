@@ -87,6 +87,7 @@ tabs:
                   cover: true
                   ratio: 1/1
                 type: files
+                uploads: image
               vita:
                 label: Vita Text
                 type: blocks
