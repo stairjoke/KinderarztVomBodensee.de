@@ -119,7 +119,7 @@ h2 {
 h1 {
 	@include page-title();
 
-	.card & {
+	footer &, .card & {
 		@include section-headline();
 	}
 }
