@@ -19,6 +19,10 @@ body {
 	@include body-text();
 }
 
+p {
+  margin: 0 0 .5rem 0;
+}
+
 @mixin body-bold() {
 	@include body-text();
 	font-weight: 700;
@@ -122,4 +126,11 @@ h1 {
 	footer &, .card & {
 		@include section-headline();
 	}
+}
+
+ul, ol {
+  li {
+    margin: .5rem 0 .5rem 0;
+    margin-block: .25rem;
+  }
 }

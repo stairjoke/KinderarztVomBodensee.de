@@ -38,6 +38,10 @@ body {
   }
 }
 
+p {
+  margin: 0 0 0.5rem 0;
+}
+
 strong, em {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -132,6 +136,11 @@ footer h1, .card h1 {
     font-size: 2rem;
     line-height: 1.5em;
   }
+}
+
+ul li, ol li {
+  margin: 0.5rem 0 0.5rem 0;
+  margin-block: 0.25rem;
 }
 
 header {
