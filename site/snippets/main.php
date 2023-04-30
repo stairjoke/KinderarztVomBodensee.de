@@ -1,0 +1,1 @@
+<main><?= $page->blocks()->toBlocks() ?></main>
