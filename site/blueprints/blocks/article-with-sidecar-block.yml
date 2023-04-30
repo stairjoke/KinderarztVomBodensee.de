@@ -1,0 +1,38 @@
+name: Artikel mit Bild-Spalte
+icon: grid-right
+tabs:
+  content:
+    fields:
+      images:
+        label: Bilder
+        width: 1/3
+        type: blocks
+        fieldsets:
+          - image
+          - self-hosted-video-block
+      article:
+        label: Inhalt
+        width: 2/3
+        type: blocks
+        fieldsets:
+          text:
+            label: Text
+            type: group
+            fieldsets:
+              - text
+              - heading
+              - list
+              - picture-list-block
+          media:
+            label: Medien
+            type: group
+            fieldsets:
+              - image
+              - self-hosted-video-block
+          code:
+            label: Code
+            type: group
+            open: false
+            fieldsets:
+               - markdown
+               - code

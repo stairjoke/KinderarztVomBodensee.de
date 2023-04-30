@@ -3,6 +3,13 @@ return [
 	'debug' => true,
 	'blocks' => [
 		'fieldsets' => [
+			'layouts' => [
+				'label' => 'Layouts',
+				'type' => 'group',
+				'fieldsets' => [
+					'article-with-sidecar-block'
+				]
+			],
 			'text' => [
 				'label' => 'Text',
 				'type' => 'group',
