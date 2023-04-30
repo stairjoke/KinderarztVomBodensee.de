@@ -328,6 +328,12 @@ footer {
     background-color: var(--color-accent-1);
   }
 }
+footer img.portraitphoto {
+  width: calc(50% - var(--grid-gap) / 2);
+  height: auto;
+  float: left;
+  margin-right: var(--grid-gap);
+}
 
 img, video {
   display: block;

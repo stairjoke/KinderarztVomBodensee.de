@@ -9,4 +9,11 @@ footer {
   @media (max-width: #{globals.$break-point-tablet-}) {
     background-color: var(--color-accent-1);
   }
+
+  img.portraitphoto {
+    width: calc(50% - (var(--grid-gap) / 2));
+    height: auto;
+    float: left;
+    margin-right: var(--grid-gap);
+  }
 }
