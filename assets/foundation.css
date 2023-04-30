@@ -38,7 +38,7 @@ body {
   }
 }
 
-p {
+p, h1, h2, h3, h4, h5, h6, ol, ul, blockquote, code, pre, audio, img, figure {
   margin: 0 0 0.5rem 0;
 }
 
@@ -348,7 +348,12 @@ img, video {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: var(--spacer-absatz) 0;
+  margin: var(--spacer-element) 0;
+  margin-block: 0;
+}
+
+video {
+  margin: var(--spacer-abschnitt) 0;
 }
 
 svg.icon {
@@ -361,6 +366,24 @@ svg.icon {
 main figure {
   margin: 0;
   padding: 0;
+}
+
+.hasSidecar {
+  gap: var(--grid-gap);
+}
+@media (min-width: 744px) {
+  .hasSidecar {
+    display: flex;
+  }
+}
+.hasSidecar main {
+  order: 2;
+  flex-grow: 1;
+}
+.hasSidecar aside {
+  order: 1;
+  flex-basis: 33.3333%;
+  flex-shrink: 0;
 }
 
 body {

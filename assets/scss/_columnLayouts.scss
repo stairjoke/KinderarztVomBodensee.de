@@ -1,1 +1,25 @@
 // Spalten-Layouts — Der Kinderarzt vom Bodensee
+
+@use 'globals';
+
+.hasSidecar {
+  &.card {
+    // Silence is golden
+  }
+  @media (min-width: #{globals.$break-point-tablet}) {
+    display: flex;
+  }
+
+  gap: var(--grid-gap);
+
+  main {
+    order: 2;
+    flex-grow: 1;
+  }
+
+  aside {
+    order: 1;
+    flex-basis: 33.3333%;
+    flex-shrink: 0;
+  }
+}
