@@ -3,17 +3,55 @@
 @use 'globals';
 
 footer {
-  padding-top: var(--spacer-element);
   padding-bottom: var(--spacer-element);
 
   @media (max-width: #{globals.$break-point-tablet-}) {
+    padding-top: var(--spacer-element);
     background-color: var(--color-accent-1);
   }
 
-  img.portraitphoto {
-    width: calc(50% - (var(--grid-gap) / 2));
-    height: auto;
-    float: left;
-    margin-right: var(--grid-gap);
+  .contain {
+
+    @media (min-width: #{globals.$break-point-tablet}) {
+      padding-top: var(--spacer-element);
+      border-top: solid 2px var(--color-accent-2);
+
+      display: flex;
+    }
+
+    gap: var(--grid-gap);
+
+    main {
+      order: 1;
+      flex-grow: 1;
+
+      @media (max-width: #{globals.$break-point-tablet-}) {
+        img.portraitphoto {
+          width: calc(50% - (var(--grid-gap) / 2));
+          height: auto;
+          float: left;
+          margin-right: var(--grid-gap);
+        }
+      }
+
+      @media (min-width: #{globals.$break-point-tablet}) {
+        display: flex;
+        gap: var(--grid-gap);
+
+        img.portraitphoto {
+          display: block;
+          width: 25%;
+          height: auto;
+          align-self: flex-start;
+        }
+      }
+    }
+
+    aside {
+      order: 2;
+      flex-basis: 33.3333%;
+      flex-shrink: 0;
+    }
   }
+
 }
