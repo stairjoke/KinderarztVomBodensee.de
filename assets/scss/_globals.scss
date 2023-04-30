@@ -46,8 +46,8 @@
 $break-point-desktop-max: 1280px;
 $break-point-desktop: 1024px;
 $break-point-desktop-: 1023px;
-$break-point-tablet: 744px;
-$break-point-tablet-: 743px;
+$break-point-tablet: 694px; // Wide Column on landscape iPad Mini when in multitasking mode
+$break-point-tablet-: 693px;
 $break-point-phablet: 431px; // Wider than the largest iPhone is tall
 
 @mixin media-L() {
