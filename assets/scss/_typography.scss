@@ -99,7 +99,7 @@ h2 {
 }
 
 @mixin page-title() {
-	font-family: 'Univers-Black';
+	font-family: 'Univers75Black';
 	font-weight: 750;
 	font-size: 3.5rem;
 	line-height: 1.09;
@@ -122,8 +122,10 @@ h2 {
 
 h1 {
 	@include page-title();
+  text-align: center;
 
 	footer &, .card & {
+    text-align: left;
 		@include section-headline();
 	}
 }

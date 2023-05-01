@@ -19,6 +19,25 @@
 			'/media/plugins/wenzels-design/picture-list-block/picture-list-plugin.css',
 			'assets/foundation.css'
 		]) ?>
+		
+		<!--
+		/**
+		* @license
+		* MyFonts Webfont Build ID 601285
+		*
+		* The fonts listed in this notice are subject to the End User License
+		* Agreement(s) entered into by the website owner. All other parties are
+		* explicitly restricted from using the Licensed Webfonts(s).
+		*
+		* You may obtain a valid license from one of MyFonts official sites.
+		* http://www.fonts.com
+		* http://www.myfonts.com
+		* http://www.linotype.com
+		*
+		*/
+		-->
+		<link rel="stylesheet" type="text/css" href="/assets/fonts/Der_Kinderarzt_vom_Bodensee.css">
+		
 		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffe587" />
 		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#084CB5" />
 		
