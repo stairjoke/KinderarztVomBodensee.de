@@ -1,8 +1,8 @@
-title: Standard Seite
+title: Produktübersicht
 
 options:
   changeTemplate:
-    - products
+    - default
     - videos
 
 columns:
@@ -21,7 +21,7 @@ columns:
       pages:
         label: Untergeordnete Seiten
         type: pages
-        template: default
+        template: product
       files:
         label: Dateien
         type: files

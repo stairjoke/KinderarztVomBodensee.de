@@ -1,9 +1,4 @@
-title: Standard Seite
-
-options:
-  changeTemplate:
-    - products
-    - videos
+title: Produkt Seite
 
 columns:
   main:
@@ -18,10 +13,6 @@ columns:
   sidebar:
     width: 1/3
     sections:
-      pages:
-        label: Untergeordnete Seiten
-        type: pages
-        template: default
       files:
         label: Dateien
         type: files

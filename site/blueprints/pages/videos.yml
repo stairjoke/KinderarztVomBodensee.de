@@ -1,5 +1,9 @@
 title: Videos Seite
 
+options:
+  changeTemplate:
+    - default
+    - products
 
 sections:
   fields:
