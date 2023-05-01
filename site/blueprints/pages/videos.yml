@@ -2,6 +2,12 @@ title: Videos Seite
 
 
 sections:
+  fields:
+    type: fields
+    fields:
+      blocks:
+        label: Inhalt
+        type: blocks
   pages:
     label: Videos
     layout: cards
