@@ -124,9 +124,12 @@ h1 {
 	@include page-title();
   text-align: center;
 
+  margin-bottom: var(--spacer-element);
+
 	footer &, .card & {
     text-align: left;
 		@include section-headline();
+    margin-bottom: var(--spacer-absatz);
 	}
 }
 

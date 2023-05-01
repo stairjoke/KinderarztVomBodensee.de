@@ -114,6 +114,7 @@ h1 {
   line-height: 1.09;
   color: var(--color-accent-2-text);
   text-align: center;
+  margin-bottom: var(--spacer-element);
 }
 footer h1, .card h1 {
   text-align: left;
@@ -127,6 +128,7 @@ footer h1, .card h1 {
   font-size: 1.5rem;
   line-height: 2rem;
   color: var(--color-accent-2-text);
+  margin-bottom: var(--spacer-absatz);
 }
 @media (min-width: 694px) {
   footer h1, .card h1 {
