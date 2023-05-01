@@ -1,0 +1,8 @@
+title: Datei
+
+fields:
+  template:
+    type: select
+    options:
+      - default
+      - image
