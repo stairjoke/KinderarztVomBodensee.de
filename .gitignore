@@ -43,8 +43,3 @@ Icon
 
 /site/sessions/*
 !/site/sessions/index.html
-
-# License
-# ---------------
-
-/site/config/.license
