@@ -440,6 +440,15 @@ main figure {
   }
 }
 
+pre {
+  padding: 1rem;
+  background: darkred;
+}
+pre code {
+  color: white;
+  font-weight: bold;
+}
+
 body {
   margin: 0;
   padding: 0;
