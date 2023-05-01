@@ -1,16 +1,13 @@
 title: Bild / Grafik
 
-fields:
-template:
-  type: select
-  options:
-    - default
-    - image
-
 accept: image/*
-options:
-  update: true
+
 fields:
+  template:
+    type: select
+    options:
+      - default
+      - image
   alt:
     label: Alternativtext
     type: text
