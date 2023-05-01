@@ -15,13 +15,13 @@ columns:
           blocks:
             label: Inhalt
             type: blocks
+      pages:
+        label: Produktseiten
+        type: pages
+        template: product
   sidebar:
     width: 1/3
     sections:
-      pages:
-        label: Untergeordnete Seiten
-        type: pages
-        template: product
       files:
         label: Dateien
         type: files

@@ -1,4 +1,4 @@
-title: Produkt Seite
+title: Produktseite
 
 columns:
   main:
@@ -7,12 +7,23 @@ columns:
       fields:
         type: fields
         fields:
+          summary:
+            label: Zusammenfassung / Teaser
+            type: textarea
+            buttons: true
+            size: small
+            help: Dieser Text wird in der Produktübersicht angezeigt.
           blocks:
             label: Inhalt
             type: blocks
   sidebar:
     width: 1/3
     sections:
+      info:
+        type: info
+        label: Wichtig!
+        text: |
+          Die erste Datei in der Liste aller Dateien auf dieser Seite wird in der Produktübersicht genutzt. Also immer darauf achten, dass die erste Datei das gewünschte Produktbild ist. Die Dateien lassen sich per Drag & Drop sortieren!
       files:
         label: Dateien
         type: files
