@@ -7,6 +7,10 @@ columns:
       fields:
         type: fields
         fields:
+          autor:
+            label: Autor (optional)
+            type: text
+            help: Dieser text wird ohne Zeilenschub unter der Überschrift angezeigt.
           summary:
             label: Zusammenfassung / Teaser
             type: textarea
