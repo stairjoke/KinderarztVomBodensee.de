@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --color-CI: #084CB5;
   --color-accent-1: #FFE588;
@@ -63,6 +64,19 @@ strong, em {
 a {
   text-decoration: underline;
   --link-hover: var(--color-accent-2-text);
+  /*
+    &[href*='http']:not([target='_blank']) {
+      padding: 2rem;
+      border: 2px red solid;
+
+      &::after {
+        content: "Link zeigt auf externe Webseite, aber öffnet nicht in neuem Fenster!";
+        color: red;
+        width: unset;
+        height: unset;
+      }
+    }
+  */
 }
 a:link, a:active, a:visited {
   color: var(--color-CI);
@@ -73,7 +87,7 @@ a[href*=amazon]:link, a[href*=amazon]:active, a[href*=amazon]:visited, a[href*="
 a:hover, a:focus {
   color: var(--link-hover);
 }
-a[target=_blank]::after {
+a[target=_blank]::after, a[href*=http]::after {
   display: inline-block;
   height: 1em;
   width: 1em;

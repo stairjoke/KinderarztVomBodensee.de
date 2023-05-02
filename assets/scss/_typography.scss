@@ -58,7 +58,7 @@ a {
 	}
 
   // Links that open in a new tab show an external link icon after
-  &[target="_blank"]::after {
+  &[target="_blank"]::after, &[href*="http"]::after {
     display: inline-block;
     height: 1em;
     width: 1em;
@@ -75,6 +75,19 @@ a {
     background-size: contain;
     background-repeat: no-repeat;
   }
+/*
+  &[href*='http']:not([target='_blank']) {
+    padding: 2rem;
+    border: 2px red solid;
+
+    &::after {
+      content: "Link zeigt auf externe Webseite, aber öffnet nicht in neuem Fenster!";
+      color: red;
+      width: unset;
+      height: unset;
+    }
+  }
+*/
 }
 
 @mixin navigation() {
