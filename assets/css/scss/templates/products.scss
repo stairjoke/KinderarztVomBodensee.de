@@ -1,5 +1,32 @@
 // Products Page — Der Kinderarzt vom Bodensee
 
-.products {
+@use '../globals';
 
+.productCard {
+  .desktop {
+    display: none;
+  }
+
+  @media (width < #{globals.$break-point-phablet}) {
+    &:last-child::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+
+    img {
+      float: left;
+      margin: 0 var(--grid-gap) var(--grid-gap) 0;
+      max-width: 33.3333%;
+    }
+  }
+
+  @media (width >= #{globals.$break-point-phablet}) {
+    .desktop {
+      display: block;
+    }
+    .mobile {
+      display: none;
+    }
+  }
 }
