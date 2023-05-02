@@ -1,5 +1,5 @@
 <?php
 	snippet('head');
-	snippet('main');
+	snippet('main-default');
 	snippet('foot');
 ?>
