@@ -1,6 +1,7 @@
 <?php
 return [
 	'debug' => true,
+	'url' => '/',/* set url() to use relative paths */
 	'blocks' => [
 		'fieldsets' => [
 			'layouts' => [
