@@ -28,6 +28,7 @@ main img, main video, .media {
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
+  font-size: 1rem;
   line-height: 1.375em;
   letter-spacing: 0.02em;
   color: var(--color-text, #f0f);
@@ -45,6 +46,7 @@ p, h1, h2, h3, h4, h5, h6, ol, ul, blockquote, code, pre, audio, img, figure {
 strong, em {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
+  font-size: 1rem;
   line-height: 1.375em;
   letter-spacing: 0.02em;
   color: var(--color-text, #f0f);
@@ -92,6 +94,7 @@ a[target=_blank]::after, a[href*=http]::after {
 h2 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
+  font-size: 1rem;
   line-height: 1.375em;
   letter-spacing: 0.02em;
   color: var(--color-text, #f0f);
@@ -103,6 +106,20 @@ h2 {
     line-height: 1.5em;
   }
 }
+.productCard h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375em;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #f0f);
+  font-weight: 700;
+}
+@media (min-width: 694px) {
+  .productCard h2 {
+    line-height: 1.5em;
+  }
+}
 h2 a {
   --link-color: var(--color-accent-2-text);
   --link-color-hover: var(--color-accent-2);
@@ -111,16 +128,23 @@ h2 a {
 h1 {
   font-family: "Univers75Black";
   font-weight: 750;
-  font-size: 3.5rem;
-  line-height: 1.09;
+  font-size: 2rem;
+  line-height: auto;
   color: var(--color-accent-2-text);
   text-align: center;
   margin-bottom: var(--spacer-element);
+}
+@media (min-width: 431px) {
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.09;
+  }
 }
 footer h1, .card h1 {
   text-align: left;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
+  font-size: 1rem;
   line-height: 1.375em;
   letter-spacing: 0.02em;
   color: var(--color-text, #f0f);
@@ -305,6 +329,7 @@ nav.triggered-by-nav-toggle ul li a, nav.triggered-by-nav-toggle ol li a {
 nav.triggered-by-nav-toggle ul li a, nav.triggered-by-nav-toggle ul li a:link, nav.triggered-by-nav-toggle ul li a:active, nav.triggered-by-nav-toggle ul li a:visited, nav.triggered-by-nav-toggle ol li a, nav.triggered-by-nav-toggle ol li a:link, nav.triggered-by-nav-toggle ol li a:active, nav.triggered-by-nav-toggle ol li a:visited {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
+  font-size: 1rem;
   line-height: 1.375em;
   letter-spacing: 0.02em;
   color: var(--color-text, #f0f);

@@ -5,6 +5,7 @@
 @mixin body-text() {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 400;
+  font-size: 1rem;
   line-height: 1.375em;
 	letter-spacing: 0.02em;
 
@@ -92,6 +93,10 @@ a {
 
 h2 {
 	@include headline();
+
+  .productCard & {
+    @include body-bold();
+  }
   a {
     --link-color: var(--color-accent-2-text);
     --link-color-hover: var(--color-accent-2);
@@ -101,9 +106,14 @@ h2 {
 @mixin page-title() {
 	font-family: 'Univers75Black';
 	font-weight: 750;
-	font-size: 3.5rem;
-	line-height: 1.09;
+  font-size: 2rem;
+  line-height: auto;
 	color: var(--color-accent-2-text);
+
+  @media (min-width: #{globals.$break-point-phablet}) {
+    font-size: 3.5rem;
+    line-height: 1.09;
+  }
 }
 
 @mixin section-headline() {
