@@ -39,11 +39,12 @@ strong, em {
 a {
 	text-decoration: underline;
   //Hover by default is orange
-	--link-hover: var(--color-accent-2-text);
+  --link-color: var(--color-CI);
+	--link-color-hover: var(--color-accent-2-text);
 
   // Links by default are in CI color
   &:link, &:active, &:visited {
-    color: var(--color-CI);
+    color: var(--link-color);
   }
 
   // All Amazon links are grey
@@ -54,7 +55,7 @@ a {
   }
 
 	&:hover, &:focus {
-		color: var(--link-hover);
+		color: var(--link-color-hover);
 	}
 
   // Links that open in a new tab show an external link icon after
@@ -71,23 +72,10 @@ a {
     color: transparent;
     overflow: hidden;
 
-    background-image: url('images/external-link.svg');
+    background-image: url('../images/external-link.svg');
     background-size: contain;
     background-repeat: no-repeat;
   }
-/*
-  &[href*='http']:not([target='_blank']) {
-    padding: 2rem;
-    border: 2px red solid;
-
-    &::after {
-      content: "Link zeigt auf externe Webseite, aber öffnet nicht in neuem Fenster!";
-      color: red;
-      width: unset;
-      height: unset;
-    }
-  }
-*/
 }
 
 @mixin navigation() {
@@ -104,11 +92,10 @@ a {
 
 h2 {
 	@include headline();
-	--link-hover: var(--color-accent-2);
-
-	a:link, a:active, a:visited {
-		color: var(--color-accent-2-text);
-	}
+  a {
+    --link-color: var(--color-accent-2-text);
+    --link-color-hover: var(--color-accent-2);
+  }
 }
 
 @mixin page-title() {

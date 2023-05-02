@@ -3,6 +3,7 @@
 @use 'globals';
 
 .hasSidecar {
+  margin: var(--spacer-element) 0;
   &.card {
     // Silence is golden
   }

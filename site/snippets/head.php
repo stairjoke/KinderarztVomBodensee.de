@@ -16,8 +16,9 @@
 		<meta name="robots" content="inxed, follow">
 		
 		<?= css([
-			'/media/plugins/wenzels-design/picture-list-block/picture-list-plugin.css',
-			'assets/foundation.css'
+			'/media/plugins/wenzels-design/picture-list-block/css/picture-list-plugin.css',
+			'assets/css/foundation.css',
+			'@auto'
 		]) ?>
 		
 		<!--
