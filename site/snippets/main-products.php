@@ -6,7 +6,7 @@
 				<?= $productImage = $product->files()->first() ?>
 			</aside>
 			<main>
-				<a href="<?= $product->url() ?>"><h2><?= $product->title() ?></h2></a>
+				<h2><a href="<?= $product->url() ?>"><?= $product->title() ?></a></h2>
 				<?= $product->summary()->kirbytext() ?>
 			</main>
 		</article>
