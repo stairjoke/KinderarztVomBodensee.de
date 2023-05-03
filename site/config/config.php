@@ -22,7 +22,7 @@ return [
 				'label' => 'Medien',
 				'type' => 'group',
 				'fieldsets' => [
-					'image', 'self-hosted-video-block'
+					'image', 'self-hosted-video-block', 'slider-block'
 				]
 			],
 			'code' => [

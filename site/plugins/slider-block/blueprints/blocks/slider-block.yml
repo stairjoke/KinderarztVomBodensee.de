@@ -1,0 +1,14 @@
+name: Slider
+icon: images
+tabs:
+  content:
+    fields:
+      layout:
+        type: toggles
+        label: Slider Layout
+        default: two
+        options:
+          - value: two
+            text: Zwei Spalten
+          - value: three
+            text: Drei Spalten
