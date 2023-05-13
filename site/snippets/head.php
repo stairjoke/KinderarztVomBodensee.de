@@ -17,6 +17,7 @@
 		
 		<?= css([
 			'/media/plugins/wenzels-design/picture-list-block/css/picture-list-plugin.css',
+			'/media/plugins/wenzels-design/slider-block/css/slider-block.css',
 			'assets/css/foundation.css',
 			'@auto'
 		]) ?>

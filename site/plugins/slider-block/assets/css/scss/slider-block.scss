@@ -1,0 +1,72 @@
+// Slider Block Plugin
+
+.slider-block {
+  border-top: solid 2px var(--color-accent-2);
+  border-bottom: solid 2px var(--color-accent-2);
+  margin: var(--spacer-element) 0;
+
+  .slider-block-elements {
+    overflow: scroll; //hide scrollbar!
+    scroll-snap-type: x mandatory;
+
+    margin: var(--spacer-elemente-absatz) 0 calc(var(--spacer-elemente-absatz) - .5rem) 0;
+    display: flex;
+    gap: var(--grid-gap);
+
+    img {
+      display: block;
+      height: auto;
+      margin-bottom: .5rem; //shadow
+      scroll-snap-align: center;
+    }
+
+    &.two img {
+      // Half *minus* half of the shadow-size *minus* half the grid-gap
+      width: calc((50% - .25rem) - (var(--grid-gap) / 2));
+    }
+
+    &.three img {
+      // One third *minus* a third of the shadow size *minus* two-thirds of the grid gap
+      width: calc((33.333% - .16667rem) - (var(--grid-gap) / 1.5));
+    }
+  }
+
+  .slider-block-controls {
+    .no-js & {
+      ol {
+        display: none;
+      }
+      noscript p {
+        display: block;
+        text-align: center;
+      }
+    }
+    margin-bottom: var(--spacer-viertel);
+
+    ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      word-spacing: 1rem;
+      text-align: center;
+
+      li {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+
+        color: transparent;
+        overflow: hidden;
+
+        border: solid 1px var(--color-secondary-elements-and-links, currentcolor);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+
+        &.current {
+          background-color: var(--color-input-selected-fill, currentcolor);
+        }
+      }
+    }
+  }
+}

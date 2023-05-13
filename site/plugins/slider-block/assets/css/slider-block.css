@@ -1,0 +1,57 @@
+.slider-block {
+  border-top: solid 2px var(--color-accent-2);
+  border-bottom: solid 2px var(--color-accent-2);
+  margin: var(--spacer-element) 0;
+}
+.slider-block .slider-block-elements {
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
+  margin: var(--spacer-elemente-absatz) 0 calc(var(--spacer-elemente-absatz) - 0.5rem) 0;
+  display: flex;
+  gap: var(--grid-gap);
+}
+.slider-block .slider-block-elements img {
+  display: block;
+  height: auto;
+  margin-bottom: 0.5rem;
+  scroll-snap-align: center;
+}
+.slider-block .slider-block-elements.two img {
+  width: calc(50% - 0.25rem - var(--grid-gap) / 2);
+}
+.slider-block .slider-block-elements.three img {
+  width: calc(33.333% - 0.16667rem - var(--grid-gap) / 1.5);
+}
+.slider-block .slider-block-controls {
+  margin-bottom: var(--spacer-viertel);
+}
+.no-js .slider-block .slider-block-controls ol {
+  display: none;
+}
+.no-js .slider-block .slider-block-controls noscript p {
+  display: block;
+  text-align: center;
+}
+.slider-block .slider-block-controls ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  word-spacing: 1rem;
+  text-align: center;
+}
+.slider-block .slider-block-controls ol li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  color: transparent;
+  overflow: hidden;
+  border: solid 1px var(--color-secondary-elements-and-links, currentcolor);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.slider-block .slider-block-controls ol li.current {
+  background-color: var(--color-input-selected-fill, currentcolor);
+}
+
+/*# sourceMappingURL=slider-block.css.map */
