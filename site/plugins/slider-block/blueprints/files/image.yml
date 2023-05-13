@@ -8,7 +8,6 @@ fields:
     options:
       - default
       - image
-      - slider-image
   alt:
     label: Alternativtext
     type: text

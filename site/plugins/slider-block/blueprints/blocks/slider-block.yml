@@ -12,3 +12,9 @@ tabs:
             text: Zwei Spalten
           - value: three
             text: Drei Spalten
+      images:
+        type: files
+        uploads: image
+        layout: cards
+        size: small
+        min: 1
