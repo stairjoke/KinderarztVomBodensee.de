@@ -1,33 +1,50 @@
 title: Produktseite
 
-columns:
-  main:
-    width: 2/3
+tabs:
+  teaser:
+    label: Produktübersicht
     sections:
-      fields:
+      info:
+        label: Info
+        type: info
+        text: |
+          Die Informationen in diesem Tab werden auf der Seite "Produkte" genutzt um die Liste von Produkten zusammenzustellen.
+      teaserContent:
         type: fields
         fields:
+          hero:
+            label: Hero Bild
+            type: files
+            uploads: image
+            min: 1
+            max: 1
+            uploads: image
+            layout: cards
           autor:
-            label: Autor (optional)
+            label: Autoren-Zeile (optional)
             type: text
-            help: Dieser text wird ohne Zeilenschub unter der Überschrift angezeigt.
+            help: Dieser Text wird ohne Zeilenschub unter der Überschrift angezeigt.
           summary:
             label: Zusammenfassung / Teaser
             type: textarea
             buttons: true
             size: small
             help: Dieser Text wird in der Produktübersicht angezeigt.
-          blocks:
-            label: Inhalt
-            type: blocks
-  sidebar:
-    width: 1/3
-    sections:
-      info:
-        type: info
-        label: Wichtig!
-        text: |
-          Die erste Datei in der Liste aller Dateien auf dieser Seite wird in der Produktübersicht genutzt. Also immer darauf achten, dass die erste Datei das gewünschte Produktbild ist. Die Dateien lassen sich per Drag & Drop sortieren!
-      files:
-        label: Dateien
-        type: files
+  content:
+    label: Produktdetails
+    columns:
+      main:
+        width: 2/3
+        sections:
+          fields:
+            type: fields
+            fields:
+              blocks:
+                label: Inhalt
+                type: blocks
+      sidebar:
+        width: 1/3
+        sections:
+          files:
+            label: Alle Dateien
+            type: files
