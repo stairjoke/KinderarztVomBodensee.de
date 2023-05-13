@@ -1,10 +1,10 @@
-<!--
+<?php /*
 	Fields:
 	- files
 	- mp4
 	- webm
 	- subtitles: list of files "de.vtt", "en.vtt", etc.
--->
+*/ ?>
 
 <video controls poster="<?= $block->files()->toFile()->url() //Take the first file in the files-field and echo the URL into the poster-property ?>" preload="metadata" class="<?= $block->size() ?>">
 	<!-- MP4 -->
