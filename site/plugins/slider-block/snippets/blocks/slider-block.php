@@ -33,6 +33,8 @@
 					<li role="menuitemradio">Seite <?= $index ?></li>
 				<?php endfor; ?>
 			</ol></nav>
+			<img class="slider-block-stepper-button slider-block-stepper-button-previous" role="button" aria-hidden="true" src="/media/plugins/wenzels-design/slider-block/img/button.svg" />
+			<img class="slider-block-stepper-button slider-block-stepper-button-next" role="button" aria-hidden="true" src="/media/plugins/wenzels-design/slider-block/img/button.svg" />
 		</div>
 	<?php endif; ?>
 </div>
