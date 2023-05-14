@@ -22,6 +22,10 @@
 			'@auto'
 		]) ?>
 		
+		<?=
+			js('/media/plugins/wenzels-design/slider-block/js/slider-block.js');
+		?>
+		
 		<!--
 		/**
 		* @license
