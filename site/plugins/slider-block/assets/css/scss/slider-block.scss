@@ -4,6 +4,7 @@
   border-top: solid 2px var(--color-accent-2);
   border-bottom: solid 2px var(--color-accent-2);
   margin: var(--spacer-element) 0;
+  position: relative;
 
   .slider-block-elements {
     overflow: scroll; //hide scrollbar!
@@ -18,6 +19,8 @@
       height: auto;
       margin-bottom: .5rem; //shadow
       scroll-snap-align: center;
+
+      cursor: zoom-in;
     }
 
     &.two img {
@@ -67,6 +70,49 @@
           background-color: var(--color-input-selected-fill, currentcolor);
         }
       }
+    }
+  }
+
+  .slider-block-stepper-button {
+    display: block;
+    box-shadow: 0 0 .5rem rgba(4, 35, 83, 0.4);
+
+    border-radius: .5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition-property: opacity transform;
+    transition-timing-function: ease-in;
+    transition-duration: 120ms;
+
+    cursor: pointer;
+  }
+  &:hover .slider-block-stepper-button {
+    opacity: 1;
+  }
+  .slider-block-stepper-button-next {
+    right: 0;
+    transform: translateY(-50%);
+
+    &:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .click {
+      transform: translateY(-50%) scale(1);
+    }
+  }
+  .slider-block-stepper-button-previous {
+    left: 0;
+    transform: translateY(-50%) rotate(180deg);
+
+    &:hover {
+      transform: translateY(-50%) rotate(180deg) scale(1.1);
+    }
+
+    .click {
+      transform: translateY(-50%) rotate(180deg) scale(1);
     }
   }
 }
