@@ -11,6 +11,8 @@
     scroll-snap-type: x mandatory;
 
     margin: var(--spacer-elemente-absatz) 0 calc(var(--spacer-elemente-absatz) - .5rem) 0;
+    padding-right: .5rem;
+
     display: flex;
     gap: var(--grid-gap);
 
