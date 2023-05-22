@@ -7,6 +7,7 @@
 .slider-block .slider-block-elements {
   overflow: scroll;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   margin: var(--spacer-elemente-absatz) 0 calc(var(--spacer-elemente-absatz) - 0.5rem) 0;
   padding-right: 0.5rem;
   display: flex;
@@ -17,6 +18,7 @@
   height: auto;
   margin-bottom: 0.5rem;
   scroll-snap-align: center;
+  object-fit: contain;
   cursor: zoom-in;
 }
 .slider-block .slider-block-elements.two img {

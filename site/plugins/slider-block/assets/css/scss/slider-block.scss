@@ -9,6 +9,7 @@
   .slider-block-elements {
     overflow: scroll; //hide scrollbar!
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 
     margin: var(--spacer-elemente-absatz) 0 calc(var(--spacer-elemente-absatz) - .5rem) 0;
     padding-right: .5rem;
@@ -21,6 +22,8 @@
       height: auto;
       margin-bottom: .5rem; //shadow
       scroll-snap-align: center;
+
+      object-fit: contain;
 
       cursor: zoom-in;
     }
