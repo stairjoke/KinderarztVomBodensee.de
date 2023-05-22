@@ -1,31 +1,24 @@
 <?php
-/*
-	Fields:
-		- layout: ['two', 'three']
-		- images: files
-*/
+	// Use set layout and number of images top calculate how many bullets / page-steps to display below the images
+	$numberOfImages = $block->images()->toFiles()->count();
+	$numberOfImagesPerPage = 2;
+	$numberOfBullets = 0;
+	
+	switch ($block->layout()) {
+		case 'two';
+			$numberOfImagesPerPage = 2;
+			break;
+		default; // 'three'
+			$numberOfImagesPerPage = 3;
+			break;
+	}
+	
+	if($numberOfImages > $numberOfImagesPerPage) {
+		$numberOfBullets = ceil($numberOfImages / $numberOfImagesPerPage);
+	}
 ?>
 
-<div class="slider-block">
-	<?php
-		// Use set layout and number of images top calculate how many bullets / page-steps to display below the images
-		$numberOfImages = $block->images()->toFiles()->count();
-		$numberOfImagesPerPage = 2;
-		$numberOfBullets = 0;
-		switch ($block->layout()) {
-			case 'two';
-				$numberOfImagesPerPage = 2;
-				break;
-			default; // 'three'
-				$numberOfImagesPerPage = 3;
-				break;
-		}
-		
-		if($numberOfImages > $numberOfImagesPerPage) {
-			$numberOfBullets = ceil($numberOfImages / $numberOfImagesPerPage);
-		}
-	?>
-	
+<div class="slider-block" <?php echo("data-items-per-page=$numberOfImagesPerPage"); ?>>
 	<div role="marquee" class="slider-block-elements <?= $block->layout() ?>">
 		<?php foreach($block->images()->toFiles() as $image) : ?>
 		<?= $image ?>
