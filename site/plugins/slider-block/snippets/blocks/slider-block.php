@@ -7,26 +7,32 @@
 ?>
 
 <div class="slider-block">
+	<?php
+		// Use set layout and number of images top calculate how many bullets / page-steps to display below the images
+		$numberOfImages = $block->images()->toFiles()->count();
+		$numberOfImagesPerPage = 2;
+		$numberOfBullets = 0;
+		switch ($block->layout()) {
+			case 'two';
+				$numberOfImagesPerPage = 2;
+				break;
+			default; // 'three'
+				$numberOfImagesPerPage = 3;
+				break;
+		}
+		
+		if($numberOfImages > $numberOfImagesPerPage) {
+			$numberOfBullets = ceil($numberOfImages / $numberOfImagesPerPage);
+		}
+	?>
+	
 	<div role="marquee" class="slider-block-elements <?= $block->layout() ?>">
 		<?php foreach($block->images()->toFiles() as $image) : ?>
 		<?= $image ?>
 		<?php endforeach; ?>
 	</div>
-	<?php
-		// Use set layout and number of images top calculate how many bullets / page-steps to display below the images
-		$numberOfImages = $block->images()->toFiles()->count();
-		$numberOfBullets = 0;
-		switch ($block->layout()) {
-			case 'two';
-				$numberOfBullets = ceil($numberOfImages / 2);
-				break;
-			default; // 'three'
-				$numberOfBullets = ceil($numberOfImages / 3);
-				break;
-		}
-	?>
 	<?php if ($numberOfBullets > 0) : ?>
-		<div class="slider-block-controls">
+		<div class="slider-block-controls" data-number-of-pages="<?= $numberOfBullets ?>">
 			<noscript><p>← scroll →</p></noscript>
 			<nav aria-label="Produktbilder scrollen"><ol>
 				<?php for($index = 1; $index <= $numberOfBullets; $index++) : ?>
