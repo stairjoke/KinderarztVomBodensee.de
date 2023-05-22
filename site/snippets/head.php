@@ -48,15 +48,16 @@
 		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#084CB5" />
 		
 		<script>
-			window.onload = (event) => {
+			window.addEventListener("DOMContentLoaded", (event) => {
 				document.body.classList.remove('no-js');
 				document.body.classList.add('loaded');
-			}
-			window.onpageshow = (event) => {
+			});
+			
+			window.addEventListener("pageshow", (event) => {
 				if(document.getElementById('nav-toggle').checked) {
 					document.getElementById('nav-toggle').click();
 				}
-			}
+			});
 		</script>
 	</head>
 	<body class="no-js">
