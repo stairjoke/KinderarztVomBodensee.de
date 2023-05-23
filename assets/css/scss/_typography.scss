@@ -106,8 +106,8 @@ h2 {
 @mixin page-title() {
 	font-family: 'Univers75Black';
 	font-weight: 750;
-  font-size: 2rem;
-  line-height: auto;
+    font-size: 2rem;
+    line-height: normal;
 	color: var(--color-accent-2-text);
 
   @media (min-width: #{globals.$break-point-phablet}) {
@@ -133,13 +133,12 @@ h2 {
 h1 {
 	@include page-title();
   text-align: center;
-
   margin-bottom: var(--spacer-element);
 
 	footer &, .card & {
-    text-align: left;
-		@include section-headline();
-    margin-bottom: var(--spacer-absatz);
+      text-align: left;
+	  @include section-headline();
+      margin-bottom: var(--spacer-absatz);
 	}
 }
 
