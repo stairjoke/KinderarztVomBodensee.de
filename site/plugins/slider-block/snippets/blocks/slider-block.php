@@ -20,9 +20,34 @@
 
 <div class="slider-block" <?php echo("data-items-per-page=$numberOfImagesPerPage"); ?>>
 	<div role="marquee" class="slider-block-elements <?= $block->layout() ?>">
-		<?php foreach($block->images()->toFiles() as $image) : ?>
-		<?= $image ?>
-		<?php endforeach; ?>
+		<?php
+			// Get the elements for the slider block and set the element-on-page-index to zero
+			// The element-on-page-index counts the current element within the slider page
+			$elements = $block->images()->toFiles();
+			$currentElementOnPageIndex = 0;
+			
+			// Package images in DIVs to scroll-snap them according to their layout
+			// Iterate through all elements of the slider
+			foreach($elements as $element) {
+				
+				// If this is the first element on a slider-page open the page
+				if($currentElementOnPageIndex == 0){
+					echo("<div class=slider-page>");
+				}
+				
+				// If this is just another element on the slider-page echo the element and count up
+				if($currentElementOnPageIndex < $numberOfImagesPerPage){
+					echo($element);
+					$currentElementOnPageIndex++;
+				}
+				
+				// If this is the last element on the page, close the page
+				if($currentElementOnPageIndex == $numberOfImagesPerPage || $element === $elements->last()){
+					echo("</div>");
+					$currentElementOnPageIndex = 0;
+				}
+			}
+		?>
 	</div>
 	<?php if ($numberOfBullets > 0) : ?>
 		<div class="slider-block-controls" data-number-of-pages="<?= $numberOfBullets ?>">

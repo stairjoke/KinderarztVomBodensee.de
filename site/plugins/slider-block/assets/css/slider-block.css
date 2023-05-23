@@ -13,11 +13,19 @@
   display: flex;
   gap: var(--grid-gap);
 }
-.slider-block .slider-block-elements img {
-  display: block;
-  height: auto;
-  margin-bottom: 0.5rem;
+.slider-block .slider-block-elements .slider-page {
+  display: flex;
+  gap: var(--grid-gap);
+  width: 100%;
+  flex-basis: 100%;
+  flex-shrink: 0;
+  flex-grow: 0;
   scroll-snap-align: center;
+}
+.slider-block .slider-block-elements .slider-page img {
+  display: block;
+  align-self: center;
+  margin-bottom: 0.5rem;
   object-fit: contain;
   cursor: zoom-in;
 }

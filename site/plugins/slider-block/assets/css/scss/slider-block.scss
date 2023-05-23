@@ -17,15 +17,26 @@
     display: flex;
     gap: var(--grid-gap);
 
-    img {
-      display: block;
-      height: auto;
-      margin-bottom: .5rem; //shadow
+    .slider-page {
+      display: flex;
+      gap: var(--grid-gap);
+
+      width: 100%;
+      flex-basis: 100%;
+      flex-shrink: 0;
+      flex-grow: 0;
+
       scroll-snap-align: center;
 
-      object-fit: contain;
+      img {
+        display: block;
+        align-self: center;
+        margin-bottom: .5rem; //shadow
 
-      cursor: zoom-in;
+        object-fit: contain;
+
+        cursor: zoom-in;
+      }
     }
 
     &.two img {
