@@ -40,86 +40,146 @@ class sliderBlock {
   #slider; #pages; #imagesPaginated; #zoom; #imagesZoomed; #controlsPaginated; #controlsZoomed; #previousButton; #nextButton; #currentPage; #itemsPerPage;
 
     constructor(sliderNode) {
-        this.#slider = sliderNode;
+        this.#slider = sliderNode
+        this.setPages()
+        this.setImagesPaginated()
+        this.setZoom()
+        this.setImagesZoomed()
+        this.setControlsPaginated()
+        this.setControlsZoomed()
+        this.setPreviousButton()
+        this.setNextButton()
+        this.setItemsPerPage()
+
+        this.selfTest()
+    }
+
+    selfTest(){
+      this.getPages()
+      this.getImagesPaginated()
+      this.getZoom()
+      this.getImagesZoomed()
+      this.getControlsPaginated()
+      this.getControlsZoomed()
+      this.getPreviousButton()
+      this.getNextButton()
+      this.getCurrentPage()
+      this.getItemsPerPage()
+      this.setItemsPerPage()
+      this.setCurrentPage()
     }
 
     getPages(){
-      return this.#pages;
+      if(this.#pages === undefined) {
+        throw new Error('Private variable "pages" undefined')
+      }
+      return this.#pages
     }
-    #setPages(){}
+    setPages(slider = this.#slider){
+      return this.#pages = slider.querySelectorAll('.slider-page')
+    }
 
     getImagesPaginated(){
-      return this.#imagesPaginated;
+      if(this.#imagesPaginated === undefined) {
+        throw new Error('Private variable "imagesPaginated" undefined')
+      }
+      return this.#imagesPaginated
     }
-    #setImagesPaginated(){}
+    setImagesPaginated(slider = this.#slider){
+      return this.#imagesPaginated = slider.querySelectorAll('.slider-block-elements img')
+    }
 
     getZoom(){
-      return this.#zoom;
+      if(this.#zoom === undefined) {
+        throw new Error('Private variable "zoom" undefined')
+      }
+      return this.#zoom
     }
-    #setZoom(){}
+    setZoom(slider = this.#slider){
+      return this.#zoom = slider.querySelector('.slider-block-zoom')
+    }
 
     getImagesZoomed(){
-      return this.#imagesZoomed;
+      if(this.#imagesZoomed === undefined) {
+        throw new Error('Private variable "imagesZoomed" undefined')
+      }
+      return this.#imagesZoomed
     }
-    #setImagesZoomed(){}
+    setImagesZoomed(slider = this.#slider){
+      return this.#imagesZoomed = slider.querySelectorAll('.slider-block-zoom img')
+    }
 
     getControlsPaginated(){
+      if(this.#controlsPaginated === undefined) {
+        throw new Error('Private variable "controlsPaginated" undefined')
+      }
       return this.#controlsPaginated;
     }
-    #setControlsPaginated(){}
+    setControlsPaginated(slider = this.#slider){
+      return this.#controlsPaginated = slider.querySelector('.slider-block-controls .paginated')
+    }
 
     getControlsZoomed(){
-      return this.#controlsZoomed;
+      if(this.#controlsZoomed === undefined) {
+        throw new Error('Private variable "controlsZoomed" undefined')
+      }
+      return this.#controlsZoomed
     }
-    #setControlsZoomed(){}
+    setControlsZoomed(slider = this.#slider){
+      return this.#controlsZoomed = slider.querySelector('.slider-block-controls .singles')
+    }
 
     getPreviousButton(){
-      return this.#previousButton;
+      if(this.#previousButton === undefined) {
+        throw new Error('Private variable "previousButton" undefined')
+      }
+      return this.#previousButton
     }
-    #setPreviousButton(){}
+    setPreviousButton(slider = this.#slider){
+      return this.#previousButton = slider.querySelector('.slider-block-stepper-button-previous')
+    }
 
     getNextButton(){
-      return this.#nextButton;
+      if(this.#nextButton === undefined) {
+        throw new Error('Private variable "nextButton" undefined')
+      }
+      return this.#nextButton
     }
-    #setNextButton(){}
-
-    getCurrentPage(){
-      return this.#currentPage;
-    }
-    #setCurrentPage() {
-      // Old Code
-      // this.#currentPage = Math.floor(item/this.getItemsPerPage()); // Determine new page
-      // this.#pages.forEach((page) => { page.classList.remove('current') }) // remove the .current class form all li-elements in the nav
-      // this.#pages[this.#currentPage].classList.add('current'); // Add .current class to the current nav element
-      // this.updateScrollPosition();
+    setNextButton(slider = this.#slider){
+      return this.#nextButton = slider.querySelector('.slider-block-stepper-button-next')
     }
 
     getItemsPerPage() {
       if(this.#itemsPerPage > 0) {
-        return this.#itemsPerPage;
+        return this.#itemsPerPage
       }else{
-        throw new Error("Items per page of slider unknown. Check to see if the referenced '.slider-block'-node has a data-items-per-page-property with a number above zero!");
+        throw new Error("Items per page of slider unknown. Check to see if the referenced '.slider-block'-node has a data-items-per-page-property with a number above zero!")
       }
     }
-    #setItemsPerPage(){}
+    setItemsPerPage(slider = this.#slider){
+      return this.#itemsPerPage = slider.dataset.itemsPerPage;
+    }
+
+    getCurrentPage(){
+      if(this.#currentPage === undefined) {
+        return this.setCurrentPage();
+      }
+      return this.#currentPage
+    }
+    setCurrentPage(page = 0) {
+      this.#currentPage = page;
+    }
 
     // --- //
 
-    updateScrollPosition() {
-      // IF Singles
-
-      // IF paginated
-      let scrollTarget = this.#itemsPerPage * this.#currentPage;
-      this.#imagesPaginated[scrollTarget].scrollIntoView();
-    }
 }
 
 window.addEventListener("DOMContentLoaded", (event) => {
   document.querySelectorAll('.slider-block').forEach((slider) => {
     if(slider.querySelector('.slider-block-controls')) {
 
-      let sliderInstance = new sliderBlock(slider);
-      console.log(sliderInstance.getItemsPerPage());
+      let sliderInstance = new sliderBlock(slider)
+      //console.log(sliderInstance.getItemsPerPage())
 
     }
   });
