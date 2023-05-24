@@ -52,6 +52,9 @@ class sliderBlock {
         this.setItemsPerPage()
 
         this.selfTest()
+
+        this.getNextButton().addEventListener('click', this.nextButtonClicked.bind(this))
+        this.getPreviousButton().addEventListener('click', this.previousButtonClicked.bind(this))
     }
 
     selfTest(){
@@ -157,20 +160,44 @@ class sliderBlock {
       }
     }
     setItemsPerPage(slider = this.#slider){
-      return this.#itemsPerPage = slider.dataset.itemsPerPage;
+      return this.#itemsPerPage = slider.dataset.itemsPerPage
     }
 
     getCurrentPage(){
       if(this.#currentPage === undefined) {
-        return this.setCurrentPage();
+        return this.setCurrentPage()
       }
       return this.#currentPage
     }
     setCurrentPage(page = 0) {
-      this.#currentPage = page;
+      return this.#currentPage = page
     }
 
     // --- //
+
+    // Track user scrolling and update currentPage variable!
+
+    scrollToPage(page = 0){
+      let pages = this.getPages();
+      pages[page].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      this.setCurrentPage(page)
+    }
+
+    nextButtonClicked(event){
+      let page = this.getCurrentPage() + 1;
+      if(page >= this.getPages().length){
+        page = 0
+      }
+      this.scrollToPage(page)
+    }
+
+    previousButtonClicked(event) {
+      let page = this.getCurrentPage() - 1;
+      if(page < 0){
+        page = this.getPages().length - 1
+      }
+      this.scrollToPage(page)
+    }
 
 }
 
@@ -182,5 +209,5 @@ window.addEventListener("DOMContentLoaded", (event) => {
       //console.log(sliderInstance.getItemsPerPage())
 
     }
-  });
-});
+  })
+})
