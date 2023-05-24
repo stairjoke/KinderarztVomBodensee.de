@@ -33,7 +33,7 @@
     margin: var(--spacer-elemente-absatz) 0 calc(var(--spacer-elemente-absatz) - 0.5rem) 0;
   }
   .slider-block .slider-block-zoom img {
-    width: calc((100vw - 32px) / 6 * 5 - var(--grid-gap, 0) / 2);
+    width: calc((100vw - 2rem) / 6 * 5 - var(--grid-gap, 1rem) / 2);
   }
 }
 .slider-block .slider-block-zoom .show {
@@ -107,6 +107,7 @@
   list-style: none;
   word-spacing: 17px;
   text-align: center;
+  text-align-last: right;
   text-wrap: balance;
 }
 .slider-block .slider-block-controls ol li {

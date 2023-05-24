@@ -36,7 +36,8 @@
       margin: var(--spacer-elemente-absatz) 0 calc(var(--spacer-elemente-absatz) - .5rem) 0;
 
       img {
-        width: calc((((100vw - 32px) / 6) * 5) - (var(--grid-gap, 0)/2));
+        // Use 5 of six columns where the column gap is 1rem and the layout is centered with 1rem margin
+        width: calc((((100vw - 2rem) / 6) * 5) - (var(--grid-gap, 1rem)/2));
       }
     }
     .show {
@@ -125,6 +126,7 @@
       list-style: none;
       word-spacing: 17px;
       text-align: center;
+      text-align-last: right;
       text-wrap: balance;
 
       li {
