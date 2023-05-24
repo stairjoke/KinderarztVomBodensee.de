@@ -37,28 +37,62 @@
 */
 
 class sliderBlock {
-  #slider; #pages; #previous; #next; #elements; #currentPage; #itemsPerPage;
+  #slider; #pages; #imagesPaginated; #zoom; #imagesZoomed; #controlsPaginated; #controlsZoomed; #previousButton; #nextButton; #currentPage; #itemsPerPage;
 
     constructor(sliderNode) {
         this.#slider = sliderNode;
-        this.#pages = sliderNode.querySelectorAll('.slider-block-controls li');
-        this.#previous = sliderNode.querySelector('.slider-block-stepper-button-previous');
-        this.#next = sliderNode.querySelector('.slider-block-stepper-button-next');
-        this.#elements = sliderNode.querySelectorAll('.slider-block-elements > *');
-        this.#itemsPerPage = sliderNode.dataset.itemsPerPage;
-        this.#currentPage = 0;
-
-        // Start the slider at the beginning
-        this.setCurrentPage(0);
     }
 
-    /*
+    getPages(){
+      return this.#pages;
+    }
+    #setPages(){}
 
-     - attach click events to previous/next
-     - attach click events to nav > li
-     - listen for scroll events on .slider-block-elements
+    getImagesPaginated(){
+      return this.#imagesPaginated;
+    }
+    #setImagesPaginated(){}
 
-    */
+    getZoom(){
+      return this.#zoom;
+    }
+    #setZoom(){}
+
+    getImagesZoomed(){
+      return this.#imagesZoomed;
+    }
+    #setImagesZoomed(){}
+
+    getControlsPaginated(){
+      return this.#controlsPaginated;
+    }
+    #setControlsPaginated(){}
+
+    getControlsZoomed(){
+      return this.#controlsZoomed;
+    }
+    #setControlsZoomed(){}
+
+    getPreviousButton(){
+      return this.#previousButton;
+    }
+    #setPreviousButton(){}
+
+    getNextButton(){
+      return this.#nextButton;
+    }
+    #setNextButton(){}
+
+    getCurrentPage(){
+      return this.#currentPage;
+    }
+    #setCurrentPage() {
+      // Old Code
+      // this.#currentPage = Math.floor(item/this.getItemsPerPage()); // Determine new page
+      // this.#pages.forEach((page) => { page.classList.remove('current') }) // remove the .current class form all li-elements in the nav
+      // this.#pages[this.#currentPage].classList.add('current'); // Add .current class to the current nav element
+      // this.updateScrollPosition();
+    }
 
     getItemsPerPage() {
       if(this.#itemsPerPage > 0) {
@@ -67,31 +101,16 @@ class sliderBlock {
         throw new Error("Items per page of slider unknown. Check to see if the referenced '.slider-block'-node has a data-items-per-page-property with a number above zero!");
       }
     }
+    #setItemsPerPage(){}
 
-    setCurrentPage(item) {
-      let fromPage = this.#currentPage; // Store current page for later
-      this.#currentPage = Math.floor(item/this.getItemsPerPage()); // Determine new page
-      this.updateScrollPosition(fromPage);
+    // --- //
 
-      this.#pages.forEach((page) => { page.classList.remove('current') }) // remove the .current class form all li-elements in the nav
-      this.#pages[this.#currentPage].classList.add('current'); // Add .current class to the current nav element
-    }
+    updateScrollPosition() {
+      // IF Singles
 
-    updateScrollPosition(fromPage) {
-      let scrollTarget = 0;
-
-      // Scrolling in layout direction
-      if(fromPage < this.#currentPage) {
-        scrollTarget = this.#itemsPerPage * this.#currentPage;
-      }
-
-      // Scrolling against layout direction
-      if(fromPage > this.#currentPage) {
-        scrollTarget = (this.#itemsPerPage * this.#currentPage) - (this.#itemsPerPage - 1);
-      }
-
-      // Scroll target element into view
-      this.#elements[scrollTarget].scrollIntoView();
+      // IF paginated
+      let scrollTarget = this.#itemsPerPage * this.#currentPage;
+      this.#imagesPaginated[scrollTarget].scrollIntoView();
     }
 }
 
