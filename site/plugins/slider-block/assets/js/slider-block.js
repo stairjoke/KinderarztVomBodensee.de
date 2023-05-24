@@ -2,31 +2,37 @@
 
 /*
 
-  Stories:
-  # Previous/Next buttons
+  # DOM Nodes
+  div.slider-block:
+    div.slider-block-elements.two/three
+      - div.slider-page
+        - images
+    div.slider-block-zoom
+      - images
+    div.slider-block-controls
+      nav
+        ol.paginated
+        ol.singles
+    img.slider-block-stepper-button-previous
+    img.slider-block-stepper-button-next
+
+  # Stories:
+  ## Previous/Next buttons
   On any page but the last: User clicks on next button, page scrolls to next page.
   On last page: Next button hidden.
 
   On any page but the first: User clicks on previous button, page scrolls to the previous page.
   On the first page: Previous button hidden.
 
+  ## Previous/Next buttons
+
   # Nav-Buttons in the bottom
   User clicks on a nav button, the container scrolls to that page.
 
-  ---
-
+  #Notes
   - Number of pages: Done in PHP, available in HTML markup: data-number-of-pages.
-  - CSS is set up to automatically snap scroll images in .slider-block-elements
+  - CSS is set up to automatically snap scroll pages/images in .slider-block-elements and .slider-block-zoom
   - CSS is set up to enforce smooth scrolling
-
-  ---
-
-  # Previous/Next buttons
-
-  # Nav-Buttons in the bottom
-  IF page number is greater than current: scroll to last image on page
-  IF page number is smaller than current: scroll to first image on page
-  IF page number is current: scroll to first, then lasst item on page
 
 */
 
@@ -54,16 +60,6 @@ class sliderBlock {
 
     */
 
-    /*#isDOMElement(node) {
-      // If the browser knows HTMLElement, test if the node is an HTMLElement
-      // If the browser does not know it, test if
-      // - node equates to and is of type object
-      // - node is not null
-      // - node is of Type 1 (HTMLElement)
-      // - node name is a string
-      return(typeof HTMLElement === "object" ? node instanceof HTMLElement : node && typeof node === "object" && node !== null && node.nodeType === 1 && typeof node.nodeName === "string")
-    }*/
-
     getItemsPerPage() {
       if(this.#itemsPerPage > 0) {
         return this.#itemsPerPage;
@@ -73,7 +69,7 @@ class sliderBlock {
     }
 
     setCurrentPage(item) {
-      var fromPage = this.#currentPage; // Store current page for later
+      let fromPage = this.#currentPage; // Store current page for later
       this.#currentPage = Math.floor(item/this.getItemsPerPage()); // Determine new page
       this.updateScrollPosition(fromPage);
 
@@ -82,14 +78,16 @@ class sliderBlock {
     }
 
     updateScrollPosition(fromPage) {
+      let scrollTarget = 0;
+
       // Scrolling in layout direction
       if(fromPage < this.#currentPage) {
-        var scrollTarget = this.#itemsPerPage * this.#currentPage;
+        scrollTarget = this.#itemsPerPage * this.#currentPage;
       }
 
       // Scrolling against layout direction
       if(fromPage > this.#currentPage) {
-        var scrollTarget = (this.#itemsPerPage * this.#currentPage) - (this.#itemsPerPage - 1);
+        scrollTarget = (this.#itemsPerPage * this.#currentPage) - (this.#itemsPerPage - 1);
       }
 
       // Scroll target element into view
@@ -101,7 +99,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   document.querySelectorAll('.slider-block').forEach((slider) => {
     if(slider.querySelector('.slider-block-controls')) {
 
-      var sliderInstance = new sliderBlock(slider);
+      let sliderInstance = new sliderBlock(slider);
       console.log(sliderInstance.getItemsPerPage());
 
     }
