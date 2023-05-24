@@ -4,14 +4,56 @@
   margin: var(--spacer-element) 0;
   position: relative;
 }
+.slider-block img {
+  display: block;
+  align-self: center;
+  object-fit: contain;
+  cursor: zoom-in;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+.slider-block .slider-block-zoom {
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: var(--grid-gap, 10px);
+  padding-right: 0.5rem;
+  display: none;
+}
+.slider-block .slider-block-zoom img {
+  scroll-snap-align: center;
+}
+@media (max-width: 430px) {
+  .slider-block .slider-block-zoom {
+    display: flex;
+    margin: var(--spacer-elemente-absatz) 0 calc(var(--spacer-elemente-absatz) - 0.5rem) 0;
+  }
+  .slider-block .slider-block-zoom img {
+    width: calc((100vw - 32px) / 6 * 5 - var(--grid-gap, 0) / 2);
+  }
+}
+.slider-block .slider-block-zoom .show {
+  display: flex;
+}
 .slider-block .slider-block-elements {
   overflow: scroll;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   margin: var(--spacer-elemente-absatz) 0 calc(var(--spacer-elemente-absatz) - 0.5rem) 0;
   padding-right: 0.5rem;
-  display: flex;
-  gap: var(--grid-gap);
+  display: none;
+}
+@media (min-width: 431px) {
+  .slider-block .slider-block-elements {
+    display: flex;
+    gap: var(--grid-gap, 10px);
+  }
+  .slider-block .slider-block-elements.two img {
+    width: calc(50% - 0.25rem - var(--grid-gap) / 2);
+  }
+  .slider-block .slider-block-elements.three img {
+    width: calc(33.333% - 0.16667rem - var(--grid-gap) / 1.5);
+  }
 }
 .slider-block .slider-block-elements .slider-page {
   display: flex;
@@ -23,17 +65,7 @@
   scroll-snap-align: center;
 }
 .slider-block .slider-block-elements .slider-page img {
-  display: block;
-  align-self: center;
-  margin-bottom: 0.5rem;
-  object-fit: contain;
   cursor: zoom-in;
-}
-.slider-block .slider-block-elements.two img {
-  width: calc(50% - 0.25rem - var(--grid-gap) / 2);
-}
-.slider-block .slider-block-elements.three img {
-  width: calc(33.333% - 0.16667rem - var(--grid-gap) / 1.5);
 }
 .slider-block .slider-block-controls {
   margin-bottom: var(--spacer-viertel);
