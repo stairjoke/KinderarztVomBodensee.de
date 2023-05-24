@@ -10,7 +10,10 @@
     display: block;
     align-self: center;
     object-fit: contain;
-    cursor: zoom-in;
+    @media (min-width: 431px) {
+      // Mobile already shows full screen by default
+      cursor: zoom-in;
+    }
     height: auto;
     margin-bottom: .5rem; //shadow
   }
@@ -146,6 +149,11 @@
 
   .slider-block-stepper-button {
     display: block;
+    @media (max-width: 430px) {
+      // No stepper buttons on mobile
+      display: none;
+    }
+
     box-shadow: 0 0 .5rem rgba(4, 35, 83, 0.4);
 
     border-radius: .5rem;

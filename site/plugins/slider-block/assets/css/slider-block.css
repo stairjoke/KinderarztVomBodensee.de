@@ -8,9 +8,13 @@
   display: block;
   align-self: center;
   object-fit: contain;
-  cursor: zoom-in;
   height: auto;
   margin-bottom: 0.5rem;
+}
+@media (min-width: 431px) {
+  .slider-block img {
+    cursor: zoom-in;
+  }
 }
 .slider-block .slider-block-zoom {
   overflow: scroll;
@@ -131,6 +135,11 @@
   transition-timing-function: ease-in;
   transition-duration: 120ms;
   cursor: pointer;
+}
+@media (max-width: 430px) {
+  .slider-block .slider-block-stepper-button {
+    display: none;
+  }
 }
 .slider-block:hover .slider-block-stepper-button {
   opacity: 1;
