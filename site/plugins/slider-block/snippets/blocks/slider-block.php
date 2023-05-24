@@ -60,11 +60,18 @@
 	<?php if ($numberOfBullets > 0) : ?>
 		<div class="slider-block-controls" data-number-of-pages="<?= $numberOfBullets ?>">
 			<noscript><p>← scroll →</p></noscript>
-			<nav aria-label="Produktbilder scrollen"><ol>
+			<nav aria-label="Produktbilder scrollen">
+				<ol class="paginated">
 				<?php for($index = 1; $index <= $numberOfBullets; $index++) : ?>
-					<li role="menuitemradio">Seite <?= $index ?></li>
+					<li role="menuitemradio">Seite <?= $index ?> von <?= $numberOfBullets ?></li>
 				<?php endfor; ?>
-			</ol></nav>
+				</ol>
+				<ol class="singles">
+					<?php for($index = 0; $index <= $numberOfImages; $index++) : ?>
+						<li role="menuitemradio">Bild <?= $index ?> von <?= $numberOfImages ?></li>
+					<?php endfor; ?>
+				</ol>
+			</nav>
 			<img class="slider-block-stepper-button slider-block-stepper-button-previous" role="button" aria-hidden="true" src="/media/plugins/wenzels-design/slider-block/img/button.svg" />
 			<img class="slider-block-stepper-button slider-block-stepper-button-next" role="button" aria-hidden="true" src="/media/plugins/wenzels-design/slider-block/img/button.svg" />
 		</div>
