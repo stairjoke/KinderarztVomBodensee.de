@@ -37,7 +37,7 @@
       }
     }
     .show {
-      display: flex;
+      display: flex !important;
     }
 
 
@@ -93,12 +93,36 @@
     }
     margin-bottom: var(--spacer-viertel);
 
+    ol.paginated {
+      display: none;
+    }
+    ol.singles {
+      display: block;
+
+      &.show {
+        display: block !important;
+      }
+    }
+
+    @media (min-width: 431px) {
+      ol.paginated {
+        display: block;
+        &.hide {
+          display: none;
+        }
+      }
+      ol.singles {
+        display: none;
+      }
+    }
+
     ol {
       margin: 0;
       padding: 0;
       list-style: none;
-      word-spacing: 1rem;
+      word-spacing: 17px;
       text-align: center;
+      text-wrap: balance;
 
       li {
         display: inline-block;
