@@ -49,6 +49,14 @@
 			}
 		?>
 	</div>
+	<div role="marquee" class="slider-block-zoom">
+		<?php
+		// Show all images again, but without the pagination. Used for lightbox and by default on mobile
+			foreach($elements as $element) {
+				echo($element);
+			}
+		?>
+	</div>
 	<?php if ($numberOfBullets > 0) : ?>
 		<div class="slider-block-controls" data-number-of-pages="<?= $numberOfBullets ?>">
 			<noscript><p>← scroll →</p></noscript>
