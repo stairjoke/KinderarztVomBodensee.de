@@ -73,6 +73,7 @@ class sliderBlock {
       this.getItemsPerPage()
       this.setItemsPerPage()
       this.setCurrentPage()
+      this.setCurrentImageZoomed()
     }
 
     getPages(){
