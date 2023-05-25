@@ -67,7 +67,7 @@
 				<?php endfor; ?>
 				</ol>
 				<ol class="singles">
-					<?php for($index = 0; $index <= $numberOfImages; $index++) : ?>
+					<?php for($index = 1; $index <= $numberOfImages; $index++) : ?>
 						<li role="menuitemradio">Bild <?= $index ?> von <?= $numberOfImages ?></li>
 					<?php endfor; ?>
 				</ol>
