@@ -55,6 +55,9 @@ class sliderBlock {
 
         this.getNextButton().addEventListener('click', this.nextButtonClicked.bind(this))
         this.getPreviousButton().addEventListener('click', this.previousButtonClicked.bind(this))
+        this.#slider.querySelectorAll('.slider-block-elements, slider-block-zoom').forEach((node) => {
+          node.addEventListener('scroll', this.monitorScrolling.bind(this))
+        });
     }
 
     selfTest(){
@@ -175,7 +178,34 @@ class sliderBlock {
 
     // --- //
 
-    // Track user scrolling and update currentPage variable!
+    isScrolledIntoView(parentNode, childNode) {
+      // This method assumed a left to right or right to left scroll. It will not work for up-down scrollers!
+
+      let parentRect = parentNode.getBoundingClientRect();
+      let childRect = childNode.getBoundingClientRect();
+
+      return (
+        childRect.left >= parentRect.left &&
+        childRect.right <= parentRect.right
+      );
+    }
+
+    scrolled(){
+      this.getPages().forEach((page, index) => {
+        if(this.isScrolledIntoView(this.#slider, page)) {
+          console.log(index);
+          this.setCurrentPage(index)
+        }
+      })
+    }
+
+    #scrollTimeoutID = false;
+    monitorScrolling(){
+      if(this.#scrollTimeoutID){
+        window.clearTimeout(this.#scrollTimeoutID)
+      }
+      this.#scrollTimeoutID = window.setTimeout(this.scrolled.bind(this), 80)
+    }
 
     scrollToPage(page = 0){
       let pages = this.getPages();
@@ -198,7 +228,6 @@ class sliderBlock {
       }
       this.scrollToPage(page)
     }
-
 }
 
 window.addEventListener("DOMContentLoaded", (event) => {
