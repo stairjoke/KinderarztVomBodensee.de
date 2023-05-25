@@ -37,7 +37,7 @@
 */
 
 class sliderBlock {
-  #slider; #pages; #imagesPaginated; #zoom; #imagesZoomed; #controlsPaginated; #controlsZoomed; #previousButton; #nextButton; #currentPage; #itemsPerPage;
+  #slider; #pages; #imagesPaginated; #zoom; #imagesZoomed; #controlsPaginated; #controlsZoomed; #previousButton; #nextButton; #currentPage; #itemsPerPage; #currentImageZoomed;
 
     constructor(sliderNode) {
         this.#slider = sliderNode
@@ -55,7 +55,7 @@ class sliderBlock {
 
         this.getNextButton().addEventListener('click', this.nextButtonClicked.bind(this))
         this.getPreviousButton().addEventListener('click', this.previousButtonClicked.bind(this))
-        this.#slider.querySelectorAll('.slider-block-elements, slider-block-zoom').forEach((node) => {
+        this.#slider.querySelectorAll('.slider-block-elements, .slider-block-zoom').forEach((node) => {
           node.addEventListener('scroll', this.monitorScrolling.bind(this))
         });
     }
@@ -173,7 +173,25 @@ class sliderBlock {
       return this.#currentPage
     }
     setCurrentPage(page = 0) {
-      return this.#currentPage = page
+      this.#currentPage = page
+      this.getControlsPaginated().querySelectorAll('li').forEach((control, index) => {
+        (this.#currentPage != index) ? control.classList.remove('current') : control.classList.add('current')
+      });
+      return this.#currentPage
+    }
+
+    getCurrentImageZoomed(){
+      if(this.#currentImageZoomed === undefined) {
+        return this.setCurrentImageZoomed()
+      }
+      return this.#currentImageZoomed
+    }
+    setCurrentImageZoomed(image = 0){
+      this.#currentImageZoomed = image
+      this.getControlsZoomed().querySelectorAll('li').forEach((control, index) => {
+        (this.#currentImageZoomed != index) ? control.classList.remove('current') : control.classList.add('current')
+      });
+      return this.#currentImageZoomed
     }
 
     // --- //
@@ -193,10 +211,15 @@ class sliderBlock {
     scrolled(){
       this.getPages().forEach((page, index) => {
         if(this.isScrolledIntoView(this.#slider, page)) {
-          console.log(index);
           this.setCurrentPage(index)
         }
-      })
+      });
+
+      this.getImagesZoomed().forEach((image, index) => {
+        if(this.isScrolledIntoView(this.#slider, image)) {
+          this.setCurrentImageZoomed(index)
+        }
+      });
     }
 
     #scrollTimeoutID = false;
