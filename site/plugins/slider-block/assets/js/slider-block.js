@@ -58,6 +58,7 @@ class sliderBlock {
         this.#slider.querySelectorAll('.slider-block-elements, .slider-block-zoom').forEach((node) => {
           node.addEventListener('scroll', this.monitorScrolling.bind(this))
         });
+        window.addEventListener('load', this.scrollToStart.bind(this))
     }
 
     selfTest(){
@@ -232,13 +233,17 @@ class sliderBlock {
     }
 
     scrollToPage(page = 0){
-      let pages = this.getPages();
-      pages[page].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      this.getPages()[page].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
       this.setCurrentPage(page)
     }
 
+    scrollToStart(){
+      this.scrollToPage()
+      this.getImagesZoomed()[0].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+    }
+
     nextButtonClicked(event){
-      let page = this.getCurrentPage() + 1;
+      let page = this.getCurrentPage() + 1
       if(page >= this.getPages().length){
         page = 0
       }
@@ -246,7 +251,7 @@ class sliderBlock {
     }
 
     previousButtonClicked(event) {
-      let page = this.getCurrentPage() - 1;
+      let page = this.getCurrentPage() - 1
       if(page < 0){
         page = this.getPages().length - 1
       }
@@ -257,10 +262,7 @@ class sliderBlock {
 window.addEventListener("DOMContentLoaded", (event) => {
   document.querySelectorAll('.slider-block').forEach((slider) => {
     if(slider.querySelector('.slider-block-controls')) {
-
-      let sliderInstance = new sliderBlock(slider)
-      //console.log(sliderInstance.getItemsPerPage())
-
+      new sliderBlock(slider)
     }
   })
 })
