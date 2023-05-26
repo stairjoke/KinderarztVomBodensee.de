@@ -1,0 +1,25 @@
+name: Produktdetails Tabellenzeile
+icon: dots
+tabs:
+  content:
+    fields:
+      cell1:
+        type: text
+        width: 1/4
+        label: Spalte 1
+        counter: false
+      cell2:
+        type: text
+        width: 1/4
+        label: Spalte 2
+        counter: false
+      cell3:
+        type: text
+        width: 1/4
+        label: Spalte 3
+        counter: false
+      cell4:
+        type: text
+        width: 1/4
+        label: Spalte 4
+        counter: false
