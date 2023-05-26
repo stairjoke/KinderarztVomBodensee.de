@@ -2,6 +2,7 @@
   --color-CI: #084CB5;
   --color-CI-hover: #0a62e8;
   --color-accent-1: #FFE588;
+  --color-accent-1-05: rgba(255, 229, 136, 0.5);
   --color-accent-2: #FFAC46;
   --color-page: #FFFBF0;
   --color-secondary-elements-and-links: #4F4F4F;
@@ -478,6 +479,10 @@ pre {
 pre code {
   color: white;
   font-weight: bold;
+}
+
+table.productDetails thead {
+  background: var(--color-accent-1-05);
 }
 
 body {
