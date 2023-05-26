@@ -3,30 +3,42 @@ icon: table
 tabs:
   content:
     fields:
+
       cell1:
         type: text
         width: 1/4
         label: Spalte 1
         default: Art
         counter: false
+
       cell2:
         type: text
         width: 1/4
         label: Spalte 2
         default: Umfang
         counter: false
+
       cell3:
         type: text
         width: 1/4
         label: Spalte 3
         default: UVP
         counter: false
+
       cell4:
         type: text
         width: 1/4
         label: Spalte 4
         default: Erhältlich
         counter: false
+
+      cell1options:
+        type: checkboxes
+        width: 1/4
+        label: Spalte 1 Optionen
+        options:
+          wide: Extrabreit
+
       rows:
         type: blocks
         fieldsets:
