@@ -3,6 +3,16 @@
 ?>
 
 <table class="productDetails">
+	<colgroup>
+		<col class="<?php
+			foreach($block->cell1options()->split() as $option){
+				echo("$option ");
+			}
+		?>" />
+		<col />
+		<col />
+		<col />
+	</colgroup>
 	<thead>
 		<tr>
 			<th scope="col"><?= $block->cell1()->kirbytextinline() ?></th>

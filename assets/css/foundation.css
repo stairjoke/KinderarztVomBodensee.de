@@ -481,8 +481,63 @@ pre code {
   font-weight: bold;
 }
 
+table.productDetails {
+  margin: var(--spacer-elemente-absatz) 0;
+  border-spacing: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+table.productDetails colgroup col:first-child {
+  width: 25%;
+}
+table.productDetails colgroup col:first-child.wide {
+  width: 37.5%;
+}
+table.productDetails colgroup col {
+  width: 12.5%;
+}
+table.productDetails colgroup col:last-child {
+  width: unset;
+}
+table.productDetails th, table.productDetails td {
+  padding: 0.25rem 0.5rem;
+}
 table.productDetails thead {
   background: var(--color-accent-1-05);
+}
+table.productDetails thead th {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375em;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #f0f);
+  border-right: solid 1px var(--color-text);
+  text-align: center;
+}
+@media (min-width: 694px) {
+  table.productDetails thead th {
+    line-height: 1.5em;
+  }
+}
+table.productDetails thead th:first-child {
+  text-align: left;
+}
+table.productDetails thead th:last-child {
+  border-right: none;
+  text-align: left;
+}
+table.productDetails tbody td {
+  border-right: solid 1px var(--color-text);
+  border-top: solid 1px var(--color-text);
+  text-align: center;
+}
+table.productDetails tbody td:first-child {
+  text-align: left;
+}
+table.productDetails tbody td:last-child {
+  border-right: none;
+  text-align: left;
 }
 
 body {

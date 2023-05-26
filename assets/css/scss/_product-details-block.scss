@@ -1,7 +1,70 @@
 // Product Details table Block styles — Der Kinderarzt vom Bodensee
 
+@use 'typography';
+
 table.productDetails {
+  margin: var(--spacer-elemente-absatz) 0;
+
+  border-spacing: 0;
+  width: 100%;
+  table-layout: fixed;
+
+  colgroup {
+    col:first-child {
+      width: 25%;
+
+      &.wide {
+        width: 37.5%;
+      }
+    }
+
+    col {
+      width: 12.5%;
+    }
+
+    col:last-child {
+      width: unset;
+    }
+  }
+
+  th, td {
+    padding: .25rem .5rem;
+  }
+
   thead {
     background: var(--color-accent-1-05);
+    th {
+      @include typography.body-text();
+
+      border-right: solid 1px var(--color-text);
+
+      text-align: center;
+
+      &:first-child {
+        text-align: left;
+      }
+
+      &:last-child {
+        border-right: none;
+        text-align: left;
+      }
+    }
+  }
+  tbody {
+    td {
+      border-right: solid 1px var(--color-text);
+      border-top: solid 1px var(--color-text);
+
+      text-align: center;
+
+      &:first-child {
+        text-align: left;
+      }
+
+      &:last-child {
+        border-right: none;
+        text-align: left;
+      }
+    }
   }
 }
