@@ -15,7 +15,7 @@ return [
 				'label' => 'Text',
 				'type' => 'group',
 				'fieldsets' => [
-					'text', 'heading', 'list', 'picture-list-block'
+					'text', 'heading', 'list', 'picture-list-block', 'product-details-block'
 				]
 			],
 			'media' => [
