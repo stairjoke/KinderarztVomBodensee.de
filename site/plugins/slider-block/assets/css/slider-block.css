@@ -11,11 +11,6 @@
   height: auto;
   margin-bottom: 0.5rem;
 }
-@media (min-width: 431px) {
-  .slider-block img {
-    cursor: zoom-in;
-  }
-}
 .slider-block .slider-block-zoom {
   overflow: scroll;
   scroll-snap-type: x mandatory;
@@ -67,9 +62,6 @@
   flex-shrink: 0;
   flex-grow: 0;
   scroll-snap-align: center;
-}
-.slider-block .slider-block-elements .slider-page img {
-  cursor: zoom-in;
 }
 .slider-block .slider-block-controls {
   margin-bottom: var(--spacer-viertel);

@@ -12,7 +12,6 @@
     object-fit: contain;
     @media (min-width: 431px) {
       // Mobile already shows full screen by default
-      cursor: zoom-in;
     }
     height: auto;
     margin-bottom: .5rem; //shadow
@@ -71,10 +70,6 @@
     }
 
     .slider-page {
-      img {
-        cursor: zoom-in;
-      }
-
       display: flex;
       gap: var(--grid-gap);
       width: 100%;
