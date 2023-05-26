@@ -15,6 +15,39 @@
   --color-overlay-alt: rgba(0, 0, 0, 0.8);
 }
 
+.tablet {
+  display: none;
+}
+
+.desktop {
+  display: none;
+}
+
+@media (min-width: 694px) {
+  .mobile {
+    display: none;
+  }
+  .tablet {
+    display: unset;
+  }
+  table.tablet {
+    display: table;
+  }
+}
+@media (min-width: 1024px) {
+  .mobile {
+    display: none;
+  }
+  .tablet {
+    display: none;
+  }
+  .desktop {
+    display: unset;
+  }
+  table.desktop {
+    display: table;
+  }
+}
 main img, main video, .media {
   --shadow-color: var(--color-accent-1);
   box-shadow: 0.5rem 0.5rem 0 0 var(--shadow-color);

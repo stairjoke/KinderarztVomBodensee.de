@@ -53,6 +53,40 @@ $break-point-tablet: 694px; // Wide Column on landscape iPad Mini when in multit
 $break-point-tablet-: 693px;
 $break-point-phablet: 431px; // Wider than the largest iPhone is tall
 
+.tablet {
+  display: none;
+}
+.desktop {
+  display: none;
+}
+
+@media (min-width: #{$break-point-tablet}) {
+  .mobile {
+    display: none;
+  }
+  .tablet {
+    display: unset;
+  }
+  table.tablet {
+    display: table;
+  }
+}
+
+@media (min-width: #{$break-point-desktop}){
+  .mobile {
+    display: none;
+  }
+  .tablet {
+    display: none;
+  }
+  .desktop {
+    display: unset;
+  }
+  table.desktop {
+    display: table;
+  }
+}
+
 @mixin media-L() {
   @include shadow-L();
   border-radius: var(--border-radius-L);
