@@ -23,7 +23,10 @@
 		]) ?>
 		
 		<?=
-			js('/media/plugins/wenzels-design/slider-block/js/slider-block.js');
+			js([
+				'/media/plugins/wenzels-design/slider-block/js/slider-block.js',
+				'/assets/js/product-details-block.js'
+			]);
 		?>
 		
 		<!--

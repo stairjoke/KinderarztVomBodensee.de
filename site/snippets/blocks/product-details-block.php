@@ -2,7 +2,7 @@
 	// Product Details table Block — Der Kinderarzt vom Bodensee
 ?>
 
-<table class="productDetails tablet desktop">
+<table class="productDetails tablet desktop" data-id="<?= $block->id() ?>">
 	<colgroup>
 		<col class="<?php
 			foreach($block->cell1options()->split() as $option){
@@ -26,6 +26,4 @@
 	</tbody>
 </table>
 
-<div class="mobile">
-	<?= $block->rows()->toBlocks() ?>
-</div>
+<div class="mobile" data-id="<?= $block->id() ?>">ℹ️ Um die Produktdetails auf besonders kleinen Geräten darzustellen, aktivieren Sie bitte JavaScript.</div>
