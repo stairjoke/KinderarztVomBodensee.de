@@ -8,14 +8,14 @@ return [
 				'label' => 'Layouts',
 				'type' => 'group',
 				'fieldsets' => [
-					'article-with-sidecar-block'
+					'article-with-sidecar-block', 'two-columns-block'
 				]
 			],
 			'text' => [
 				'label' => 'Text',
 				'type' => 'group',
 				'fieldsets' => [
-					'text', 'heading', 'list', 'picture-list-block', 'product-details-block'
+					'text', 'textarea', 'heading', 'list', 'picture-list-block', 'product-details-block'
 				]
 			],
 			'media' => [
