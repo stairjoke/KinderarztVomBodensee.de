@@ -1,0 +1,37 @@
+name: Zwei Spalten Layout
+icon: grid
+tabs:
+  content:
+    fields:
+      leftColumn:
+        label: Linke Spalte
+        help: Die Linke Spalte ist unten im mobilem Layout.
+        width: 1/2
+        type: writer
+
+      rightColumn:
+        label: Rechte Spalte
+        help: Die rechte Spalte ist oben im mobilen Layout
+        width: 1/2
+        type: blocks
+        fieldsets:
+          - text:
+            label: Text
+            type: group
+            fieldsets:
+              - text
+              - heading
+              - list
+              - picture-list-block
+          - media:
+            label: Medien
+            type: group
+            fieldsets:
+              - image
+              - self-hosted-video-block
+          - code:
+            label: Code
+            type: group
+            fieldsets:
+              - markdown
+              - code

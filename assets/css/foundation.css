@@ -227,7 +227,7 @@ div.header-layout {
   background: var(--color-page);
   margin-left: max(var(--grid-margin) - 5.7%, 0);
   margin-right: max(var(--grid-margin) - (22px - 0.5rem), 0);
-  max-width: calc(1280px - (2 * var(--grid-margin)));
+  max-width: calc(1280px - 2 * var(--grid-margin));
   margin-bottom: var(--spacer-abschnitt);
 }
 @media (min-width: 1024px) {
@@ -573,6 +573,37 @@ table.productDetails tbody td:last-child {
   text-align: left;
 }
 
+.two-columns-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-items: stretch;
+}
+@media (min-width: 431px) {
+  .two-columns-block {
+    gap: 2rem;
+    flex-direction: row;
+  }
+}
+.two-columns-block div {
+  flex-basis: 100%;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+@media (min-width: 431px) {
+  .two-columns-block div {
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 430px) {
+  .two-columns-block div:first-child {
+    order: 2;
+  }
+  .two-columns-block div:last-child {
+    order: 1;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -622,8 +653,8 @@ body {
 }
 
 body > main, .contain {
-  margin-left: max(var(--grid-margin), 50vw - (1280px - (2 * var(--grid-margin))) / 3);
-  margin-right: max(var(--grid-margin), 50vw - (1280px - (2 * var(--grid-margin))) / 3);
+  margin-left: max(var(--grid-margin), 50vw - (1280px - 2 * var(--grid-margin)) / 3);
+  margin-right: max(var(--grid-margin), 50vw - (1280px - 2 * var(--grid-margin)) / 3);
   margin-top: var(--spacer-abschnitt);
   margin-bottom: var(--spacer-abschnitt);
 }
@@ -631,7 +662,7 @@ body > main, .contain {
 .containWide, main.wide {
   margin-left: var(--grid-margin-adaptive);
   margin-right: var(--grid-margin-adaptive);
-  max-width: calc(1280px - (2 * var(--grid-margin)));
+  max-width: calc(1280px - 2 * var(--grid-margin));
 }
 
 #overlay-dimmer {
