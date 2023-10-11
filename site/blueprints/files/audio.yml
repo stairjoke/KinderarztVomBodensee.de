@@ -1,0 +1,18 @@
+title: Audiodatei
+
+accept: audio/*
+
+fields:
+  template:
+    type: select
+    options:
+      - default
+      - audio
+  alt:
+    label: Alternativtext
+    type: text
+  caption:
+    label: Inhaltsbeschreibung
+    type: textarea
+    buttons: false
+    size: medium

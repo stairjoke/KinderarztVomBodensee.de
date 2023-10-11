@@ -28,6 +28,7 @@ tabs:
             type: group
             fieldsets:
               - image
+              - audio-sample
               - self-hosted-video-block
           - code:
             label: Code

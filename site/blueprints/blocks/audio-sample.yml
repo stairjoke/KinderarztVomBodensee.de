@@ -1,0 +1,24 @@
+name: Hörprobe
+icon: audio
+tabs:
+  content:
+    fields:
+      info:
+        label: Zweck einer Hörprobe
+        type: info
+        text : |
+          Hörproben sollten kurze Audiodateien sein, für die keine Untertitel benötigt werden. Beispielsweise Hörbuchausschnitte. Audiodateien für die Untertitel sinnvoll sind, sollten niemals als Hörprobe eingepflegt werden, sondern als Audiodatei plus Untertiteldatei.
+      label:
+        label: Label
+        width: 2/3
+        type: text
+        default: Hörprobe
+      samples:
+        label: Adui-Dateien
+        help: Vorzugsweise **MP3,** da diese Dateien klein sind. Hinterlegt werden können auch AIF, AIFF, M4A und WAV, wobei die Kompatibilität für AIF und AIFF nur auf Apple Geräten gewährleistet ist.
+        width: 1/3
+        type: files
+        uploads: audio
+        min: 1
+        max: 5
+        layout: list
