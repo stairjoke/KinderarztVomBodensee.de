@@ -11,7 +11,7 @@ columns:
             type: textarea
             size: small
             help: Beschreibungstext des Videos, gleich wie auf YouTube. Wird in Suchergebnissen auf dieser Webseite, Google, Bing, etc. angezeigt.
-          url:
+          videoUrl:
             type: text
             help: URL des Videos auf YouTube (Kurz- oder Langform).
           worte:
