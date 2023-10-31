@@ -9,6 +9,7 @@
 
 @use 'globals';
 @use 'typography';
+@use 'interactions';
 @use 'header';
 @use 'footer';
 @use 'media';
@@ -24,6 +25,7 @@ body {
 
   --grid-margin: 1rem;
   --grid-gap: 1rem;
+  --border-radius-S: .25rem;
   --border-radius-M: .5rem;
   --border-radius-L: .5rem;
 

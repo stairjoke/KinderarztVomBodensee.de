@@ -1,0 +1,54 @@
+// Videos Page Specific CSS - Der Kinderarzt vom Bodensee
+
+@use '../typography';
+
+.icon.inline {
+  display: inline-block;
+}
+
+dl {
+  dt {
+    background: var(--color-accent-1);
+    @include typography.body-bold();
+    margin: .5em -0.25em;
+    padding: 0 .25em;
+    border-radius: var(--border-radius-S);
+  }
+
+  dd {
+    margin: 0;
+
+    details {
+      summary {
+
+      }
+
+      .details-video-card {
+        a {
+          --link-color: var(--color-text-inverted);
+          --link-color-hover: var(--color-text-inverted);
+        }
+
+        position: relative;
+        .details-video-card-youtube-banner {
+          aspect-ratio: 5.1;
+          background: var(--color-secondary-elements-and-links);
+          margin-top: -.5em;
+
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          border-bottom-left-radius: var(--border-radius-M);
+          border-bottom-right-radius: var(--border-radius-M);
+        }
+      }
+    }
+  }
+}

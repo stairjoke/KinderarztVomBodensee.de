@@ -1,0 +1,259 @@
+:root {
+  --color-CI: #084CB5;
+  --color-CI-hover: #0a62e8;
+  --color-accent-1: #FFE588;
+  --color-accent-1-05: rgba(255, 229, 136, 0.5);
+  --color-accent-2: #FFAC46;
+  --color-page: #FFFBF0;
+  --color-secondary-elements-and-links: #4F4F4F;
+  --color-input-selected-fill: #999999;
+  --color-text: #212121;
+  --color-text-inverted: #FFFFFF;
+  --color-accent-2-text: #E57A00;
+  --color-shadow: rgba(0, 0, 0, 0.12);
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-overlay-alt: rgba(0, 0, 0, 0.8);
+}
+
+.tablet {
+  display: none;
+}
+
+.desktop {
+  display: none;
+}
+
+@media (min-width: 694px) {
+  .mobile {
+    display: none;
+  }
+  .tablet {
+    display: unset;
+  }
+  table.tablet {
+    display: table;
+  }
+}
+@media (min-width: 1024px) {
+  .mobile {
+    display: none;
+  }
+  .tablet {
+    display: none;
+  }
+  .desktop {
+    display: unset;
+  }
+  table.desktop {
+    display: table;
+  }
+}
+main img, main video, .media {
+  --shadow-color: var(--color-accent-1);
+  box-shadow: 0.5rem 0.5rem 0 0 var(--shadow-color);
+  border-radius: var(--border-radius-M);
+}
+@media (min-width: 431px) {
+  main img.large, main video.large, .media.large {
+    --shadow-color: var(--color-accent-1);
+    box-shadow: 1rem 1rem 0 0 var(--shadow-color);
+    border-radius: var(--border-radius-L);
+  }
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375em;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #f0f);
+}
+@media (min-width: 694px) {
+  body {
+    line-height: 1.5em;
+  }
+}
+
+p, h1, h2, h3, h4, h5, h6, ol, ul, blockquote, code, pre, audio, img, figure {
+  margin: 0 0 0.5rem 0;
+}
+
+strong, em {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375em;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #f0f);
+  font-weight: 700;
+}
+@media (min-width: 694px) {
+  strong, em {
+    line-height: 1.5em;
+  }
+}
+
+.fett {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: underline;
+  --link-color: var(--color-CI);
+  --link-color-hover: var(--color-accent-2-text);
+}
+a:link, a:active, a:visited {
+  color: var(--link-color);
+}
+a[href*=amazon]:link, a[href*=amazon]:active, a[href*=amazon]:visited, a[href*="//amzn."]:link, a[href*="//amzn."]:active, a[href*="//amzn."]:visited {
+  color: var(--color-secondary-elements-and-links);
+}
+a:hover, a:focus {
+  color: var(--link-color-hover);
+}
+a[target=_blank]::after, a[href*=http]::after {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  margin-left: 2px;
+  margin-right: 4px;
+  transform: translateY(0.2rem);
+  content: " (externer Link)";
+  color: transparent;
+  overflow: hidden;
+  background-image: url("../images/external-link.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375em;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #f0f);
+  font-weight: 700;
+  font-weight: 700;
+}
+@media (min-width: 694px) {
+  h2 {
+    line-height: 1.5em;
+  }
+}
+.productCard h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375em;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #f0f);
+  font-weight: 700;
+}
+@media (min-width: 694px) {
+  .productCard h2 {
+    line-height: 1.5em;
+  }
+}
+h2 a {
+  --link-color: var(--color-accent-2-text);
+  --link-color-hover: var(--color-accent-2);
+}
+
+h1 {
+  font-family: "Univers75Black";
+  font-weight: 750;
+  font-size: 2rem;
+  line-height: normal;
+  color: var(--color-accent-2-text);
+  text-align: center;
+  margin-bottom: var(--spacer-element);
+}
+@media (min-width: 431px) {
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.09;
+  }
+}
+footer h1, .card h1 {
+  text-align: left;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375em;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #f0f);
+  font-weight: 700;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--color-accent-2-text);
+  margin-bottom: var(--spacer-absatz);
+}
+@media (min-width: 694px) {
+  footer h1, .card h1 {
+    line-height: 1.5em;
+  }
+}
+@media (min-width: 694px) {
+  footer h1, .card h1 {
+    font-size: 2rem;
+    line-height: 1.5em;
+  }
+}
+
+ul li, ol li {
+  margin: 0.5rem 0 0.5rem 0;
+  margin-block: 0.25rem;
+}
+
+.icon.inline {
+  display: inline-block;
+}
+
+dl dt {
+  background: var(--color-accent-1);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375em;
+  letter-spacing: 0.02em;
+  color: var(--color-text, #f0f);
+  font-weight: 700;
+  margin: 0.5em -0.25em;
+  padding: 0 0.25em;
+  border-radius: var(--border-radius-S);
+}
+@media (min-width: 694px) {
+  dl dt {
+    line-height: 1.5em;
+  }
+}
+dl dd {
+  margin: 0;
+}
+dl dd details .details-video-card {
+  position: relative;
+}
+dl dd details .details-video-card a {
+  --link-color: var(--color-text-inverted);
+  --link-color-hover: var(--color-text-inverted);
+}
+dl dd details .details-video-card .details-video-card-youtube-banner {
+  aspect-ratio: 5.1;
+  background: var(--color-secondary-elements-and-links);
+  margin-top: -0.5em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: var(--border-radius-M);
+  border-bottom-right-radius: var(--border-radius-M);
+}
+
+/*# sourceMappingURL=videos.css.map */

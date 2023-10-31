@@ -208,6 +208,10 @@ ul li, ol li {
   margin-block: 0.25rem;
 }
 
+details summary {
+  cursor: pointer;
+}
+
 header {
   position: relative;
   z-index: 1;
@@ -610,6 +614,7 @@ body {
   background: var(--color-page);
   --grid-margin: 1rem;
   --grid-gap: 1rem;
+  --border-radius-S: .25rem;
   --border-radius-M: .5rem;
   --border-radius-L: .5rem;
   --spacer-abschnitt: 3rem;
