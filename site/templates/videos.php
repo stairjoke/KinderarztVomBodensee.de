@@ -1,5 +1,5 @@
 <?php snippet('head'); ?>
-<main>
+<main class="wide">
 	<?= $page->blocks()->toBlocks() ?>
 	<dl>
 	<?php
@@ -11,7 +11,7 @@
 			foreach($list as $video) :
 	?>
 		<dd>
-			<details>
+			<details open>
 				<summary><?= $video->title() ?></summary>
 				<div class="details-video-card">
 					<a href="<?= $video->videoURL() ?>">
