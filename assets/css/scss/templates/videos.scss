@@ -12,12 +12,9 @@ dl {
   // USE PHP to divide into columns to avoid columns shifting when details is opened!
 
   @media (min-width: #{globals.$break-point-tablet}){
-    columns: 2;
-    column-gap: var(--grid-gap);
   }
 
   @media (min-width: #{globals.$break-point-desktop}){
-    columns: 3;
   }
 
   dt {

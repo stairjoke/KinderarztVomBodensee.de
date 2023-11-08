@@ -212,17 +212,6 @@ ul li, ol li {
   display: inline-block;
 }
 
-@media (min-width: 694px) {
-  dl {
-    columns: 2;
-    column-gap: var(--grid-gap);
-  }
-}
-@media (min-width: 1024px) {
-  dl {
-    columns: 3;
-  }
-}
 dl dt {
   background: var(--color-accent-1);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
