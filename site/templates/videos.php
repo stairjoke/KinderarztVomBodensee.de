@@ -23,8 +23,14 @@
 				<details>
 					<summary><?= (isset($listItem['altTitle'])) ? $listItem['altTitle'] : $listItem['video']->title() ; ?></summary>
 					<div class="details-video-card">
-						<a href="<?= $listItem['video']->videoURL() ?>">
-							<img src="<?= ($listItem['video']->hasImages()) ? $listItem['video']->image()->url() : 'placeholder' ?>" />
+						<a href="<?= $listItem['video']->videoURL() ?>" target="_blank">
+							<?php
+								if($listItem['video']->hasImages()){
+									echo("<img alt='{$listItem['video']->image()->alt()}' src='{$listItem['video']->image()->url()}' />");
+								}else{
+									echo("<img />");
+								}
+							?>
 							<div class="details-video-card-youtube-banner">
 								<div>
 									<svg class="icon inline" aria-label="YouTube Logo">
