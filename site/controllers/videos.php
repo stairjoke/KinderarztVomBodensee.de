@@ -11,8 +11,14 @@
 		
 // —1— Generate an array for all videos including duplicates based on title and field "Buchstabe"
 
-		// Leeres Array für die Listen
+		// The layout uses one, two, and three columns of list items, each representing a video. The columns cannot be established using CSS, because they will be flexible in size, and CSS will re-flow them when a list item changes in height.
+				// Solution: 1x2x3 = 6 blocks of an equal number of videos. They can flow into 1, 2, and 3 columns
+				// 1. Count the number of videos
+				// 2. Store the number so the layout can use it to group the list items
+
+		// Empty arrays for alphabetically sorted videos and columns to establish scope
 		$alphabetical = [];
+		$numberOfVideos = 0;
 		
 		// Liste aller Unterseiten vom Typ Video alphabetisch sortiert
 		$videos = $page->children()->filterBy(function ($child) {
@@ -77,6 +83,7 @@
 				$letters = mb_split('(\, )', $video->Buchstaben());
 				foreach($letters as $letter) {
 					$alphabetical = addToAlphabeticalCollection($alphabetical, $letter, $video, true);
+					$numberOfVideos++;
 				}
 			}
 			
@@ -84,6 +91,7 @@
 			// If the video title starts with der, die, or das, remove it
 			$letter = str_replace(['der ', 'die ', 'das '], '', strtolower($video->title()));
 			$alphabetical = addToAlphabeticalCollection($alphabetical, $letter, $video);
+			$numberOfVideos++;
 		}
 		
 // —2— Sort the array of pages alphabetically
@@ -113,8 +121,11 @@
 			usort($letter, "sortLetter");
 		}
 		
+
+		
 		return [
-			'alphabetical' => $alphabetical
+			'alphabetical' => $alphabetical,
+			'numberOfVideos' => $numberOfVideos
 		];
 	}
 ?>

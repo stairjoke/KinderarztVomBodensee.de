@@ -2,14 +2,22 @@
 <main class="wide">
 	<?= $page->blocks()->toBlocks() ?>
 	<dl>
+		<div class=column-block>
 	<?php
+		$separateVideosIntoBlocksOfN = ceil($numberOfVideos / 6);
+		$separateVideosIntoBlocksOfNCurrentCount = 0;
 		
 		foreach($alphabetical as $letter => $list) :
-			?>
-		<div>
-		<dt><?= $letter ?></dt>
-			<?php
+			
+			if($separateVideosIntoBlocksOfNCurrentCount == $separateVideosIntoBlocksOfN) {
+				$separateVideosIntoBlocksOfNCurrentCount = 0;
+				echo ('</div><div class=column-block>');
+			}
+			
+			echo("<dt>$letter</dt>");
+			
 			foreach($list as $listItem) :
+				$separateVideosIntoBlocksOfNCurrentCount++;
 	?>
 			<dd>
 				<details>
@@ -35,11 +43,9 @@
 			</dd>
 	<?php
 			endforeach; // Collection
+		endforeach; // Alphabet
 	?>
 		</div>
-	<?php
-		endforeach; // Alphabet
-	?>	
 	</dl>
 	
 </main>
