@@ -3,37 +3,41 @@
 	<?= $page->blocks()->toBlocks() ?>
 	<dl>
 	<?php
+		
 		foreach($alphabetical as $letter => $list) :
-			$list = $list->sortBy('title', 'asc');
 			?>
+		<div>
 		<dt><?= $letter ?></dt>
 			<?php
-			foreach($list as $video) :
+			foreach($list as $listItem) :
 	?>
-		<dd>
-			<details open>
-				<summary><?= $video->title() ?></summary>
-				<div class="details-video-card">
-					<a href="<?= $video->videoURL() ?>">
-						<img src="<?= ($video->hasImages()) ? $video->image()->url() : 'placeholder' ?>" />
-						<div class="details-video-card-youtube-banner">
-							<div>
-								<svg class="icon inline" aria-label="YouTube Logo">
-									<use href="/assets/images/iconSprite.svg#youtube"></use>
-								</svg>
-								<span>Auf YouTube ansehen</span>
-								<svg class="icon inline" aria-label="Externe Verlinkung">
-									<use href="/assets/images/iconSprite.svg#ext"></use>
-								</svg>
+			<dd>
+				<details>
+					<summary><?= (isset($listItem['altTitle'])) ? $listItem['altTitle'] : $listItem['video']->title() ; ?></summary>
+					<div class="details-video-card">
+						<a href="<?= $listItem['video']->videoURL() ?>">
+							<img src="<?= ($listItem['video']->hasImages()) ? $listItem['video']->image()->url() : 'placeholder' ?>" />
+							<div class="details-video-card-youtube-banner">
+								<div>
+									<svg class="icon inline" aria-label="YouTube Logo">
+										<use href="/assets/images/iconSprite.svg#youtube"></use>
+									</svg>
+									<span>Auf YouTube ansehen</span>
+									<svg class="icon inline" aria-label="Externe Verlinkung">
+										<use href="/assets/images/iconSprite.svg#ext"></use>
+									</svg>
+								</div>
 							</div>
-						</div>
-					</a>
-				</div>
-				<?= $video->beschreibung()->kt() ?>
-			</details>
-		</dd>
+						</a>
+					</div>
+					<?= $listItem['video']->beschreibung()->kt() ?>
+				</details>
+			</dd>
 	<?php
 			endforeach; // Collection
+	?>
+		</div>
+	<?php
 		endforeach; // Alphabet
 	?>	
 	</dl>

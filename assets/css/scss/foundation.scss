@@ -89,7 +89,7 @@ body > main, .contain {
   margin-top: var(--spacer-abschnitt);
   margin-bottom: var(--spacer-abschnitt);
 }
-.containWide, main.wide {
+body > main.wide, .containWide {
   // This class will limit the width of an element to be the maximum size and center
   // it horizontally. Using custom properties, it maintains a margin left/right that
   // is consistent with the rest of the page.

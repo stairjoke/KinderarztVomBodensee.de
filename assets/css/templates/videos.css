@@ -212,6 +212,17 @@ ul li, ol li {
   display: inline-block;
 }
 
+@media (min-width: 694px) {
+  dl {
+    columns: 2;
+    column-gap: var(--grid-gap);
+  }
+}
+@media (min-width: 1024px) {
+  dl {
+    columns: 3;
+  }
+}
 dl dt {
   background: var(--color-accent-1);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -233,12 +244,24 @@ dl dt {
 dl dd {
   margin: 0;
 }
+dl dd details {
+  display: inline-block;
+}
+dl dd details .glossary-letter {
+  color: var(--color-secondary-elements-and-links);
+  font-variant: all-small-caps;
+}
 dl dd details .details-video-card {
   position: relative;
 }
 dl dd details .details-video-card a {
   --link-color: var(--color-text-inverted);
   --link-color-hover: var(--color-text-inverted);
+}
+dl dd details .details-video-card img {
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto;
 }
 dl dd details .details-video-card .details-video-card-youtube-banner {
   aspect-ratio: 5.1;

@@ -664,7 +664,7 @@ body > main, .contain {
   margin-bottom: var(--spacer-abschnitt);
 }
 
-.containWide, main.wide {
+body > main.wide, .containWide {
   margin-left: var(--grid-margin-adaptive);
   margin-right: var(--grid-margin-adaptive);
   max-width: calc(1280px - 2 * var(--grid-margin));

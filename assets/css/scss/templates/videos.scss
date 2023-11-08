@@ -1,5 +1,6 @@
 // Videos Page Specific CSS - Der Kinderarzt vom Bodensee
 
+@use '../globals';
 @use '../typography';
 
 .icon.inline {
@@ -7,6 +8,18 @@
 }
 
 dl {
+
+  // USE PHP to divide into columns to avoid columns shifting when details is opened!
+
+  @media (min-width: #{globals.$break-point-tablet}){
+    columns: 2;
+    column-gap: var(--grid-gap);
+  }
+
+  @media (min-width: #{globals.$break-point-desktop}){
+    columns: 3;
+  }
+
   dt {
     background: var(--color-accent-1);
     @include typography.body-bold();
@@ -19,14 +32,27 @@ dl {
     margin: 0;
 
     details {
+      display: inline-block;
+
       summary {
 
+      }
+
+      .glossary-letter {
+        color: var(--color-secondary-elements-and-links);
+        font-variant: all-small-caps;
       }
 
       .details-video-card {
         a {
           --link-color: var(--color-text-inverted);
           --link-color-hover: var(--color-text-inverted);
+        }
+
+        img {
+          aspect-ratio: 16/9;
+          width: 100%;
+          height: auto;
         }
 
         position: relative;
