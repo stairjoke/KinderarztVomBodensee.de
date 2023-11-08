@@ -4,12 +4,12 @@
 	<dl>
 		<div class=column-block>
 	<?php
-		$separateVideosIntoBlocksOfN = ceil($numberOfVideos / 6);
+		$separateVideosIntoBlocksOfN = ceil($numberOfVideos / 3);
 		$separateVideosIntoBlocksOfNCurrentCount = 0;
 		
 		foreach($alphabetical as $letter => $list) :
 			
-			if($separateVideosIntoBlocksOfNCurrentCount == $separateVideosIntoBlocksOfN) {
+			if($separateVideosIntoBlocksOfNCurrentCount >= $separateVideosIntoBlocksOfN) {
 				$separateVideosIntoBlocksOfNCurrentCount = 0;
 				echo ('</div><div class=column-block>');
 			}
