@@ -42,10 +42,15 @@ dl {
       }
 
       .details-video-card {
+        position: relative;
 
         a {
           --link-color: var(--color-text-inverted);
           --link-color-hover: var(--color-text-inverted);
+
+          &::after {
+            display: none;
+          }
         }
 
         img {
@@ -54,16 +59,12 @@ dl {
           height: auto;
         }
 
-        position: relative;
         .details-video-card-youtube-banner {
-          aspect-ratio: 5.1;
-          background: var(--color-secondary-elements-and-links);
-          margin-top: -.5em;
+          background-color: var(--color-secondary-elements-and-links);
+          min-height: 35%;
 
           position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
+          inset: auto 0 0 0;
 
           display: flex;
           flex-direction: column;
