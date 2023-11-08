@@ -50,8 +50,6 @@
 				}
 			}
 			
-			echo($letter . '<br>');
-			
 			// Test if this letter is already in use, otherwise create a new empty array for this letter
 			$alphabeticalCollection[$letter] = (isset($alphabeticalCollection[$letter])) ? $alphabeticalCollection[$letter] : [];
 			
