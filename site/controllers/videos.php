@@ -11,11 +11,6 @@
 		
 // —1— Generate an array for all videos including duplicates based on title and field "Buchstabe"
 
-		// The layout uses one, two, and three columns of list items, each representing a video. The columns cannot be established using CSS, because they will be flexible in size, and CSS will re-flow them when a list item changes in height.
-				// Solution: 1x2x3 = 6 blocks of an equal number of videos. They can flow into 1, 2, and 3 columns
-				// 1. Count the number of videos
-				// 2. Store the number so the layout can use it to group the list items
-
 		// Empty arrays for alphabetically sorted videos and columns to establish scope
 		$alphabetical = [];
 		$numberOfVideos = 0;
