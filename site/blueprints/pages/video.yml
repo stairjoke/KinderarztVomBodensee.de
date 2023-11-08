@@ -27,7 +27,7 @@ columns:
             type: tags
             width: 1/2
             help: |
-              **Ist ein Wort eingetragen wird der Titel des Videos ignoriert!** Ansonsten wird der Videotitel genutzt um das Video im Glossar einzuordnen. Die "Glossar-Orte"-Tags sind **ganze Worte** und können dazu genutzt werden das Video an mehr als einer Stelle in der alphabetischen Glossar-Liste anzuzeigen.
+              Die "Glossar-Orte"-Tags sind **ganze Worte** und können dazu genutzt werden das Video an mehr als einer Stelle in der alphabetischen Glossar-Liste anzuzeigen. Sie werden zusätzlich zum Video-Titel genutzt.
               Bei Videotiteln die mit "der", "die" oder "das" beginnen wird automatisch das zweite Wort genutzt.
             options:
               type: query
