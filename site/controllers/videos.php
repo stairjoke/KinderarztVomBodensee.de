@@ -24,11 +24,19 @@
 			// Only use the first letter of the string given in $letter and always use upper case
 			$letter = strtoupper(mb_substr($field_buchstabe, 0, 1));
 			
-			// Test if the letter is valid ASCII
+			// Test if the letter is valid ASCII to ensure it can be used as an ARRAY KEY
 			if(mb_detect_encoding($letter, 'ASCII', true) != 'ASCII') {
 				
 				// If the letter is not a valid ASCII character manually sort it.
-				// `iconv` does not work reliably.
+				// PROBLEM: mb_subsctr (used above) will NOT cut out the correct number of
+				// characters. A Word starting with "Über" shortened to one character using
+				//mb_subsctr will actually not be shortened to "Ü" but to "Üb" - bug?
+				
+				// `iconv` does not work reliably to convert strings to ASCII//TRANSLIT
+				// it will consider umlauts as illegal characters despite a defined LOCALE
+				
+				// In comes the manual solution:
+				// Use Regex to catch strings beginning with defined characters
 				if (preg_match('/^\Ä/', $letter)) {
 					$letter = 'A';
 				}else if (preg_match('/^\Ö/', $letter)) {
@@ -37,6 +45,7 @@
 				else if (preg_match('/^\Ü/', $letter)) {
 					$letter = 'U';
 				}else{
+					// And catch the rest of them in a miscellaneous category
 					$letter = '#';
 				}
 			}
