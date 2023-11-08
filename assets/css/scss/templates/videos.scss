@@ -8,13 +8,14 @@
 }
 
 dl {
-
-  // USE PHP to divide into columns to avoid columns shifting when details is opened!
-
   @media (min-width: #{globals.$break-point-tablet}){
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (min-width: #{globals.$break-point-desktop}){
+  .column-block {
+
   }
 
   dt {
@@ -41,6 +42,7 @@ dl {
       }
 
       .details-video-card {
+
         a {
           --link-color: var(--color-text-inverted);
           --link-color-hover: var(--color-text-inverted);

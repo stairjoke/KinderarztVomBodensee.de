@@ -212,6 +212,13 @@ ul li, ol li {
   display: inline-block;
 }
 
+@media (min-width: 694px) {
+  dl {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 dl dt {
   background: var(--color-accent-1);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
