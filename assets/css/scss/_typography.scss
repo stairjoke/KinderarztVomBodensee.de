@@ -60,22 +60,29 @@ a {
 	}
 
   // Links that open in a new tab show an external link icon after
-  &[target="_blank"]::after, &[href*="http"]::after {
+  &[target="_blank"]::after {
     display: inline-block;
-    height: 1em;
-    width: 1em;
-    margin-left: 2px;
-    margin-right: 4px;
 
-    transform: translateY(.2rem);
+    width: .9rem;
+    height: .9rem;
+    margin: 1px .2rem -1px .2rem;
+    overflow: hidden;
 
     content: " (externer Link)";
     color: transparent;
     overflow: hidden;
 
-    background-image: url('../images/external-link.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="white" fill-rule="evenodd" clip-rule="evenodd" d="M4 0H5V1.61538H4.11538C2.73467 1.61538 1.61538 2.73467 1.61538 4.11539V9.88462C1.61538 11.2653 2.73467 12.3846 4.11539 12.3846H9.88462C11.2653 12.3846 12.3846 11.2653 12.3846 9.88461V9H14V10C14 12.2091 12.2091 14 10 14H4C1.79086 14 0 12.2091 0 10V4C0 1.79086 1.79086 0 4 0ZM8 0V1.61538H11.3846L7.5 5.5L8.5 6.5L12.3846 2.61539V6H14V1C14 0.447715 13.5523 0 13 0H8Z" /></svg>');
+    -webkit-mask-position: bottom right;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+
+    mask-image: url('data:image/svg+xml;utf8,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="white" fill-rule="evenodd" clip-rule="evenodd" d="M4 0H5V1.61538H4.11538C2.73467 1.61538 1.61538 2.73467 1.61538 4.11539V9.88462C1.61538 11.2653 2.73467 12.3846 4.11539 12.3846H9.88462C11.2653 12.3846 12.3846 11.2653 12.3846 9.88461V9H14V10C14 12.2091 12.2091 14 10 14H4C1.79086 14 0 12.2091 0 10V4C0 1.79086 1.79086 0 4 0ZM8 0V1.61538H11.3846L7.5 5.5L8.5 6.5L12.3846 2.61539V6H14V1C14 0.447715 13.5523 0 13 0H8Z" /></svg>');
+    mask-position: bottom right;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+
+    background:  var(--color-secondary-elements-and-links);
   }
 }
 
