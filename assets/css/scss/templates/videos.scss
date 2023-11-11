@@ -31,9 +31,26 @@ dl {
 
     details {
       display: inline-block;
+      padding: var(--spacer-absatz) 0;
+      @media (min-width: #{globals.$break-point-tablet}){
+        padding: var(--spacer-achtel) 0;
+      }
+
+      &[open] {
+        summary {
+          margin-bottom: var(--spacer-absatz);
+        }
+
+        @media (max-width: #{globals.$break-point-tablet-}){
+          background: var(--color-accent-1);
+          box-shadow: var(--grid-margin) 0 0 var(--color-accent-1),
+                      calc((-1) * var(--grid-margin)) 0 0 var(--color-accent-1);
+        }
+      }
 
       summary {
-
+        display: inline-block;
+        margin-bottom: 0;
       }
 
       .glossary-letter {
@@ -57,6 +74,7 @@ dl {
           aspect-ratio: 16/9;
           width: 100%;
           height: auto;
+          margin-bottom: var(--spacer-element);
         }
 
         .details-video-card-youtube-banner {

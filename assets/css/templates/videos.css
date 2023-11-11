@@ -242,6 +242,25 @@ dl dd {
 }
 dl dd details {
   display: inline-block;
+  padding: var(--spacer-absatz) 0;
+}
+@media (min-width: 694px) {
+  dl dd details {
+    padding: var(--spacer-achtel) 0;
+  }
+}
+dl dd details[open] summary {
+  margin-bottom: var(--spacer-absatz);
+}
+@media (max-width: 693px) {
+  dl dd details[open] {
+    background: var(--color-accent-1);
+    box-shadow: var(--grid-margin) 0 0 var(--color-accent-1), calc(-1 * var(--grid-margin)) 0 0 var(--color-accent-1);
+  }
+}
+dl dd details summary {
+  display: inline-block;
+  margin-bottom: 0;
 }
 dl dd details .glossary-letter {
   color: var(--color-secondary-elements-and-links);
@@ -261,6 +280,7 @@ dl dd details .details-video-card img {
   aspect-ratio: 16/9;
   width: 100%;
   height: auto;
+  margin-bottom: var(--spacer-element);
 }
 dl dd details .details-video-card .details-video-card-youtube-banner {
   background-color: var(--color-secondary-elements-and-links);

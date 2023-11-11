@@ -26,7 +26,7 @@
 						<a href="<?= $listItem['video']->videoURL() ?>" target="_blank">
 							<?php
 								if($listItem['video']->hasImages()){
-									echo("<img alt='{$listItem['video']->image()->alt()}' src='{$listItem['video']->image()->url()}' />");
+									echo("<img alt='{$listItem['video']->image()->alt()}' src='{$listItem['video']->image()->url()}' loading='lazy' />");
 								}else{
 									echo("<img />");
 								}
