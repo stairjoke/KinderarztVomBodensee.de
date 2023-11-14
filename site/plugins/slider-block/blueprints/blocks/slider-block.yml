@@ -13,6 +13,7 @@ tabs:
           - value: three
             text: Drei Spalten
       images:
+        label: Bilder
         type: files
         uploads: image
         layout: cards
