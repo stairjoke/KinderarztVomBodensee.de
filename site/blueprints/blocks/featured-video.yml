@@ -1,0 +1,13 @@
+name: Featured Videos
+icon: road-sign
+tabs:
+  content:
+    fields:
+      featured:
+        label: Videos
+        help: |
+          Videos in dieser Liste werden in einem Spalten-Layout angezeigt. Es werden *bis zu* drei Videos angezeigt, auf kleineren Bildschirmen weniger. Die Reihenfolge in dieser Liste bestimmt die Reihenfolge auf der Seite.
+        layout: cards
+        type: pages
+        max: 3
+        template: video
