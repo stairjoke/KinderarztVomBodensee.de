@@ -99,9 +99,11 @@ strong, em {
 }
 
 a {
-  text-decoration: underline;
   --link-color: var(--color-CI);
   --link-color-hover: var(--color-accent-2-text);
+  --link-text-decoration: underline;
+  --link-text-decoration-hover: underline;
+  text-decoration: var(--link-text-decoration);
 }
 a:link, a:active, a:visited {
   color: var(--link-color);
@@ -111,6 +113,7 @@ a[href*=amazon]:link, a[href*=amazon]:active, a[href*=amazon]:visited, a[href*="
 }
 a:hover, a:focus {
   color: var(--link-color-hover);
+  text-decoration: var(--link-text-decotaion-hover);
 }
 a[target=_blank]::after {
   display: inline-block;
@@ -479,10 +482,11 @@ video {
 }
 
 svg.icon {
-  width: 1rem;
-  height: 1rem;
+  width: 1em;
+  height: 1em;
   color: currentcolor;
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 main figure {

@@ -38,10 +38,13 @@ strong, em {
 }
 
 a {
-	text-decoration: underline;
   //Hover by default is orange
   --link-color: var(--color-CI);
-	--link-color-hover: var(--color-accent-2-text);
+  --link-color-hover: var(--color-accent-2-text);
+  --link-text-decoration: underline;
+  --link-text-decoration-hover: underline;
+
+  text-decoration: var(--link-text-decoration);
 
   // Links by default are in CI color
   &:link, &:active, &:visited {
@@ -55,9 +58,10 @@ a {
     }
   }
 
-	&:hover, &:focus {
-		color: var(--link-color-hover);
-	}
+  &:hover, &:focus {
+    color: var(--link-color-hover);
+    text-decoration: var(--link-text-decotaion-hover);
+  }
 
   // Links that open in a new tab show an external link icon after
   &[target="_blank"]::after {

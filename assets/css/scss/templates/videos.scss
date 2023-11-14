@@ -3,8 +3,41 @@
 @use '../globals';
 @use '../typography';
 
-.icon.inline {
-  display: inline-block;
+section.featured-videos-block {
+  margin-bottom: var(--spacer-abschnitt);
+
+  @media (min-width: #{globals.$break-point-phablet}){
+    display: flex;
+    gap: var(--grid-gap);
+  }
+
+  .video {
+    flex-basis: 33%;
+    flex-shrink: 1;
+    flex-grow: 0;
+
+    @media (max-width: #{globals.$break-point-desktop-}){
+      &:nth-child(3) {
+        display: none;
+      }
+      flex-basis: 50%;
+    }
+
+    @media (max-width: #{globals.$break-point-phablet-}){
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+
+    img {
+      margin-bottom: var(--spacer-elemente-absatz);
+    }
+    a {
+      --link-color: var(--color-text);
+      --link-color-hover: var(--color-accent-2-text);
+      --link-text-decoration: none;
+    }
+  }
 }
 
 dl {
@@ -74,7 +107,7 @@ dl {
           aspect-ratio: 16/9;
           width: 100%;
           height: auto;
-          margin-bottom: var(--spacer-element);
+          margin-bottom: var(--spacer-elemente-absatz);
         }
 
         .details-video-card-youtube-banner {
