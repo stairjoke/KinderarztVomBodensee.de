@@ -28,7 +28,7 @@
 								if($listItem['video']->hasImages()){
 									echo("<img alt='{$listItem['video']->image()->alt()}' src='{$listItem['video']->image()->url()}' loading='lazy' />");
 								}else{
-									echo("<img />");
+									echo("<img src='/assets/images/Thumbnail-none.jpg' />");
 								}
 							?>
 							<div class="details-video-card-youtube-banner">
