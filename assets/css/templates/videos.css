@@ -248,6 +248,11 @@ dl dd details[open] summary {
     background: var(--color-accent-1);
     box-shadow: var(--grid-margin) 0 0 var(--color-accent-1), calc(-1 * var(--grid-margin)) 0 0 var(--color-accent-1);
   }
+  dl dd details[open] img {
+    --shadow-color: var(--color-accent-1);
+    box-shadow: 0.5rem 0.5rem 0 0 var(--shadow-color);
+    --shadow-color: var(--color-CI);
+  }
 }
 dl dd details summary {
   display: inline-block;

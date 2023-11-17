@@ -41,6 +41,10 @@ dl {
           background: var(--color-accent-1);
           box-shadow: var(--grid-margin) 0 0 var(--color-accent-1),
                       calc((-1) * var(--grid-margin)) 0 0 var(--color-accent-1);
+
+          img {
+            @include globals.shadow-alt();
+          }
         }
       }
 
