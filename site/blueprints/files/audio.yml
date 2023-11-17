@@ -6,8 +6,8 @@ fields:
   template:
     type: select
     options:
-      - default
-      - audio
+      default: Datei (Generell)
+      audio: Audio-Datei
   alt:
     label: Alternativtext
     type: text

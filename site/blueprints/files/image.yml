@@ -6,9 +6,8 @@ fields:
   template:
     type: select
     options:
-      - default
-      - image
-      - slider-image
+      default: Datei (generell)
+      image: Bild
   alt:
     label: Alternativtext
     type: text

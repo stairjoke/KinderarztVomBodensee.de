@@ -14,7 +14,14 @@ sections:
         type: blocks
   pages:
     label: Videos
-    layout: cards
+    layout: table
+    columns:
+      buchstaben:
+        label: Glossar-Stichworte
+      worte:
+        label: Zusätzliche Suchstichworte
     type: pages
     sortBy: title asc
     template: video
+    limit: 500
+    search: true

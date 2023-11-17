@@ -14,14 +14,6 @@ columns:
           videoUrl:
             type: text
             help: URL des Videos auf YouTube (Kurz- oder Langform).
-          worte:
-            label: Suchstichworte
-            type: tags
-            width: 1/2
-            help: Die "Suchstichworte"-tags werden genutzt um die Suche zu optimieren. Sie werden nirgends angezeigt.
-            options:
-              type: query
-              query: page.siblings.pluck("worte", ",", true)
           buchstaben:
             label: Glossar-Orte
             type: tags
@@ -32,6 +24,14 @@ columns:
             options:
               type: query
               query: page.siblings.pluck("buchstaben", ",", true)
+          worte:
+            label: Zusätzliche Suchstichworte
+            type: tags
+            width: 1/2
+            help: Die "Suchstichworte"-tags werden genutzt um die Suche zu optimieren. Sie werden nichtöffentlich gezeigt.
+            options:
+              type: query
+              query: page.siblings.pluck("worte", ",", true)
   sidebar:
     width: 1/3
     sections:
@@ -40,5 +40,6 @@ columns:
         type: files
         max: 1
         layout: cards
-        accept: image/*
+        uploads:
+          template: image
         help: Thumbnail Bilder sollten 746 x 426 PX oder größer sein. Um die Dateigröße gering zu halten sollten sie als JPG vorliegen, aber bitte in 100% Qualität, „runter”-rechnen geht immer, nur verlorene Pixel zurückholen nicht.

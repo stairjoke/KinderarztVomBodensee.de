@@ -6,8 +6,7 @@
 			'blocks/slider-block' => __DIR__ . '/snippets/blocks/slider-block.php'
 		],
 		'blueprints' => [
-			'blocks/slider-block' => __DIR__ . '/blueprints/blocks/slider-block.yml',
-			'files/slider-image' => __DIR__ . '/blueprints/files/slider-image.yml'
+			'blocks/slider-block' => __DIR__ . '/blueprints/blocks/slider-block.yml'
 		],
 		'js' => [
 			'assets/js/slider-block' => __DIR__ . '/assets/js/slider-block.js'
