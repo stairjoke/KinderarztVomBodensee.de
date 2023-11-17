@@ -23,32 +23,21 @@
 		// Helper function to add pages to a colleciton and sort special chars into their counterpart normal ones
 		function addToAlphabeticalCollection($alphabeticalCollection, $field_buchstabe, $page_video, $isBuchstabe = false){
 			// Only use the first letter of the string given in $letter and always use upper case
-			$letter = strtoupper(mb_substr($field_buchstabe, 0, 1));
-			
-			// Test if the letter is valid ASCII to ensure it can be used as an ARRAY KEY
-			if(mb_detect_encoding($letter, 'ASCII', true) != 'ASCII') {
-				
-				// If the letter is not a valid ASCII character manually sort it.
-				// PROBLEM: mb_subsctr (used above) will NOT cut out the correct number of
-				// characters. A Word starting with "Über" shortened to one character using
-				//mb_subsctr will actually not be shortened to "Ü" but to "Üb" - bug?
-				
-				// `iconv` does not work reliably to convert strings to ASCII//TRANSLIT
-				// it will consider umlauts as illegal characters despite a defined LOCALE
-				
-				// In comes the manual solution:
-				// Use Regex to catch strings beginning with defined characters
-				if (preg_match('/^\Ä/', $letter)) {
-					$letter = 'A';
-				}else if (preg_match('/^\Ö/', $letter)) {
-					$letter = 'O';
-				}
-				else if (preg_match('/^\Ü/', $letter)) {
-					$letter = 'U';
-				}else{
-					// And catch the rest of them in a miscellaneous category
-					$letter = '#';
-				}
+			$letter = mb_strtoupper(mb_substr($field_buchstabe, 0, 1, 'UTF-8'), 'UTF-8');
+
+			switch($letter) {
+				case "Ä":
+					$letter = "A";
+				break;
+				case "Ö":
+					$letter = "O";
+				break;
+				case "Ü":
+					$letter = "U";
+				break;
+				case mb_ereg_match('/[^A-Z]/', $letter):
+					$letter = "#";
+				break;
 			}
 			
 			// Test if this letter is already in use, otherwise create a new empty array for this letter
@@ -84,7 +73,9 @@
 			
 			// Use the video title in addition to the "Buchstaben" field
 			// If the video title starts with der, die, or das, remove it
-			$letter = str_replace(['der ', 'die ', 'das '], '', strtolower($video->title()));
+			$replace = '^(Der \b)|^(Die \b)|^(Das \b)|^(Wie den \b)|^(Was ist \b)|^(Was sind \b)|^(\")|^(^\„)|^(^\“)';
+			$letter = mb_ereg_replace($replace, '', $video->title());
+			
 			$alphabetical = addToAlphabeticalCollection($alphabetical, $letter, $video);
 			$numberOfVideos++;
 		}
@@ -94,26 +85,43 @@
 		// Sort the array of letters containing arrays of videos naturally like a human would
 		ksort($alphabetical, SORT_NATURAL);
 		
-		function sortLetter($a, $b){
+		function sortLetterArrayOfVideoPages($a, $b){
+			
 			// Helper-Function for sorting.
 			// Uses title or if available altTitle to return -1, 0, or +1
 			if(isset($a['altTitle'])) {
-				$a = $a['altTitle'];
+				$a = mb_strtoupper($a['altTitle'], 'UTF-8');
 			}else{
-				$a = $a['video']->title();
+				$a = mb_strtoupper($a['video']->title(), 'UTF-8');
 			}
 			
 			if(isset($b['altTitle'])) {
-				$b = $b['altTitle'];
+				$b = mb_strtoupper($b['altTitle'], 'UTF-8');
 			}else{
-				$b = $b['video']->title();
+				$b = mb_strtoupper($b['video']->title(), 'UTF-8');
 			}
+			// Filter sort to remove quotation marks and spans
+			$replace = '(^<SPAN[A-Z0-9 =_"\-]*>)|(["„“\ ])';
+			$a = mb_ereg_replace($replace, '', $a);
+			$b = mb_ereg_replace($replace, '', $b);
 			
+			$replace = '(\:<\/SPAN>&NBSP;)';
+			$a = mb_ereg_replace($replace, '', $a);
+			$b = mb_ereg_replace($replace, '', $b);
+			
+			$a = mb_substr($a, 0, 10, 'UTF-8');
+			$b = mb_substr($b, 0, 10, 'UTF-8');
+			
+			//echo '<pre>' . $a . '</pre> ' . strcmp($a, $b) . ' <pre>' . $b . '</pre><br>';
 			return strcmp($a, $b);
 		}
 		
-		foreach($alphabetical as $letter) {
-			usort($letter, "sortLetter");
+		foreach($alphabetical as $key => $letterArrayOfVideoPages) {
+			// Sort
+			usort($letterArrayOfVideoPages, "sortLetterArrayOfVideoPages");
+			
+			// Save
+			$alphabetical[$key] = $letterArrayOfVideoPages;
 		}
 		
 
