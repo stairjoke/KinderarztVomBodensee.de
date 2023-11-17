@@ -1,5 +1,7 @@
 // Media Styles — Der Kinderarzt vom Bodensee
 
+@use 'globals';
+
 img, video {
   display: block;
   max-width: 100%;
@@ -25,10 +27,21 @@ main figure {
   padding: 0;
 }
 
+@mixin media-L() {
+  @include globals.shadow-L();
+  border-radius: var(--border-radius-L);
+}
+
+@mixin media() {
+  @include globals.shadow();
+  border-radius: var(--border-radius-M);
+}
+
+
 main img, main video, .media {
   @include media();
 
-  @media (min-width: #{$break-point-phablet}) {
+  @media (min-width: #{globals.$break-point-phablet}) {
     &.large {
       @include media-L();
     }

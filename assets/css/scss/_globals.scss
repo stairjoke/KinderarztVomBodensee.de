@@ -89,13 +89,3 @@ $break-point-phablet-: 430px;
     display: table;
   }
 }
-
-@mixin media-L() {
-  @include shadow-L();
-  border-radius: var(--border-radius-L);
-}
-
-@mixin media() {
-  @include shadow();
-  border-radius: var(--border-radius-M);
-}
