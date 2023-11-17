@@ -99,13 +99,3 @@ $break-point-phablet-: 430px;
   @include shadow();
   border-radius: var(--border-radius-M);
 }
-
-main img, main video, .media {
-  @include media();
-
-  @media (min-width: #{$break-point-phablet}) {
-    &.large {
-      @include media-L();
-    }
-  }
-}

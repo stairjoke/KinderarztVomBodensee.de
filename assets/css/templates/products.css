@@ -48,19 +48,6 @@
     display: table;
   }
 }
-main img, main video, .media {
-  --shadow-color: var(--color-accent-1);
-  box-shadow: 0.5rem 0.5rem 0 0 var(--shadow-color);
-  border-radius: var(--border-radius-M);
-}
-@media (min-width: 431px) {
-  main img.large, main video.large, .media.large {
-    --shadow-color: var(--color-accent-1);
-    box-shadow: 1rem 1rem 0 0 var(--shadow-color);
-    border-radius: var(--border-radius-L);
-  }
-}
-
 .productCard .desktop {
   display: none;
 }

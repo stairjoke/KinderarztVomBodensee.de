@@ -24,3 +24,13 @@ main figure {
   margin: 0;
   padding: 0;
 }
+
+main img, main video, .media {
+  @include media();
+
+  @media (min-width: #{$break-point-phablet}) {
+    &.large {
+      @include media-L();
+    }
+  }
+}
