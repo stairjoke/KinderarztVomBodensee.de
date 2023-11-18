@@ -15,11 +15,13 @@ tabs:
         type: text
         width: 1/2
         help: Der Text kann eine relative oder abolute Adresse sein. Also */downloads/video.mp4* oder *https://externer-hoster.xyz/video.mp4*.
+        default: /assets/home-video.mp4
       webm:
         label: URL der Videodatei in WebM
         type: text
         width: 1/2
         help: Der Text kann eine relative oder abolute Adresse sein. Also */downloads/video.mp4* oder *https://externer-hoster.xyz/video.mp4*.
+        default: /assets/home-video.webm
       size:
         type: radio
         label: Stil
