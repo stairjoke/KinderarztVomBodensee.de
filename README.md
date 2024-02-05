@@ -1,10 +1,8 @@
 # Kinderarztvombodensee.de
+Dr. med. Christof Metzler, youtuber and pediatrician, has been publishing helpful videos for over ten years. He helps parents, grandparents and anyone who would like to be one. This is the source code of his website.
+
+## Built with Kirby
 You can learn more about Kirby at [getkirby.com](https://getkirby.com).
 
-## License Information
-This repository contains licensed fonts which may only be used for this website. Using these fonts for other projects not owned and operated by Christof Metzler is not permitted.
-
-This repository contains one KirbyCMS license. The license is bound to https://kinderarztvombodensee.de and may not be used for any other KirbyCMS installation.
-
 ## Copyright
-Design and Code by Wenzel Massag (https://wenzels.design/) all rights reserved.
+Design and Code by Wenzel Massag all rights reserved. More information about this project (German): http://wenzels.design/@/page/UaTbz72G67CCrKCv
