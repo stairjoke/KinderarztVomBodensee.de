@@ -49,3 +49,7 @@ Icon
 
 /site/config/.license
 /assets/fonts/webFonts
+
+# Content
+# ---------------
+/content/*
