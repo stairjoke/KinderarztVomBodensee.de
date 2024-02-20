@@ -50,6 +50,11 @@ Icon
 /site/config/.license
 /assets/fonts/webFonts
 
+# Ext. Source Files
+# ---------------
+/kirby
+/vendor
+
 # Content
 # ---------------
 /content/*
