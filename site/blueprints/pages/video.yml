@@ -32,6 +32,15 @@ columns:
             options:
               type: query
               query: page.siblings.pluck("worte", ",", true)
+          glossarHide:
+            width: 1/2
+            label: Videotitel für Glossar-Ort nutzen
+            type: toggle
+            text:
+              - "Videotitel wird genutzt"
+              - "Wird nur am Glossar-Ort gelistet"
+            help: |
+              Beispiel: „Kann Husten chronisch werden?“ — Nutze diese Option für Videos, deren Titel mit einem unabhängigen Wort beginnt. Die Videos erscheinen im Glossar dann nicht unter Ihrem Anfangsbuchstaben. **Ausnahmen:** die Worte *der, die* und *das* werden automatisch gefiltert.
   sidebar:
     width: 1/3
     sections:
