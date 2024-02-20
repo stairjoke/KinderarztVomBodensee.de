@@ -6,13 +6,11 @@ Icon
 
 # Temporary files
 # ---------------
-
 /media/*
 !/media/index.html
 
 # Lock files
 # ---------------
-
 .lock
 
 # Editors
@@ -28,25 +26,21 @@ Icon
 
 # Cache Files
 # ---------------
-
 /site/cache/*
 !/site/cache/index.html
 
 # Accounts
 # ---------------
-
 /site/accounts/*
 !/site/accounts/index.html
 
 # Sessions
 # ---------------
-
 /site/sessions/*
 !/site/sessions/index.html
 
 # License
 # ---------------
-
 /site/config/.license
 /assets/fonts/webFonts
 
