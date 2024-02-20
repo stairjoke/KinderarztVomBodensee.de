@@ -31,7 +31,7 @@
 									echo("<img src='/assets/images/Thumbnail-none.jpg' />");
 								}
 							?>
-							<div class="details-video-card-youtube-banner">
+							<div class="details-video-card-youtube-banner <?= $listItem['video']->thumbnailVersion() ?>">
 								<div>
 									<svg class="icon inline" aria-label="YouTube Logo">
 										<use href="/assets/images/iconSprite.svg#youtube"></use>

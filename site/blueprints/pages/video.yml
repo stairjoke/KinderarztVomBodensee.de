@@ -43,7 +43,7 @@ columns:
             type: radio
             options:
               legacy: Bis 2024
-              2024-1: 2024 Januar
+              v2024-1: 2024 Januar
             default: legacy
       files:
         label: Thumbnail

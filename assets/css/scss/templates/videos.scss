@@ -80,6 +80,12 @@ dl {
         .details-video-card-youtube-banner {
           background-color: var(--color-secondary-elements-and-links);
           min-height: 35%;
+          &.legacy {
+            min-height: 35%;
+          }
+          &.v2024-1 {
+            min-height: 29%;
+          }
 
           position: absolute;
           inset: auto 0 0 0;

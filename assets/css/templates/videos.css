@@ -290,5 +290,11 @@ dl dd details .details-video-card .details-video-card-youtube-banner {
   border-bottom-left-radius: var(--border-radius-M);
   border-bottom-right-radius: var(--border-radius-M);
 }
+dl dd details .details-video-card .details-video-card-youtube-banner.legacy {
+  min-height: 35%;
+}
+dl dd details .details-video-card .details-video-card-youtube-banner.v2024-1 {
+  min-height: 29%;
+}
 
 /*# sourceMappingURL=videos.css.map */
