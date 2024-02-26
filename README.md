@@ -1,5 +1,5 @@
 # Kinderarztvombodensee.de
-Dr. med. Christof Metzler, youtuber and pediatrician, has been publishing helpful videos for over ten years. He helps parents, grandparents and anyone who would like to be one. This is the source code of his website.
+Dr. med. Christof Metzler, pediatrician and youtuber, has been publishing helpful videos for over ten years. He helps parents, grandparents and anyone who would like to be one. This is the source code of his website.
 
 ## Built with Kirby
 You can learn more about Kirby at [getkirby.com](https://getkirby.com).
