@@ -21,7 +21,7 @@ sections:
       worte:
         label: Zusätzliche Suchstichworte
     type: pages
-    sortBy: title asc
+    sortBy: status asc title asc
     template: video
     limit: 500
     search: true
