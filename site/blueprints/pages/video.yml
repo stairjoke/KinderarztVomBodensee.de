@@ -23,7 +23,7 @@ columns:
               Bei Videotiteln die mit "der", "die" oder "das" beginnen wird automatisch das zweite Wort genutzt.
             options:
               type: query
-              query: page.siblings.pluck("buchstaben", ",", true)
+              query: site.find("videos").children.pluck("buchstaben", ",", true)
           worte:
             label: Zusätzliche Suchstichworte
             type: tags
@@ -31,7 +31,7 @@ columns:
             help: Die "Suchstichworte"-tags werden genutzt um die Suche zu optimieren. Sie werden nichtöffentlich gezeigt.
             options:
               type: query
-              query: page.siblings.pluck("worte", ",", true)
+              query: site.find("videos").children.pluck("worte", ",", true)
           glossarHide:
             width: 1/2
             label: Videotitel für Glossar-Ort nutzen
