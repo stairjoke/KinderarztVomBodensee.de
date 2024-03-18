@@ -254,10 +254,6 @@ dl dd details[open] summary {
     --shadow-color: var(--color-CI);
   }
 }
-dl dd details summary {
-  display: inline-block;
-  margin-bottom: 0;
-}
 dl dd details .glossary-letter {
   color: var(--color-secondary-elements-and-links);
   font-variant: all-small-caps;
