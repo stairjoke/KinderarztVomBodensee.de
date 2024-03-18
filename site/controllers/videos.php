@@ -70,14 +70,16 @@
 					$numberOfVideos++;
 				}
 			}
-			
-			// Use the video title in addition to the "Buchstaben" field
-			// If the video title starts with der, die, or das, remove it
-			$replace = '^(Der \b)|^(Die \b)|^(Das \b)|^(Wie den \b)|^(Was ist \b)|^(Was sind \b)|^(\")|^(^\„)|^(^\“)';
-			$letter = mb_ereg_replace($replace, '', $video->title());
-			
-			$alphabetical = addToAlphabeticalCollection($alphabetical, $letter, $video);
-			$numberOfVideos++;
+
+			if(!$video->glossarHide()->toBool()){
+				// Use the video title in addition to the "Buchstaben" field
+				// If the video title starts with der, die, or das, remove it
+				$replace = '^(Der \b)|^(Die \b)|^(Das \b)|^(Wie den \b)|^(Was ist \b)|^(Was sind \b)|^(\")|^(^\„)|^(^\“)';
+				$letter = mb_ereg_replace($replace, '', $video->title());
+				
+				$alphabetical = addToAlphabeticalCollection($alphabetical, $letter, $video);
+				$numberOfVideos++;
+			}
 		}
 		
 // —2— Sort the array of pages alphabetically
