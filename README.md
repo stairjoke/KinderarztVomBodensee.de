@@ -6,3 +6,10 @@ You can learn more about Kirby at [getkirby.com](https://getkirby.com).
 
 ## Copyright
 Design and Code by Wenzel Massag all rights reserved. More information about this project (German): http://wenzels.design/@/page/UaTbz72G67CCrKCv
+
+## Run Dev
+To run a Kirby instance locally all you need to do is run this command:
+
+```PHP
+php -S localhost:8000 kirby/router.php
+```
