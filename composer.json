@@ -1,11 +1,39 @@
 {
+  "name": "KinderarztVomBodensee.de",
+  "description": "Die Webseite von Dr. med. Christof Metzler",
+  "type": "project",
+  "keywords": [
+    "kirby",
+    "cms",
+    "plainkit",
+    "homepage"
+  ],
+  "authors": [
+    {
+      "name": "Wenzel Massag",
+      "email": "wenzel@wenzels.design",
+      "homepage": "https://stairjoke.ninja"
+    }, {
+      "name": "Bastian Allgeier",
+      "email": "bastian@getkirby.com",
+      "homepage": "https://getkirby.com"
+    }
+  ],
+  "homepage": "https://kinderarztvombodensee.de",
+  "scripts": {
+    "start": [
+      "Composer\\Config::disableProcessTimeout",
+      "@php -S localhost:8000 kirby/router.php"
+    ]
+  }
   "require": {
+    "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
     "getkirby/cms": "^4.1"
   },
   "config": {
-    "optimize-autoloader": true,
     "allow-plugins": {
       "getkirby/composer-installer": true
-    }
+    },
+    "optimize-autoloader": true
   }
 }
