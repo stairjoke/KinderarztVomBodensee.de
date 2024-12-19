@@ -54,7 +54,8 @@ columns:
               legacy: Bis 2024
               v2024-1: 2024 Januar
               v2024-2: 2024 Juli
-            default: v2024-2
+              v2024-3: 2024 November 11
+            default: v2024-3
       files:
         label: Thumbnail
         type: files
