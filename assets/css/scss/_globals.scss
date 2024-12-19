@@ -15,6 +15,7 @@ $break-point-phablet-: 430px;
   --color-CI-hover: #0a62e8;
   --color-accent-1: #FFE588;
   --color-accent-1-05: rgba(255, 229, 136, 0.5);
+  --color-accent-1-darken: #F6D251;
   --color-accent-2: #FFAC46;
   --color-page: #FFFBF0;
 
@@ -51,7 +52,7 @@ $break-point-phablet-: 430px;
 
 @mixin shadow-alt() {
   @include shadow();
-  --shadow-color: var(--color-CI);
+  --shadow-color: var(--color-accent-1-darken);
 }
 
 // Styles:

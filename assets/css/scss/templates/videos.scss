@@ -73,17 +73,25 @@ dl {
         }
 
         .details-video-card-youtube-banner {
-          background-color: var(--color-secondary-elements-and-links);
-          min-height: 35%;
+          background-color: var(--color-CI);
+          height: 35%;
+          width: 100%;
+          overflow: hidden;
+
           &.legacy {
-            min-height: 35%;
+            height: 35%;
           }
           &.v2024-1 {
-            min-height: 29%;
+            height: 29%;
+          }
+          &.v2024-2 {
+            height: 17.17%;
+            width: 66.64%;
+            border-top-right-radius: 2rem;
           }
 
           position: absolute;
-          inset: auto 0 0 0;
+          inset: auto auto 0 0;
 
           display: flex;
           flex-direction: column;
