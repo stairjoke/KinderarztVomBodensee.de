@@ -25,7 +25,11 @@
       "Composer\\Config::disableProcessTimeout",
       "@php -S localhost:8000 kirby/router.php"
     ]
+<<<<<<< HEAD
   },
+=======
+  }
+>>>>>>> master
   "require": {
     "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
     "getkirby/cms": "^4.1"
