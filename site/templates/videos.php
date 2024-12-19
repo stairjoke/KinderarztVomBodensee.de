@@ -39,7 +39,7 @@
 									<svg class="icon inline" aria-label="YouTube Logo">
 										<use href="/assets/images/iconSprite.svg#youtube"></use>
 									</svg>
-									<span>Auf YouTube ansehen</span>
+									<span>YouTube<span class="desktop"> öffnen</span></span>
 									<svg class="icon inline" aria-label="Externe Verlinkung">
 										<use href="/assets/images/iconSprite.svg#ext"></use>
 									</svg>
